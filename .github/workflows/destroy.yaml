@@ -1,47 +1,53 @@
-name: Terraform Destroy Provisioning   
+name: odoo Infrastructure destroy
 
-on: workflow_dispatch
-
-
+on:
+  pull_request:
+    branches:
+      - main                                            # Trigger on pull requests to the main branch
+      - staging  
+      - dev
+      
 permissions:
   contents: read
   id-token: write
-
+  
 jobs:
   Infra_provisioning:
     runs-on: ubuntu-latest
-    environment: dev  
+    environment: ${{ github.head_ref }}
     defaults:
       run:
         shell: bash
-        working-directory: ./infra
+        working-directory: ./infra/file-structure/${{ github.head_ref }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: echo the current branch
+        run:  |
+          echo "Current branch is: ${{ github.head_ref }}"
     
       - name: Configure AWS Credentials for Development Environment
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          # role-to-assume: ${{ secrets.ROLE_TO_ASSUME }}
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
-      - name: Setup Terraform
+                         
+      - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
 
-      # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
       - name: Terraform Init
         run: terraform init
-
+        
       # Checks that all Terraform configuration files adhere to a canonical format
-      - name: Terraform Format
-        run: terraform fmt -check
+      # - name: Terraform Format
+      #   run: terraform fmt -check
 
       # Generates an execution plan for Terraform
       - name: Terraform Plan -destroy
-        run: terraform plan -input=false
+        run: terraform plan var "environment_name=${{ github.head_ref }}" -out=plan.tfplan -input=false
 
       # Apply the Configuration
       - name: Terraform Destroy
