@@ -1,3 +1,5 @@
+[![odoo Infrastructure Provisioning](https://github.com/oriafo/ha_odoo-18.0_deployment/actions/workflows/infra.yaml/badge.svg)](https://github.com/oriafo/ha_odoo-18.0_deployment/actions/workflows/infra.yaml)
+
 [![Build Status](https://runbot.odoo.com/runbot/badge/flat/1/master.svg)](https://runbot.odoo.com/runbot)
 [![Tech Doc](https://img.shields.io/badge/master-docs-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/documentation/master)
 [![Help](https://img.shields.io/badge/master-help-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/forum/help-1)
