@@ -1,7 +1,7 @@
 terraform {
   # backend "s3" {
   #   bucket         = "abraham-oriafo-tf-state"
-  #   key            = "production/terraform.tfstate"
+  #   key            = "staging/terraform.tfstate"
   #   region         = "us-east-1"
   #   dynamodb_table = "abraham-terraform_lock"
   #   encrypt        = true
@@ -37,7 +37,7 @@ module "web_app" {
   # domain           = "devopsdeployed.com"
   environment_name = var.environment_name
   instance_type    = "t3.micro"
-  #create_dns_zone  = false
+  # create_dns_zone  = false
   # db_name          = "${local.environment_name}mydb"
   # db_user          = "foo"
   # db_pass          = var.db_pass
