@@ -1,11 +1,7 @@
 name: odoo Infrastructure destroy
 
-on:
-  pull_request:
-    branches:
-      - main                                            # Trigger on pull requests to the main branch
-      - staging  
-      - dev
+on: workflow_dispatch
+
       
 permissions:
   contents: read
@@ -47,7 +43,7 @@ jobs:
 
       # Generates an execution plan for Terraform
       - name: Terraform Plan -destroy
-        run: terraform plan var "environment_name=${{ github.head_ref }}" -out=plan.tfplan -input=false
+        run: terraform plan -input=false
 
       # Apply the Configuration
       - name: Terraform Destroy
