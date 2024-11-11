@@ -1,0 +1,74 @@
+name: odoo Infrastructure Provisioning
+
+on:
+  pull_request:
+    branches:
+      - main                                            # Trigger on pull requests to the main branch
+      - staging  
+      - dev
+      
+
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  Infra_provisioning:
+    runs-on: ubuntu-latest
+    environment: ${{ github.head_ref }}
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./infra
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: echo the current branch
+        run:  |
+          echo "Current branch is: ${{ github.head_ref }}"
+    
+      - name: Configure AWS Credentials for Development Environment
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+                         
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform init
+
+    # Checks that all Terraform configuration files adhere to a canonical format
+      # - name: Terraform Format
+      #   run: terraform fmt -check 
+
+    # Generates an execution plan for Terraform
+      - name: Terraform Plan
+        run: terraform plan -var "aws_private_key=${{ secrets.AWS_BASTONHOST_PRIV_KEY }}" -var "environment_name=${{ github.head_ref }}" -out=plan.tfplan 
+
+      # Apply the Configuration
+      - name: check for plain.tfplan in this directory
+        run: ls -l
+
+    # Apply the Configuration
+      - name: Terraform Apply 
+        run: terraform apply -var "aws_private_key=${{ secrets.AWS_BASTONHOST_PRIV_KEY }}" -var "environment_name=${{ github.head_ref }}" -auto-approve
+
+      - name: Check Terraform Status
+        run: |
+          if [ $? -ne 0 ]; then
+            echo "Terraform apply failed"
+            exit 1
+          else
+            echo "Terraform apply succeeded"
+          fi
+
+
+
+
+
