@@ -1,4 +1,7 @@
-[![odoo Infrastructure Provisioning](https://github.com/oriafo/ha_odoo-18.0_deployment/actions/workflows/infra.yaml/badge.svg)](https://github.com/oriafo/ha_odoo-18.0_deployment/actions/workflows/infra.yaml)
+[![odoo Infrastructure Deployment Status](https://lucid.app/lucidchart/adb284c0-e8d9-41f2-8d9f-14d0e78c35ad/edit?invitationId=inv_eeaad105-7f32-407e-8b2c-3af67c84d17f&page=0_0#)
+
+[![odoo Infrastructure Provisioning Architecture](https://github.com/oriafo/ha_odoo-18.0_deployment/actions/workflows/infra.yaml/badge.svg)](https://github.com/oriafo/ha_odoo-18.0_deployment/actions/workflows/infra.yaml)
+
 
 [![Build Status](https://runbot.odoo.com/runbot/badge/flat/1/master.svg)](https://runbot.odoo.com/runbot)
 [![Tech Doc](https://img.shields.io/badge/master-docs-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/documentation/master)
