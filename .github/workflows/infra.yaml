@@ -20,7 +20,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./infra
+        working-directory: ./infra/file-structure/${{ github.head_ref }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
