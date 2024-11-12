@@ -1,7 +1,7 @@
 name: odoo Infrastructure destroy
 
 on: 
-  workflow_dispatch
+  workflow_dispatch:
 
       
 permissions:
