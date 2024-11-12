@@ -56,11 +56,11 @@ jobs:
           fi
   
       - name: Deploy resources if stack does not exist
-        if: env.stack_exists == 'false'  # Runs only if the stack does not exist
+        if: ${{ env.stack_exists == 'false' }} # Runs only if the stack does not exist
         run: |
           aws cloudformation create-stack --stack-name odoo-backend --template-body file://backend.yaml --profile dikodin_profile --region us-east-1
       - name: Skip deployment if stack exists
-        if: env.stack_exists == 'true'  # Runs only if the stack exists
+        if: ${{ env.stack_exists == 'true' }} # Runs only if the stack exists
         run: |
           echo "Stack already exists, skipping deployment."
 
