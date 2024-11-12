@@ -1,9 +1,6 @@
 name: odoo Infrastructure destroy
 
-on: 
-  workflow_dispatch:    
-    branches:
-      - ${{ github.head_ref }}
+on: workflow_dispatch
 
       
 permissions:
