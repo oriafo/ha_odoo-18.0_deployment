@@ -49,18 +49,14 @@ jobs:
       - name: Capture Profile Output and Set Environment Variable
         run: |
           echo "PROFILE=${{ steps.check_cfn_stack.outputs.profile }}" >> $GITHUB_ENV  
-          CFN_STACK_NAME="odoo-backend-${{ github.head_ref }}"
           PROFILE="${{ steps.check_cfn_stack.outputs.profile }}"
           echo "Using profile: $PROFILE" 
 
       - name: Check if CloudFormation stack exists
         id: check_stack
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: us-east-1
         run: |
           set +e
+          CFN_STACK_NAME="odoo-backend-${{ github.head_ref }}"
           aws cloudformation describe-stacks --stack-name $CFN_STACK_NAME --profile "$PROFILE" --region us-east-1 > /dev/null 2>&1
           if [ $? -eq 0 ]; then
             echo "Stack $CFN_STACK_NAME exists."
