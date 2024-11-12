@@ -41,7 +41,7 @@ jobs:
         run: |
           CFN_STACK_NAME="odoo-backend-${{ github.head_ref }}"
           if [[ $github.head_ref  == "dev" ]]; then
-            echo "profile=dikodin_profile" >> $GITHUB_OUTPUT
+            echo "profile=dikodin_profile" >> $GITHUB_OUTPUT 
           else
             echo "profile=dikodin_production" >> $GITHUB_OUTPUT
           fi
