@@ -46,7 +46,7 @@ jobs:
             echo "profile=dikodin_production" >> $GITHUB_OUTPUT
           fi
           PROFILE="${{ steps.check_cfn_stack.outputs.profile }}"
-          echo "Using profile: $PROFILE"  
+          echo "Using profile: ${{PROFILE}}"  
           aws cloudformation describe-stacks --stack-name $CFN_STACK_NAME --profile "$PROFILE" --region us-east-1 > /dev/null 2>&1
           if [ $? -eq 0 ]; then
             echo "Stack $CFN_STACK_NAME exists."
