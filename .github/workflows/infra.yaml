@@ -72,8 +72,7 @@ jobs:
       - name: Deploy resources if stack does not exist
         if: ${{ steps.check_cfn_stack.outputs.stack_exists == 'false' }} 
         run: |
-          AWS_PROFILE=dikodin_profile
-          aws cloudformation create-stack --stack-name odoo-backend-${{ github.head_ref }} --template-body file://backend.yaml --profile "$PROFILE" --region us-east-1
+          aws cloudformation create-stack --stack-name odoo-backend-${{ github.head_ref }} --template-body file://backend.yaml --profile "$PROFILE" --region us-east-1 --debug
       - name: Skip deployment if stack exists
         if: ${{ steps.check_cfn_stack.outputs.stack_exists == 'true' }} 
         run: |
