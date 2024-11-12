@@ -41,11 +41,11 @@ jobs:
         run: |
           if [[ $github.head_ref  == "dev" ]]; then
             echo "profile=dikodin_profile" >> $GITHUB_OUTPUT 
-          else
+          fi
+          if [[ $github.head_ref  == "staging" ]]; then
             echo "profile=dikodin_production" >> $GITHUB_OUTPUT
           fi
-       
-
+          
       - name: Capture Profile Output and Set Environment Variable
         run: |
           echo "PROFILE=${{ steps.check_cfn_stack.outputs.profile }}" >> $GITHUB_ENV  
