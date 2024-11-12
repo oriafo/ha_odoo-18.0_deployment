@@ -65,10 +65,13 @@ jobs:
           if [ $? -eq 0 ]; then
             echo "Stack $CFN_STACK_NAME exists."
             echo "stack_exists=true" >> $GITHUB_OUTPUT
+            echo "Exit: ${{ steps.check_cfn_stack.outputs.stack_exists }}" 
           else
             echo "Stack $CFN_STACK_NAME does not exist."
             echo "stack_exists=false" >> $GITHUB_OUTPUT
             # echo "stack_exists=false" >> $GITHUB_OUTPUT
+            echo "Exit: ${{ steps.check_cfn_stack.outputs.stack_exists }}" 
+
           fi
           set -e
           
