@@ -7,8 +7,6 @@ on:
       - staging  
       - dev
       
-
-
 permissions:
   contents: read
   id-token: write
@@ -36,18 +34,47 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-                         
+
+  
+      - name: Check if CloudFormation stack exists
+        id: check_cfn_stack
+        run: |
+          CFN_STACK_NAME="odoo-backend-${{ github.head_ref }}"
+          if [[ $github.head_ref  == "dev" ]]; then
+            echo "profile=dikodin_profile" >> $GITHUB_ENV
+          else
+            echo "profile=dikodin_production" >> $GITHUB_ENV
+          fi
+
+          aws cloudformation describe-stacks --stack-name $CFN_STACK_NAME --profile $profile --region us-east-1 > /dev/null 2>&1
+          if [ $? -eq 0 ]; then
+            echo "Stack $CFN_STACK_NAME exists."
+            echo "stack_exists=true" >> $GITHUB_ENV
+          else
+            echo "Stack $CFN_STACK_NAME does not exist."
+            echo "stack_exists=false" >> $GITHUB_ENV
+          fi
+  
+      - name: Deploy resources if stack does not exist
+        if: env.stack_exists == 'false'  # Runs only if the stack does not exist
+        run: |
+          aws cloudformation create-stack --stack-name odoo-backend --template-body file://backend.yaml --profile dikodin_profile --region us-east-1
+      - name: Skip deployment if stack exists
+        if: env.stack_exists == 'true'  # Runs only if the stack exists
+        run: |
+          echo "Stack already exists, skipping deployment."
+
+          
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
         run: terraform init
 
-    # Checks that all Terraform configuration files adhere to a canonical format
-      # - name: Terraform Format
-      #   run: terraform fmt -check 
+      - name: Terraform Format
+        run: terraform fmt -check 
 
-    # Generates an execution plan for Terraform
+      # Generates an execution plan for Terraform
       - name: Terraform Plan
         run: terraform plan -var "environment_name=${{ github.head_ref }}" -out=plan.tfplan 
 
