@@ -41,26 +41,27 @@ jobs:
         run: |
           CFN_STACK_NAME="odoo-backend-${{ github.head_ref }}"
           if [[ $github.head_ref  == "dev" ]]; then
-            echo "profile=dikodin_profile" >> $GITHUB_ENV
+            echo "profile=dikodin_profile" >> $GITHUB_OUTPUT
           else
-            echo "profile=dikodin_production" >> $GITHUB_ENV
+            echo "profile=dikodin_production" >> $GITHUB_OUTPUT
           fi
-
-          aws cloudformation describe-stacks --stack-name $CFN_STACK_NAME --profile $profile --region us-east-1 > /dev/null 2>&1
+          PROFILE="${{ steps.check_cfn_stack.outputs.profile }}"
+          aws cloudformation describe-stacks --stack-name $CFN_STACK_NAME --profile $PROFILE --region us-east-1 > /dev/null 2>&1
           if [ $? -eq 0 ]; then
             echo "Stack $CFN_STACK_NAME exists."
-            echo "stack_exists=true" >> $GITHUB_ENV
+            echo "stack_exists=true" >> $GITHUB_OUTPUT
           else
             echo "Stack $CFN_STACK_NAME does not exist."
-            echo "stack_exists=false" >> $GITHUB_ENV
+            echo "stack_exists=false" >> $GITHUB_OUTPUT
+            # echo "stack_exists=false" >> $GITHUB_OUTPUT
           fi
   
       - name: Deploy resources if stack does not exist
-        if: ${{ env.stack_exists == 'false' }} # Runs only if the stack does not exist
+        if: ${{ steps.check_cfn_stack.outputs.stack_exists == 'false' }} # Runs only if the stack does not exist
         run: |
           aws cloudformation create-stack --stack-name odoo-backend --template-body file://backend.yaml --profile dikodin_profile --region us-east-1
       - name: Skip deployment if stack exists
-        if: ${{ env.stack_exists == 'true' }} # Runs only if the stack exists
+        if: ${{ steps.check_cfn_stack.outputs.stack_exists == 'true' }} # Runs only if the stack exists
         run: |
           echo "Stack already exists, skipping deployment."
 
