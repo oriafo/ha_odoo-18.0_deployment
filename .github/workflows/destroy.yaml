@@ -31,20 +31,25 @@ jobs:
           aws-region: us-east-1
 
                          
-      - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v3
+      # - name: Set up Terraform
+      #   uses: hashicorp/setup-terraform@v3
 
-      - name: Terraform Init
-        run: terraform init
+      # - name: Terraform Init
+      #   run: terraform init
         
       # Checks that all Terraform configuration files adhere to a canonical format
       # - name: Terraform Format
       #   run: terraform fmt -check
 
-      # Generates an execution plan for Terraform
-      - name: Terraform Plan -destroy
-        run: terraform plan -input=false
+      # # Generates an execution plan for Terraform
+      # - name: Terraform Plan -destroy
+      #   run: terraform plan -input=false
 
       # Apply the Configuration
-      - name: Terraform Destroy
-        run: terraform destroy -input=false -auto-approve
+      - name: cfn Destroy
+        if: ${{ github.head_ref }} == 'dev'
+        run: aws cloudformation delete-stack --stack-name odoo-backend-${{ github.head_ref }} --profile dikodin_profile --region us-east-1
+
+      - name: cfn Destroy
+        if: ${{ github.head_ref }} == 'staging'
+        run: aws cloudformation delete-stack --stack-name odoo-backend-${{ github.head_ref }} --profile dikodin_production --region us-east-1
