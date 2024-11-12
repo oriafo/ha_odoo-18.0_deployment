@@ -36,17 +36,26 @@ jobs:
 
 
   
-      - name: Check if CloudFormation stack exists
+      - name: Set profile output
         id: check_cfn_stack
         run: |
-          CFN_STACK_NAME="odoo-backend-${{ github.head_ref }}"
           if [[ $github.head_ref  == "dev" ]]; then
             echo "profile=dikodin_profile" >> $GITHUB_OUTPUT 
           else
             echo "profile=dikodin_production" >> $GITHUB_OUTPUT
           fi
-          # echo "PROFILE=${{ steps.check_cfn_stack.outputs.profile }}" >> $GITHUB_ENV          
-          echo "Using profile: ${{ steps.check_cfn_stack.outputs.profile }}"  
+       
+
+      - name: Capture Profile Output and Set Environment Variable
+        run: |
+          echo "PROFILE=${{ steps.check_cfn_stack.outputs.profile }}" >> $GITHUB_ENV  
+
+      - name: Check if CloudFormation stack exists
+        id: check_stack
+        run: |
+          CFN_STACK_NAME="odoo-backend-${{ github.head_ref }}"
+          PROFILE="${{ steps.check_cfn_stack.outputs.profile }}"
+          echo "Using profile: $PROFILE"  
           aws cloudformation describe-stacks --stack-name $CFN_STACK_NAME --profile "$PROFILE" --region us-east-1 > /dev/null 2>&1
           if [ $? -eq 0 ]; then
             echo "Stack $CFN_STACK_NAME exists."
@@ -56,7 +65,8 @@ jobs:
             echo "stack_exists=false" >> $GITHUB_OUTPUT
             # echo "stack_exists=false" >> $GITHUB_OUTPUT
           fi
-  
+          
+
       - name: Deploy resources if stack does not exist
         if: ${{ steps.check_cfn_stack.outputs.stack_exists == 'false' }} # Runs only if the stack does not exist
         run: |
