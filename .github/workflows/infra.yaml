@@ -39,13 +39,13 @@ jobs:
       - name: Set profile output
         id: check_cfn_stack
         run: |
-          if [[ $github.head_ref  == "dev" ]]; then
+          if [[ ${{ github.head_ref }}  == "dev" ]]; then
             echo "profile=dikodin_profile" >> $GITHUB_OUTPUT 
-          fi
-          if [[ $github.head_ref  == "staging" ]]; then
+          else
             echo "profile=dikodin_production" >> $GITHUB_OUTPUT
           fi
-          
+       
+
       - name: Capture Profile Output and Set Environment Variable
         run: |
           echo "PROFILE=${{ steps.check_cfn_stack.outputs.profile }}" >> $GITHUB_ENV  
