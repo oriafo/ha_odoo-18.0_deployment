@@ -1,11 +1,11 @@
 terraform {
-  # backend "s3" {
-  #   bucket         = "abraham-oriafo-tf-state"
-  #   key            = "production/terraform.tfstate"
-  #   region         = "us-east-1"
-  #   dynamodb_table = "abraham-terraform_lock"
-  #   encrypt        = true
-  # }
+  backend "s3" {
+    bucket         = "abraham-oriafo-tf-state"
+    key            = "terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "abraham-terraform_lock"
+    encrypt        = true
+  }
 
   required_providers {
     aws = {
