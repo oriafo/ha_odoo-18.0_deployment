@@ -1,8 +1,17 @@
 name: odoo Infrastructure destroy
 
-on: workflow_dispatch
-
-      
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Select the environment to Destroy'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - staging
+                
 permissions:
   contents: read
   id-token: write
@@ -10,18 +19,18 @@ permissions:
 jobs:
   Infra_destruction:
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.branch }} 
+    environment: ${{ github.event.inputs.environment }} 
     defaults:
       run:
         shell: bash
-        working-directory: ./infra/file-structure/${{ github.event.inputs.branch }}
+        working-directory: ./infra/file-structure/${{ github.event.inputs.environment }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: echo the current branch
         run:  |
-          echo "Current branch is: ${{ github.event.inputs.branch }}"
+          echo "Current branch is: ${{ github.event.inputs.environment }}"
 
       - name: Configure AWS Credentials for Development Environment
         uses: aws-actions/configure-aws-credentials@v4
@@ -44,11 +53,11 @@ jobs:
 
       # Generates an execution plan for Terraform
       # - name: Terraform Plan -destroy
-      #   run: terraform plan -var "environment_name=${{ github.event.inputs.branch }}" -out=plan.tfplan 
+      #   run: terraform plan -var "environment_name=${{ github.event.inputs.environmenth }}" -out=plan.tfplan 
 
       # Destroy the Configuration
       - name: Terraform Destroy 
-        run: terraform destroy -var "environment_name=${{ github.event.inputs.branch }} " -auto-approve
+        run: terraform destroy -var "environment_name=${{ github.event.inputs.environment }} " -auto-approve
 
 
       # # Apply the Configuration
