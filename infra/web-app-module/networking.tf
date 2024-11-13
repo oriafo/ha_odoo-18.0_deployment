@@ -225,7 +225,7 @@ resource "aws_route_table_association" "privl22_rt22" {
 
 
 resource "aws_lb" "custom_lb" {
-  name               = "${var.environment_name}-lb"
+  name               = "${trimspace(var.environment_name)}-lb"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.instances.id]
@@ -239,7 +239,7 @@ resource "aws_lb" "custom_lb" {
 }
 
 resource "aws_lb_target_group" "lb_tg" {
-  name        = "${var.environment_name}-lb-tg"
+  name        = "${trimspace(var.environment_name)}-lb-tg"
   port        = 80
   protocol    = "HTTP"
   target_type = "instance"
@@ -295,7 +295,7 @@ resource "aws_lb_listener_rule" "lb_lis_rules" {
 
 # Create a security group for instances
 resource "aws_security_group" "instances" {
-  name        = "${var.environment_name}-instances-sg"
+  name        = "${trimspace(var.environment_name)}-instances-sg"
   description = "Allow HTTP inbound traffic and all outbound traffic"
   vpc_id      = aws_vpc.custom_vpc.id
 
@@ -323,7 +323,7 @@ resource "aws_security_group" "instances" {
 
 # Launch Template
 resource "aws_launch_template" "custom_lt" {
-  name_prefix   = "${var.app_name}_launch_template"
+  name_prefix   = "${trimspace(var.app_name)}_launch_template"
   image_id      = var.ami
   # instance_type = var.environment_name == "production" ? var.instance_type : "t3.micro"
   instance_type = "t3.micro"
