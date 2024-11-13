@@ -64,7 +64,7 @@ jobs:
             echo "Exit: ${{ steps.check_cfn_stack.outputs.stack_exists }}" 
           else
             echo "Stack $CFN_STACK_NAME does not exist."
-            echo "stack_exists=false" >> $GITHUB_OUTPUT
+            echo "stack_exists=false" >> $GITHUB_OUTPUT 
             # echo "stack_exists=false" >> $GITHUB_OUTPUT
             echo "Exit: ${{ steps.check_cfn_stack.outputs.stack_exists }}" 
 
@@ -76,7 +76,10 @@ jobs:
         if: ${{ steps.check_cfn_stack.outputs.stack_exists }} == 'false' 
         working-directory: ./cfn
         run: |
-          aws cloudformation create-stack --stack-name odoo-backend-${{ github.head_ref }} --template-body file://backend.yaml --region us-east-1 --debug
+          long_running_command & aws cloudformation create-stack --stack-name odoo-backend-${{ github.head_ref }} --template-body file://backend.yaml --region us-east-1 --debug
+          pid=$!
+          wait $pid
+          echo "Background task completed"
       - name: Skip deployment if stack exists
         if: ${{ steps.check_cfn_stack.outputs.stack_exists }}== 'true' 
         run: |
