@@ -76,8 +76,8 @@ jobs:
         if: ${{ steps.check_cfn_stack.outputs.stack_exists }} == 'false' 
         working-directory: ./cfn
         run: |
-          long_running_command & aws cloudformation create-stack --stack-name odoo-backend-${{ github.head_ref }} --template-body file://backend.yaml --region us-east-1 --debug
-          sleep 5
+          aws cloudformation create-stack --stack-name odoo-backend-${{ github.head_ref }} --template-body file://backend.yaml --region us-east-1 --debug
+          sleep 10
       - name: Skip deployment if stack exists
         if: ${{ steps.check_cfn_stack.outputs.stack_exists }}== 'true' 
         run: |
