@@ -29,7 +29,7 @@ variable "environment_name" {
   type        = string
 }
 
-module "web_app" {
+module "web_app" {    
   source = "../../web-app-module"
 
   # Input Variables
