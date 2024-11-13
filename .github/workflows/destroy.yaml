@@ -10,18 +10,18 @@ permissions:
 jobs:
   Infra_destruction:
     runs-on: ubuntu-latest
-    environment: ${{ github.head_ref }} 
+    environment: ${{ github.event.inputs.branch }} 
     defaults:
       run:
         shell: bash
-        working-directory: ./infra/file-structure/${{ github.head_ref }}
+        working-directory: ./infra/file-structure/${{ github.event.inputs.branch }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: echo the current branch
         run:  |
-          echo "Current branch is: ${{ github.head_ref }}"
+          echo "Current branch is: ${{ github.event.inputs.branch }}"
 
       - name: Configure AWS Credentials for Development Environment
         uses: aws-actions/configure-aws-credentials@v4
@@ -44,11 +44,11 @@ jobs:
 
       # Generates an execution plan for Terraform
       # - name: Terraform Plan -destroy
-      #   run: terraform plan -var "environment_name=${{ github.head_ref }}" -out=plan.tfplan 
+      #   run: terraform plan -var "environment_name=${{ github.event.inputs.branch }}" -out=plan.tfplan 
 
       # Destroy the Configuration
       - name: Terraform Destroy 
-        run: terraform destroy -var "environment_name=${{ github.head_ref }} " -auto-approve
+        run: terraform destroy -var "environment_name=${{ github.event.inputs.branch }} " -auto-approve
 
 
       # # Apply the Configuration
