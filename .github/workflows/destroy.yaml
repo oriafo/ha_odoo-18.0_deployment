@@ -1,0 +1,59 @@
+name: odoo Infrastructure destroy
+
+on: workflow_dispatch
+
+      
+permissions:
+  contents: read
+  id-token: write
+  
+jobs:
+  Infra_destruction:
+    runs-on: ubuntu-latest
+    environment: ${{ github.head_ref }} 
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./infra/file-structure/${{ github.head_ref }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: echo the current branch
+        run:  |
+          echo "Current branch is: ${{ github.head_ref }}"
+    
+      - name: Configure AWS Credentials for Development Environment
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+                         
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform init  
+        
+      # Checks that all Terraform configuration files adhere to a canonical format
+      # - name: Terraform Format
+      #   run: terraform fmt -check
+
+      # Generates an execution plan for Terraform
+      # - name: Terraform Plan -destroy
+      #   run: terraform plan -var "environment_name=${{ github.head_ref }}" -out=plan.tfplan 
+
+      # Destroy the Configuration
+      - name: Terraform Destroy 
+        run: terraform destroy -var "environment_name=${{ github.head_ref }}" -auto-approve
+
+      # # Apply the Configuration
+      # - name: cfn Destroy
+      #   if: ${{ github.head_ref }} == 'dev'
+      #   run: aws cloudformation delete-stack --stack-name odoo-backend-${{ github.head_ref }} --profile dikodin_profile --region us-east-1
+
+      # - name: cfn Destroy
+      #   if: ${{ github.head_ref }} == 'staging'
+      #   run: aws cloudformation delete-stack --stack-name odoo-backend-${{ github.head_ref }} --profile dikodin_production --region us-east-1
