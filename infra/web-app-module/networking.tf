@@ -293,113 +293,113 @@ resource "aws_lb_listener_rule" "lb_lis_rules" {
   }
 }
 
-# # Create a security group for instances
-# resource "aws_security_group" "instances" {
-#   name        = "${var.environment_name}-instances-sg"
-#   description = "Allow HTTP inbound traffic and all outbound traffic"
-#   vpc_id      = aws_vpc.custom_vpc.id
+# Create a security group for instances
+resource "aws_security_group" "instances" {
+  name        = "${var.environment_name}-instances-sg"
+  description = "Allow HTTP inbound traffic and all outbound traffic"
+  vpc_id      = aws_vpc.custom_vpc.id
 
-#   ingress {
-#     from_port   = 80
-#     to_port     = 80
-#     protocol    = "tcp"
-#     cidr_blocks = ["0.0.0.0/0"] # Allow HTTP from anywhere
-#   }
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"] # Allow HTTP from anywhere
+  }
 
-#   ingress {
-#     from_port   = 22
-#     to_port     = 22
-#     protocol    = "tcp"
-#     cidr_blocks = ["${data.http.public_ip.body}/32"]
-#   }
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["${data.http.public_ip.body}/32"]
+  }
 
-#   egress {
-#     from_port   = 0
-#     to_port     = 0
-#     protocol    = "-1"
-#     cidr_blocks = ["0.0.0.0/0"] # Allow all outbound traffic
-#   }
-# }
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"] # Allow all outbound traffic
+  }
+}
 
-# # Launch Template
-# resource "aws_launch_template" "custom_lt" {
-#   name_prefix   = "${var.app_name}_launch_template"
-#   image_id      = var.ami
-#   # instance_type = var.environment_name == "production" ? var.instance_type : "t3.micro"
-#   instance_type = "t3.micro"
-#   key_name      = var.key_pair
+# Launch Template
+resource "aws_launch_template" "custom_lt" {
+  name_prefix   = "${var.app_name}_launch_template"
+  image_id      = var.ami
+  # instance_type = var.environment_name == "production" ? var.instance_type : "t3.micro"
+  instance_type = "t3.micro"
+  key_name      = var.key_pair
 
-#   monitoring {
-#     enabled = true
-#   }
+  monitoring {
+    enabled = true
+  }
 
-#   vpc_security_group_ids = [aws_security_group.instances.id]
+  vpc_security_group_ids = [aws_security_group.instances.id]
 
-#   user_data = base64encode(<<EOF
-# #!/bin/bash -xe
-# sudo apt-get update -y
-# sudo apt upgrade -y
-# sudo apt-get install wget unzip -y
-# sudo apt-get install nginx -y
-# sudo ufw allow 'Nginx HTTP'
-# sudo ufw status
-# sudo systemctl enable nginx
-# sudo systemctl start nginx    
-# sudo systemctl status nginx
-# wget https://www.tooplate.com/zip-templates/2137_barista_cafe.zip
-# sudo unzip -o 2137_barista_cafe.zip -d /var/www/html 
-# sudo cp -r /var/www/html/2137_barista_cafe/* /var/www/html
-# sudo nginx -s reload
-# EOF
-#   )
+  user_data = base64encode(<<EOF
+#!/bin/bash -xe
+sudo apt-get update -y
+sudo apt upgrade -y
+sudo apt-get install wget unzip -y
+sudo apt-get install nginx -y
+sudo ufw allow 'Nginx HTTP'
+sudo ufw status
+sudo systemctl enable nginx
+sudo systemctl start nginx    
+sudo systemctl status nginx
+wget https://www.tooplate.com/zip-templates/2137_barista_cafe.zip
+sudo unzip -o 2137_barista_cafe.zip -d /var/www/html 
+sudo cp -r /var/www/html/2137_barista_cafe/* /var/www/html
+sudo nginx -s reload
+EOF
+  )
 
-#   tag_specifications {
-#     resource_type = "instance"
-#     tags = {
-#       Environment = var.environment_name
-#     }
-#   }
-# }
+  tag_specifications {
+    resource_type = "instance"
+    tags = {
+      Environment = var.environment_name
+    }
+  }
+}
 
-# # Auto Scaling Group
-# resource "aws_autoscaling_group" "custom_asg" {
-#   desired_capacity = 2
-#   max_size         = 4
-#   min_size         = 2
-#   vpc_zone_identifier = [
-#     aws_subnet.public_subnet1.id, # Update with your public subnet IDs
-#     aws_subnet.public_subnet2.id
-#   ]
-#   target_group_arns         = [aws_lb_target_group.lb_tg.arn]
-#   health_check_type         = "ELB"
-#   health_check_grace_period = 300
+# Auto Scaling Group
+resource "aws_autoscaling_group" "custom_asg" {
+  desired_capacity = 2
+  max_size         = 4
+  min_size         = 2
+  vpc_zone_identifier = [
+    aws_subnet.public_subnet1.id, # Update with your public subnet IDs
+    aws_subnet.public_subnet2.id
+  ]
+  target_group_arns         = [aws_lb_target_group.lb_tg.arn]
+  health_check_type         = "ELB"
+  health_check_grace_period = 300
 
-#   launch_template {
-#     id      = aws_launch_template.custom_lt.id
-#     version = "$Latest"
-#   }
+  launch_template {
+    id      = aws_launch_template.custom_lt.id
+    version = "$Latest"
+  }
 
-#   instance_refresh {
-#     strategy = "Rolling"
+  instance_refresh {
+    strategy = "Rolling"
 
-#     preferences {
-#       instance_warmup        = 300
-#       min_healthy_percentage = 50
-#       # max_healthy_percentage = 100
-#     }
+    preferences {
+      instance_warmup        = 300
+      min_healthy_percentage = 50
+      # max_healthy_percentage = 100
+    }
 
-#     triggers = ["desired_capacity"]
-#   }
-#   # tags = [
-#   #   {
-#   #     key                 = "Name"
-#   #     value               = "${var.app_name}-instance"
-#   #     propagate_at_launch = true
-#   #   },
-#   #   {
-#   #     key                 = "Environment"
-#   #     value               = var.environment_name
-#   #     propagate_at_launch = true
-#   #   }
-#   # ]
-# }
+    triggers = ["desired_capacity"]
+  }
+  # tags = [
+  #   {
+  #     key                 = "Name"
+  #     value               = "${var.app_name}-instance"
+  #     propagate_at_launch = true
+  #   },
+  #   {
+  #     key                 = "Environment"
+  #     value               = var.environment_name
+  #     propagate_at_launch = true
+  #   }
+  # ]
+}
