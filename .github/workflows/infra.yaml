@@ -52,36 +52,66 @@ jobs:
           PROFILE="${{steps.check_cfn_stack.outputs.profile}}"
           echo "Using profile: $PROFILE" 
 
+      # - name: Check if CloudFormation stack exists
+      #   id: check_stack
+      #   run: |
+      #     set +e
+      #     CFN_STACK_NAME="odoo-backend-${{github.head_ref}}"
+      #     aws cloudformation describe-stacks --stack-name $CFN_STACK_NAME --profile "$PROFILE" --region us-east-1 > /dev/null 2>&1
+      #     if [ $? -eq 0 ]; then
+      #       echo "Stack $CFN_STACK_NAME exists."
+      #       echo "stack_exists=true" >> $GITHUB_OUTPUT
+      #       echo "Exit: ${{steps.check_cfn_stack.outputs.stack_exists}}" 
+      #     else
+      #       echo "Stack $CFN_STACK_NAME does not exist."
+      #       echo "stack_exists=false" >> $GITHUB_OUTPUT 
+      #       # echo "stack_exists=false" >> $GITHUB_OUTPUT
+      #       echo "Exit: ${{steps.check_cfn_stack.outputs.stack_exists}}" 
+      #     fi
+      #     set -e
+          
+
+      # - name: Deploy resources if stack does not exist
+      #   if: ${{steps.check_cfn_stack.outputs.stack_exists}} == 'false' 
+      #   working-directory: ./cfn
+      #   run: |
+      #     aws cloudformation create-stack --stack-name odoo-backend-${{github.head_ref}} --template-body file://backend.yaml --region us-east-1 --debug
+      #     sleep 20
+      # - name: Skip deployment if stack exists
+      #   if: ${{steps.check_cfn_stack.outputs.stack_exists}}== 'true' 
+      #   run: |
+      #     echo "Stack already exists, skipping deployment,"
+      #   working-directory: ./infra/file-structure/${{github.head_ref}}
+
+
+    
       - name: Check if CloudFormation stack exists
         id: check_stack
         run: |
           set +e
-          CFN_STACK_NAME="odoo-backend-${{github.head_ref}}"
+          CFN_STACK_NAME="odoo-backend-${{ github.head_ref }}"
           aws cloudformation describe-stacks --stack-name $CFN_STACK_NAME --profile "$PROFILE" --region us-east-1 > /dev/null 2>&1
           if [ $? -eq 0 ]; then
             echo "Stack $CFN_STACK_NAME exists."
-            echo "stack_exists=true" >> $GITHUB_OUTPUT
-            echo "Exit: ${{steps.check_cfn_stack.outputs.stack_exists}}" 
+            echo "stack_exists=true" >> $GITHUB_ENV
           else
             echo "Stack $CFN_STACK_NAME does not exist."
-            echo "stack_exists=false" >> $GITHUB_OUTPUT 
-            # echo "stack_exists=false" >> $GITHUB_OUTPUT
-            echo "Exit: ${{steps.check_cfn_stack.outputs.stack_exists}}" 
+            echo "stack_exists=false" >> $GITHUB_ENV
           fi
           set -e
-          
 
       - name: Deploy resources if stack does not exist
-        if: ${{steps.check_cfn_stack.outputs.stack_exists}} == 'false' 
+        if: ${{ env.stack_exists == 'false' }}  # Use environment variable
         working-directory: ./cfn
         run: |
-          aws cloudformation create-stack --stack-name odoo-backend-${{github.head_ref}} --template-body file://backend.yaml --region us-east-1 --debug
+          aws cloudformation create-stack --stack-name odoo-backend-${{ github.head_ref }} --template-body file://backend.yaml --region us-east-1 --debug
           sleep 20
+
       - name: Skip deployment if stack exists
-        if: ${{steps.check_cfn_stack.outputs.stack_exists}}== 'true' 
+        if: ${{ env.stack_exists == 'true' }}  # Use environment variable
         run: |
-          echo "Stack already exists, skipping deployment,"
-        working-directory: ./infra/file-structure/${{github.head_ref}}
+          echo "Stack already exists, skipping deployment."
+        working-directory: ./infra/file-structure/${{ github.head_ref }}
 
               
       - name: Set up Terraform
