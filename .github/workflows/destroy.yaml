@@ -21,7 +21,7 @@ jobs:
 
       - name: echo the current branch
         run:  |
-          echo "Current branch is: ${{ github.head_ref }}"
+          echo "Current branch is: ${{ github.event.inputs.environment }}"
     
       - name: Configure AWS Credentials for Development Environment
         uses: aws-actions/configure-aws-credentials@v4
