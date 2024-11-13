@@ -1,0 +1,120 @@
+name: odoo Infrastructure Provisioning
+
+on:
+  pull_request:
+    branches:
+      - main                                            # Trigger on pull requests to the main branch
+      - staging  
+      - dev
+      
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  Infra_provisioning:
+    runs-on: ubuntu-latest
+    environment: ${{ github.head_ref }}
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./infra/file-structure/${{ github.head_ref }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: echo the current branch
+        run:  |
+          echo "Current branch is: ${{ github.head_ref }}"
+    
+      - name: Configure AWS Credentials for Development Environment
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+
+  
+      - name: Set profile output
+        id: check_cfn_stack
+        run: |
+          if [[ ${{ github.head_ref }}  == "dev" ]]; then
+            echo "profile=dikodin_profile" >> $GITHUB_OUTPUT 
+          else
+            echo "profile=dikodin_production" >> $GITHUB_OUTPUT
+          fi
+       
+
+      - name: Capture Profile Output and Set Environment Variable
+        run: |
+          echo "PROFILE=${{ steps.check_cfn_stack.outputs.profile }}" >> $GITHUB_ENV  
+          PROFILE="${{ steps.check_cfn_stack.outputs.profile }}"
+          echo "Using profile: $PROFILE" 
+
+      - name: Check if CloudFormation stack exists
+        id: check_stack
+        run: |
+          set +e
+          CFN_STACK_NAME="odoo-backend-${{ github.head_ref }}"
+          aws cloudformation describe-stacks --stack-name $CFN_STACK_NAME --profile "$PROFILE" --region us-east-1 > /dev/null 2>&1
+          if [ $? -eq 0 ]; then
+            echo "Stack $CFN_STACK_NAME exists."
+            echo "stack_exists=true" >> $GITHUB_OUTPUT
+            echo "Exit: ${{ steps.check_cfn_stack.outputs.stack_exists }}" 
+          else
+            echo "Stack $CFN_STACK_NAME does not exist."
+            echo "stack_exists=false" >> $GITHUB_OUTPUT 
+            # echo "stack_exists=false" >> $GITHUB_OUTPUT
+            echo "Exit: ${{ steps.check_cfn_stack.outputs.stack_exists }}" 
+          fi
+          set -e
+          
+
+      - name: Deploy resources if stack does not exist
+        if: ${{ steps.check_cfn_stack.outputs.stack_exists }} == 'false' 
+        working-directory: ./cfn
+        run: |
+          aws cloudformation create-stack --stack-name odoo-backend-${{ github.head_ref }} --template-body file://backend.yaml --region us-east-1 --debug
+          sleep 10
+      - name: Skip deployment if stack exists
+        if: ${{ steps.check_cfn_stack.outputs.stack_exists }}== 'true' 
+        run: |
+          echo "Stack already exists, skipping deployment,"
+        working-directory: ./infra/file-structure/${{ github.head_ref }}
+
+              
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Format
+        run: terraform fmt
+
+      # Generates an execution plan for Terraform
+      - name: Terraform Plan
+        run: terraform plan -var "environment_name=${{ github.head_ref }}" -out=plan.tfplan 
+
+      # Apply the Configuration
+      - name: check for plain.tfplan in this directory
+        run: ls -l
+
+    # Apply the Configuration
+      - name: Terraform Apply 
+        run: terraform apply -var "environment_name=${{ github.head_ref }}" -auto-approve
+
+      - name: Check Terraform Status
+        run: |
+          if [ $? -ne 0 ]; then
+            echo "Terraform apply failed"
+            exit 1
+          else
+            echo "Terraform apply succeeded"
+          fi
+
+
+
+
+
