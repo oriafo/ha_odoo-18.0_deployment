@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket         = "abraham-oriafo-tf-state"
-    key            = "staging/terraform.tfstate"
+    key            = "terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "abraham-terraform_lock"
     encrypt        = true

@@ -33,8 +33,7 @@ Resources:
       ProvisionedThroughput:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 5
-      SSESpecification:
-        SSEEnabled: true
+    DeletionPolicy: Delete
 
 Outputs:
   TerraformBackendBucketName:

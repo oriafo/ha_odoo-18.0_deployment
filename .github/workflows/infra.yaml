@@ -68,7 +68,7 @@ jobs:
             # echo "stack_exists=false" >> $GITHUB_OUTPUT
             echo "Exit: ${{steps.check_cfn_stack.outputs.stack_exists}}" 
           fi
-          set -e
+          set -e  
           
 
       - name: Deploy resources if stack does not exist
