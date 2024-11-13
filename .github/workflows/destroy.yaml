@@ -1,7 +1,17 @@
 name: odoo Infrastructure destroy
 
-on: workflow_dispatch
-
+on: 
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Select the branch to Destroy its infrastructure'
+        required: true
+        default: 'main'
+        type: choice
+        options:
+          - main
+          - dev
+          - staging
       
 permissions:
   contents: read
@@ -10,19 +20,19 @@ permissions:
 jobs:
   Infra_destruction:
     runs-on: ubuntu-latest
-    environment: ${{ github.head_ref }} 
+    environment: ${{ github.event.inputs.branch }} 
     defaults:
       run:
         shell: bash
-        working-directory: ./infra/file-structure/${{ github.head_ref }}
-    steps:
+        working-directory: ./infra/file-structure/${{ github.event.inputs.branch }}
+      steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: echo the current branch
         run:  |
-          echo "Current branch is: ${{ github.head_ref }}"
-    
+          echo "Current branch is: ${{ github.event.inputs.branch }}"
+
       - name: Configure AWS Credentials for Development Environment
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -36,7 +46,8 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        
+
+
       # Checks that all Terraform configuration files adhere to a canonical format
       # - name: Terraform Format
       #   run: terraform fmt -check
@@ -47,7 +58,7 @@ jobs:
 
       # Destroy the Configuration
       - name: Terraform Destroy 
-        run: terraform destroy -var "environment_name=${{ github.head_ref }}" -auto-approve
+        run: terraform destroy -var "environment_name=${{ github.event.inputs.branch }} " -auto-approve
 
       # # Apply the Configuration
       # - name: cfn Destroy

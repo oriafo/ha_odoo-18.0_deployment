@@ -68,7 +68,11 @@ jobs:
             # echo "stack_exists=false" >> $GITHUB_OUTPUT
             echo "Exit: ${{ steps.check_cfn_stack.outputs.stack_exists }}" 
 
+<<<<<<< HEAD
           fi
+=======
+          fi  
+>>>>>>> main
           set -e
           
 
