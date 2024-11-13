@@ -49,7 +49,7 @@ jobs:
           REPOSITORY: oriafo/ha_odoo-18.0_deployment
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG ../Dockerfile
+          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG ../
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
 
       - name: Set profile output
