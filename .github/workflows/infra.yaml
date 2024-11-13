@@ -73,19 +73,17 @@ jobs:
           
 
       - name: Deploy resources if stack does not exist
-        if: ${{ steps.check_cfn_stack.outputs.stack_exists }} == 'false'  
+        if: ${{ steps.check_cfn_stack.outputs.stack_exists }} == 'false' 
+        working-directory: ../cfn/ 
         run: |
-          cd ../cfn/
           aws cloudformation create-stack --stack-name odoo-backend-${{ github.head_ref }} --template-body file://backend.yaml --profile "$PROFILE" --region us-east-1 --debug
       - name: Skip deployment if stack exists
         if: ${{ steps.check_cfn_stack.outputs.stack_exists }}== 'true' 
         run: |
           echo "Stack already exists, skipping deployment,"
-        
-      - name: Change back to working directory
-        run:  cd ../infra/file-structure/${{ github.head_ref }}
+        working-directory: ./infra/file-structure/${{ github.head_ref }}
 
-          
+              
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
 
