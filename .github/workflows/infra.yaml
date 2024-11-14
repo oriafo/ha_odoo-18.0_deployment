@@ -124,6 +124,26 @@ jobs:
             echo "Terraform apply succeeded"
           fi
 
+      # - name: Log in to Amazon dev ECR
+      #   run: |
+      #     aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 681117582889.dkr.ecr.us-east-1.amazonaws.com
+      #     docker pull 681117582889.dkr.ecr.us-east-1.amazonaws.com/my-docker-image:${{ github.run_number }}
+      #   if: github.head_ref == 'dev'
+
+      # - name: Log in to Amazon staging ECR
+      #   run: |
+      #     aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 375410234341.dkr.ecr.us-east-1.amazonaws.com
+      #     docker pull 375410234341.dkr.ecr.us-east-1.amazonaws.com/my-docker-image:${{ github.run_number }}
+      #   if: github.head_ref == 'staging'
+
+
+
+
+
+
+
+
+      
 
 # name: odoo Infrastructure Provisioning
 
