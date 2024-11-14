@@ -407,7 +407,7 @@ resource "aws_autoscaling_group" "custom_asg" {
   min_size         = 2
   vpc_zone_identifier = [
     aws_subnet.public_subnet1.id, # Update with your public subnet IDs
-    aws_subnet.public_subnet2.id
+    aws_subnet.public_subnet2.id,
   ]
   target_group_arns         = [aws_lb_target_group.lb_tg.arn]
   health_check_type         = "ELB"
