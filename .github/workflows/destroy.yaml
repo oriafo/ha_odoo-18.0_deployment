@@ -57,7 +57,7 @@ jobs:
 
       # Destroy the Configuration
       - name: Terraform Destroy 
-        run: terraform destroy -var "environment_name=${{github.event.inputs.environment}} " "run_number=${{ github.run_number }}" -auto-approve
+        run: terraform destroy -var "environment_name=${{github.event.inputs.environment}} " -var "run_number=${{ github.run_number }}" -auto-approve
 
 
       # # Apply the Configuration
