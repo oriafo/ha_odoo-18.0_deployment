@@ -337,6 +337,8 @@ resource "aws_launch_template" "custom_lt" {
 
   user_data = base64encode(<<EOF
 #!/bin/bash -xe
+exec > /tmp/script_output.log 2>&1 
+sleep 10
 if [ github.head_ref == 'dev' ]; then
   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 681117582889.dkr.ecr.us-east-1.amazonaws.com
   docker pull $REGISTRY/$REPOSITORY:$run_number
