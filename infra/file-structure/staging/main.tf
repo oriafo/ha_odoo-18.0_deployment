@@ -29,6 +29,12 @@ variable "environment_name" {
   type        = string
 }
 
+variable "run_number" {
+  description = "GitHub run number"
+  type        = string
+}
+
+
 module "web_app" {
   source = "../../web-app-module"
 
