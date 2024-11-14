@@ -39,11 +39,6 @@ variable "instance_type" {
   default     = "t3.micro"
 }
 
-variable "run_number" {
-  description = "GitHub run number"
-  type        = string
-}
-
 # S3 Variables
 
 # variable "bucket_prefix" {

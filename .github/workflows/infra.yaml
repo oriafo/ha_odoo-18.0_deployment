@@ -34,23 +34,27 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+      - name: Build docker image
+        run: docker 
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v2
-        with:
-          mask-password: 'false'
-
-      - name: Build, tag, and push docker image to Amazon ECR
-        env:
-          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          REPOSITORY: oriafo/ha_odoo-18.0_deployment
-          IMAGE_TAG: ${{ github.sha }}
+        uses: aws-actions/amazon-ecr-login@v1
+      
+      - name: Automatic Tagging of Releases
+        id: increment-git-tag
         run: |
-          docker build -t $REGISTRY/$REPOSITORY:${{ github.sha }} ../../../.
-          docker push $REGISTRY/$REPOSITORY:${{ github.sha }}
+          bash ./build/git_update.sh -v major
+
+      - name: Build, Tag, and Push the Image to Amazon ECR
+        id: build-image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: lesson-086
+          IMAGE_TAG: ${{ steps.increment-git-tag.outputs.git-tag }}
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
       - name: Set profile output
         id: check_cfn_stack
@@ -107,13 +111,13 @@ jobs:
         run: terraform fmt
 
       - name: Terraform Plan
-        run: terraform plan -var "environment_name=${{github.head_ref}}" -var "run_number=${{github.sha}}" -out=plan.tfplan 
+        run: terraform plan -var "environment_name=${{github.head_ref}}" -out=plan.tfplan 
 
       - name: check for plain.tfplan in this directory
         run: ls -l
 
       - name: Terraform Apply 
-        run: terraform apply -var "environment_name=${{github.head_ref}}" -var "run_number=${{github.sha}}" -auto-approve
+        run: terraform apply -var "environment_name=${{github.head_ref}}" -auto-approve
 
       - name: Check Terraform Status
         run: |
@@ -124,26 +128,6 @@ jobs:
             echo "Terraform apply succeeded"
           fi
 
-      # - name: Log in to Amazon dev ECR
-      #   run: |
-      #     aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 681117582889.dkr.ecr.us-east-1.amazonaws.com
-      #     docker pull 681117582889.dkr.ecr.us-east-1.amazonaws.com/my-docker-image:${{ github.run_number }}
-      #   if: github.head_ref == 'dev'
-
-      # - name: Log in to Amazon staging ECR
-      #   run: |
-      #     aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 375410234341.dkr.ecr.us-east-1.amazonaws.com
-      #     docker pull 375410234341.dkr.ecr.us-east-1.amazonaws.com/my-docker-image:${{ github.run_number }}
-      #   if: github.head_ref == 'staging'
-
-
-
-
-
-
-
-
-      
 
 # name: odoo Infrastructure Provisioning
 
