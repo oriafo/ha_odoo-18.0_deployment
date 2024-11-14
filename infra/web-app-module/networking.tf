@@ -380,14 +380,12 @@ resource "aws_launch_template" "custom_lt" {
 #!/bin/bash -xe
 if [ github.head_ref == 'dev' ]; then
   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 681117582889.dkr.ecr.us-east-1.amazonaws.com
-  docker pull $REGISTRY/$REPOSITORY:${{ github.run_number }}
-  docker run -itd --name odoo-erp-${{ github.run_number }} -p 8069:8069 -e ODOO_USER=odoo  $REGISTRY/$REPOSITORY:${{ github.run_number }}
+  docker pull $REGISTRY/$REPOSITORY:$github.run_number
+  docker run -itd --name odoo-erp-$github.run_number -p 8069:8069 -e ODOO_USER=odoo  $REGISTRY/$REPOSITORY:$github.run_number 
 else
   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 375410234341.dkr.ecr.us-east-1.amazonaws.com
-  docker $REGISTRY/$REPOSITORY:${{ github.run_number }}
-  docker run -itd --name odoo-erp-${{ github.run_number }} -p 8069:8069 -e ODOO_USER=odoo 3$REGISTRY/$REPOSITORY:${{ github.run_number }}
-
-681117582889.dkr.ecr.us-east-1.amazonaws.com/my-docker-image:${{ github.run_number }}
+  docker $REGISTRY/$REPOSITORY:$github.run_number 
+  docker run -itd --name odoo-erp-$github.run_number  -p 8069:8069 -e ODOO_USER=odoo 3$REGISTRY/$REPOSITORY:$github.run_number 
 fi
 EOF
   )
