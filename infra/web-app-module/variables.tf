@@ -25,6 +25,12 @@ variable "environment_name" {
   # default     = "dev"
 }
 
+
+variable "run_number" {
+  description = "GitHub run number"
+  type        = string
+}
+
 # EC2 Variables
 
 variable "ami" {
