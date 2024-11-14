@@ -321,6 +321,47 @@ resource "aws_security_group" "instances" {
   }
 }
 
+
+# # Launch Template
+# resource "aws_launch_template" "custom_lt" {
+#   name_prefix   = "${trimspace(var.app_name)}_launch_template"
+#   image_id      = var.ami
+#   # instance_type = var.environment_name == "production" ? var.instance_type : "t3.micro"
+#   instance_type = "t3.micro"
+#   key_name      = var.key_pair
+
+#   monitoring {
+#     enabled = true
+#   }
+
+#   vpc_security_group_ids = [aws_security_group.instances.id]
+
+#   user_data = base64encode(<<EOF
+# #!/bin/bash -xe
+# sudo apt-get update -y
+# sudo apt upgrade -y
+# sudo apt-get install wget unzip -y
+# sudo apt-get install nginx -y
+# sudo ufw allow 'Nginx HTTP'
+# sudo ufw status
+# sudo systemctl enable nginx
+# sudo systemctl start nginx    
+# sudo systemctl status nginx
+# wget https://www.tooplate.com/zip-templates/2137_barista_cafe.zip
+# sudo unzip -o 2137_barista_cafe.zip -d /var/www/html 
+# sudo cp -r /var/www/html/2137_barista_cafe/* /var/www/html
+# sudo nginx -s reload
+# EOF
+#   )
+
+#   tag_specifications {
+#     resource_type = "instance"
+#     tags = {
+#       Environment = var.environment_name
+#     }
+#   }
+# }
+
 # Launch Template
 resource "aws_launch_template" "custom_lt" {
   name_prefix   = "${trimspace(var.app_name)}_launch_template"
@@ -337,19 +378,17 @@ resource "aws_launch_template" "custom_lt" {
 
   user_data = base64encode(<<EOF
 #!/bin/bash -xe
-sudo apt-get update -y
-sudo apt upgrade -y
-sudo apt-get install wget unzip -y
-sudo apt-get install nginx -y
-sudo ufw allow 'Nginx HTTP'
-sudo ufw status
-sudo systemctl enable nginx
-sudo systemctl start nginx    
-sudo systemctl status nginx
-wget https://www.tooplate.com/zip-templates/2137_barista_cafe.zip
-sudo unzip -o 2137_barista_cafe.zip -d /var/www/html 
-sudo cp -r /var/www/html/2137_barista_cafe/* /var/www/html
-sudo nginx -s reload
+if [ github.head_ref == 'dev' ]; then
+  aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 681117582889.dkr.ecr.us-east-1.amazonaws.com
+  docker pull 681117582889.dkr.ecr.us-east-1.amazonaws.com/my-docker-image:${{ github.run_number }}
+  docker run -itd --name odoo-erp-${{ github.run_number }} -p 8069:8069 -e ODOO_USER=odoo  681117582889.dkr.ecr.us-east-1.amazonaws.com/my-docker-image:${{ github.run_number }}
+else
+  aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 375410234341.dkr.ecr.us-east-1.amazonaws.com
+  docker pull 375410234341.dkr.ecr.us-east-1.amazonaws.com/my-docker-image:${{ github.run_number }}
+  docker run -itd --name odoo-erp-${{ github.run_number }} -p 8069:8069 -e ODOO_USER=odoo 375410234341.dkr.ecr.us-east-1.amazonaws.com/my-docker-image:${{ github.run_number }}
+
+681117582889.dkr.ecr.us-east-1.amazonaws.com/my-docker-image:${{ github.run_number }}
+fi
 EOF
   )
 
@@ -403,3 +442,5 @@ resource "aws_autoscaling_group" "custom_asg" {
   #   }
   # ]
 }
+
+
