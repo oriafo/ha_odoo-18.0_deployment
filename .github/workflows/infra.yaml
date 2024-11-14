@@ -49,8 +49,8 @@ jobs:
           REPOSITORY: oriafo/ha_odoo-18.0_deployment
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $REGISTRY/$REPOSITORY:${{ github.run_number }} ../../../.
-          docker push $REGISTRY/$REPOSITORY:${{ github.run_number }}
+          docker build -t $REGISTRY/$REPOSITORY:${{ github.sha }} ../../../.
+          docker push $REGISTRY/$REPOSITORY:${{ github.sha }}
 
       - name: Set profile output
         id: check_cfn_stack
@@ -107,13 +107,13 @@ jobs:
         run: terraform fmt
 
       - name: Terraform Plan
-        run: terraform plan -var "environment_name=${{github.head_ref}}" -var "run_number=${{ github.run_number }}" -out=plan.tfplan 
+        run: terraform plan -var "environment_name=${{github.head_ref}}" -var "run_number=${{github.sha}}" -out=plan.tfplan 
 
       - name: check for plain.tfplan in this directory
         run: ls -l
 
       - name: Terraform Apply 
-        run: terraform apply -var "environment_name=${{github.head_ref}}" -var "run_number=${{github.run_number}}" -auto-approve
+        run: terraform apply -var "environment_name=${{github.head_ref}}" -var "run_number=${{github.sha}}" -auto-approve
 
       - name: Check Terraform Status
         run: |
