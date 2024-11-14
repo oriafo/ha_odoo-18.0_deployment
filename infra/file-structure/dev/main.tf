@@ -29,7 +29,13 @@ variable "environment_name" {
   type        = string
 }
 
-module "web_app" {
+variable "run_number" {
+  description = "GitHub run number"
+  type        = string
+}
+
+
+module "web_app" {    
   source = "../../web-app-module"
 
   # Input Variables

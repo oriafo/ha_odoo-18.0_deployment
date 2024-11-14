@@ -2,10 +2,8 @@
 FROM python:3.12-slim AS builder
 
 ENV ODOO_HOME=/opt/odoo
-ENV ODOO_USER=odoo
 
 WORKDIR $ODOO_HOME
-USER $ODOO_USER
 RUN apt-get update && apt-get install -y \
     build-essential \
     libpq-dev \
@@ -29,10 +27,8 @@ FROM python:3.12-slim
 
 ENV ODOO_HOME=/opt/odoo
 ENV ODOO_CONF=/etc/odoo
-ENV ODOO_USER=odoo
 
 WORKDIR $ODOO_HOME
-USER $ODOO_USER
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
