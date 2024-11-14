@@ -36,7 +36,7 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
-
+  
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
@@ -47,10 +47,10 @@ jobs:
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           REPOSITORY: oriafo/ha_odoo-18.0_deployment
-          IMAGE_TAG: ${{ github.sha }}
+          IMAGE_TAG: ${{ github.run_number }}
         run: |
-          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG ../../../.
-          docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+          docker build -t $REGISTRY/$REPOSITORY:${{ github.run_number }} ../../../.
+          docker push $REGISTRY/$REPOSITORY:${{ github.run_number }}
 
       - name: Set profile output
         id: check_cfn_stack
@@ -107,14 +107,12 @@ jobs:
         run: terraform fmt
 
       - name: Terraform Plan
-        run: terraform plan -var "environment_name=${{github.head_ref}}" -out=plan.tfplan 
-
+        run: terraform plan -var "environment_name=${{github.head_ref}}" -var "run_number=${{ github.run_number }}" -out=plan.tfplan
       - name: check for plain.tfplan in this directory
         run: ls -l
 
       - name: Terraform Apply 
-        run: terraform apply -var "environment_name=${{github.head_ref}}" -auto-approve
-
+        run: terraform apply -var "environment_name=${{github.head_ref}}" -var "run_number=${{ github.run_number }}" -auto-approve
       - name: Check Terraform Status
         run: |
           if [ $? -ne 0 ]; then
