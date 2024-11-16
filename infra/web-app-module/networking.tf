@@ -468,7 +468,14 @@ resource "aws_security_group" "jumper_box_sg" {
     to_port     = 22
     protocol    = "tcp"
     # cidr_blocks = ["${data.http.public_ip.body}/32"]
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["192.168.1.186/32"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"] # Allow all outbound traffic
   }
 }
 
