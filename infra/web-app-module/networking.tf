@@ -458,6 +458,20 @@ resource "aws_autoscaling_group" "custom_asg" {
 }
 
 
+resource "aws_security_group" "jumper_box_sg" {
+  name        = "${trimspace(var.environment_name)}-jumper-box-sg"
+  description = "Allow HTTP inbound traffic"
+  vpc_id      = aws_vpc.custom_vpc.id
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["${data.http.public_ip.body}/32"]
+  }
+}
+
+
 
 
 
