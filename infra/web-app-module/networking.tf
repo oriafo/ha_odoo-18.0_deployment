@@ -467,7 +467,8 @@ resource "aws_security_group" "jumper_box_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["${data.http.public_ip.body}/32"]
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
 
