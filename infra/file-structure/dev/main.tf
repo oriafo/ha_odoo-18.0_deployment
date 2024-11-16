@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket         = "abraham-oriafo-tf-state"
+    bucket         = "abraham-oriafo-tf-state-dev"
     key            = "dev/terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "abraham-terraform_lock"
@@ -29,7 +29,13 @@ variable "environment_name" {
   type        = string
 }
 
-module "web_app" {
+variable "run_number" {
+  description = "GitHub run number"
+  type        = string
+}
+
+
+module "web_app" {    
   source = "../../web-app-module"
 
   # Input Variables

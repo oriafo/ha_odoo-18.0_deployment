@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket         = "abraham-oriafo-tf-state"
+    bucket         = "abraham-oriafo-tf-state-staging"
     key            = "terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "abraham-terraform_lock"
@@ -28,6 +28,12 @@ provider "aws" {
 variable "environment_name" {
   type        = string
 }
+
+variable "run_number" {
+  description = "GitHub run number"
+  type        = string
+}
+
 
 module "web_app" {
   source = "../../web-app-module"
