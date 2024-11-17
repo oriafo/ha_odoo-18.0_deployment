@@ -4,7 +4,7 @@ resource "aws_instance" "jumper_box" {
   subnet_id              = aws_subnet.public_subnet1.id
   vpc_security_group_ids = [aws_security_group.jumper_box_sg.id]
   tags = {
-    Name = "jumpe-box-${var.environment_name}-1"
+    Name = "jumper-box-${var.environment_name}-1"
   }
 }
 
