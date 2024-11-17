@@ -297,7 +297,7 @@ resource "aws_lb_listener_rule" "lb_lis_rules" {
 resource "aws_security_group" "instances" {
   name        = "${trimspace(var.environment_name)}-instances-sg"
   description = "Allow HTTP inbound traffic and all outbound traffic"
-  vpc_id      = aws_vpc.custom_vpc.id
+  vpc_id      = aws_vpc.custom_vpc.id 
 
   ingress {
     from_port   = 80
