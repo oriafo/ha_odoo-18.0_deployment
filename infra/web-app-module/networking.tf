@@ -471,6 +471,13 @@ resource "aws_security_group" "jumper_box_sg" {
     cidr_blocks = ["192.168.1.186/32"]
   }
 
+   ingress {
+    from_port   = -1   # -1 means any ICMP type
+    to_port     = -1   # -1 means any ICMP code
+    protocol    = "icmp"
+    cidr_blocks = ["192.168.1.186/32"]  # Allow ICMP from anywhere (0.0.0.0/0)
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
