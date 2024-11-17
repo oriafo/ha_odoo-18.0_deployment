@@ -61,7 +61,7 @@ jobs:
           IMAGE_TAG: ${{ github.run_number }}
         run: |
           CACHE_FROM="${{ runner.os }}-docker-${{ github.sha }}"
-          docker buildx build --cache-from=type=local,src=/tmp/.buildx-cache --cache-to=type=local,dest=/tmp/.buildx-cache,mode=max -t $REGISTRY/$REPOSITORY:${{ github.run_number }} ../../../.
+          docker buildx build --load --cache-from=type=local,src=/tmp/.buildx-cache --cache-to=type=local,dest=/tmp/.buildx-cache,mode=max -t $REGISTRY/$REPOSITORY:${{ github.run_number }} ../../../.
           # docker build -t $REGISTRY/$REPOSITORY:${{ github.run_number }} ../../../.
           docker push $REGISTRY/$REPOSITORY:${{ github.run_number }}
 
