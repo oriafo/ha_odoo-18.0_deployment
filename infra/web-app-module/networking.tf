@@ -363,8 +363,12 @@ sudo systemctl start docker
 sudo systemctl enable docker
 sudo systemctl status docker.service
 sudo apt-get update
-sudo apt-get install awscli -y
-
+sudo apt-get remove awscli -y
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+sudo apt-get install unzip -y
+unzip awscliv2.zip
+sudo sudo ./aws/install
+aws --version
 
 if [ github.head_ref == 'dev' ]; then
   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 681117582889.dkr.ecr.us-east-1.amazonaws.com
