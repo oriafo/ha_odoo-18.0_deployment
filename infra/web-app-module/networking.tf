@@ -361,6 +361,10 @@ sudo apt-get update -y
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin 
 sudo systemctl start docker
 sudo systemctl enable docker
+sudo systemctl status docker.service
+sudo apt-get update
+sudo apt-get install awscli -y
+
 
 if [ github.head_ref == 'dev' ]; then
   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 681117582889.dkr.ecr.us-east-1.amazonaws.com
