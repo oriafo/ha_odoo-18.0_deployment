@@ -371,22 +371,22 @@ sudo sudo ./aws/install
 aws --version
 
 if [ github.head_ref == 'dev' ]; then
-  export AWS_ACCESS_KEY_ID=$access_key_id
-  export AWS_SECRET_ACCESS_KEY=$secret_aws_access_key
+  export AWS_ACCESS_KEY_ID=$(var.access_key_id)
+  export AWS_SECRET_ACCESS_KEY=$(var.secret_aws_access_key)
   export AWS_DEFAULT_REGION="us-east-1"
   aws sts get-caller-identity
   echo "This is the value of $(aws ecr get-login-password --region us-east-1)
   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 681117582889.dkr.ecr.us-east-1.amazonaws.com
-  docker pull $REGISTRY/$REPOSITORY:$run_number
-  docker run -itd --name odoo-erp-$run_number -p 8069:8069 -e ODOO_USER=odoo  $REGISTRY/$REPOSITORY:$run_number 
+  docker pull $REGISTRY/$REPOSITORY:$(var.run_number)
+  docker run -itd --name odoo-erp-$(var.run_number) -p 8069:8069 -e ODOO_USER=odoo  $REGISTRY/$REPOSITORY:$(var.run_number)
 else
-  export AWS_ACCESS_KEY_ID=$access_key_id
-  export AWS_SECRET_ACCESS_KEY=$secret_aws_access_key
+  export AWS_ACCESS_KEY_ID=$(var.access_key_id)
+  export AWS_SECRET_ACCESS_KEY=$(var.secret_aws_access_key)
   Run  export AWS_DEFAULT_REGION="us-east-1"
   aws sts get-caller-identity
   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 375410234341.dkr.ecr.us-east-1.amazonaws.com
-  docker $REGISTRY/$REPOSITORY:run_number 
-  docker run -itd --name odoo-erp-$run_number  -p 8069:8069 -e ODOO_USER=odoo 3$REGISTRY/$REPOSITORY:$run_number 
+  docker $REGISTRY/$REPOSITORY:(var.run_number) 
+  docker run -itd --name odoo-erp-$(var.run_number)  -p 8069:8069 -e ODOO_USER=odoo 3$REGISTRY/$REPOSITORY:$(var.run_number )
 fi
 EOF
 )
