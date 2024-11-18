@@ -34,6 +34,16 @@ variable "run_number" {
   type        = string
 }
 
+variable "secret_aws_access_key" {
+  description = "SAK"
+  type        = string
+}
+
+variable "access_key_id" {
+  description = "AK"
+  type        = string
+}
+
 
 module "web_app" {
   source = "../../web-app-module"
