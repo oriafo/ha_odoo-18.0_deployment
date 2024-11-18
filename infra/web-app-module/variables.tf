@@ -35,6 +35,10 @@ variable "access_key_id" {
   type        = string
 }
 
+variable "run_number" {
+  description = "GitHub run number"
+  type        = string
+}
 
 # EC2 Variables
 
