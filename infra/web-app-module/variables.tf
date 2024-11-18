@@ -25,6 +25,17 @@ variable "environment_name" {
   # default     = "dev"
 }
 
+variable "secret_aws_access_key" {
+  description = "SAK"
+  type        = string
+}
+
+variable "access_key_id" {
+  description = "AK"
+  type        = string
+}
+
+
 # EC2 Variables
 
 variable "ami" {
