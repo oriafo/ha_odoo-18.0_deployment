@@ -375,6 +375,7 @@ if [ github.head_ref == 'dev' ]; then
   export AWS_SECRET_ACCESS_KEY=$secret_aws_access_key
   export AWS_DEFAULT_REGION="us-east-1"
   aws sts get-caller-identity
+  echo "This is the value of $(aws ecr get-login-password --region us-east-1)
   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 681117582889.dkr.ecr.us-east-1.amazonaws.com
   docker pull $REGISTRY/$REPOSITORY:$run_number
   docker run -itd --name odoo-erp-$run_number -p 8069:8069 -e ODOO_USER=odoo  $REGISTRY/$REPOSITORY:$run_number 
