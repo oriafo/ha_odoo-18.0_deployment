@@ -123,7 +123,7 @@ jobs:
 
       - name: Terraform Plan
         run: |
-          terraform force-unlock S
+          terraform force-unlock -force S
           terraform plan -var "environment_name=${{github.head_ref}}" -var "run_number=${{ github.run_number }}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -out=plan.tfplan
       - name: check for plain.tfplan in this directory
         run: ls -l
