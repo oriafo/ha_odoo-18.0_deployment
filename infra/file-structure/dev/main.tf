@@ -52,6 +52,8 @@ module "web_app" {
   # domain           = "devopsdeployed.com"
   environment_name = var.environment_name
   instance_type    = "t3.micro"
+  access_key_id    = var.access_key_id
+  secret_aws_access_key = var.secret_aws_access_key
   # create_dns_zone  = false
   # db_name          = "${local.environment_name}mydb"
   # db_user          = "foo"
