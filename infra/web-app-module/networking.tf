@@ -379,11 +379,11 @@ if [ "$github.head_ref" == "dev" ]; then
   export RUN_NUMBER="${var.run_number}"
   aws sts get-caller-identity
   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 681117582889.dkr.ecr.us-east-1.amazonaws.com
-  # echo "${REGISTRY}/${REPOSITORY}:${RUN_NUMBER}"
+  # echo "$REGISTRY/$REPOSITORY:$RUN_NUMBER"
   docker pull 681117582889.dkr.ecr.us-east-1.amazonaws.com/oriafo/ha_odoo-18.0_deployment:135
   docker run -itd --name odoo-erp-135 -p 8069:8069 -e ODOO_USER=odoo  681117582889.dkr.ecr.us-east-1.amazonaws.com/oriafo/ha_odoo-18.0_deployment:135
-  # docker pull ${REGISTRY}/${REPOSITORY}:${RUN_NUMBER}
-  # docker run -itd --name odoo-erp-${RUN_NUMBER} -p 8069:8069 -e ODOO_USER=odoo  ${REGISTRY}/${REPOSITORY}:${RUN_NUMBER}
+  # docker pull $REGISTRY/$REPOSITORY:$RUN_NUMBER
+  # docker run -itd --name odoo-erp-$RUN_NUMBER -p 8069:8069 -e ODOO_USER=odoo  $REGISTRY/$REPOSITORY:$RUN_NUMBER
 else
   export AWS_ACCESS_KEY_ID="${var.access_key_id}"
   export AWS_SECRET_ACCESS_KEY="${var.secret_aws_access_key}"
