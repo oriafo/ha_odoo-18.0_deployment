@@ -44,6 +44,16 @@ variable "access_key_id" {
   type        = string
 }
 
+variable "REGISTRY" {
+  description = "ECR registry"
+  type        = string
+}
+
+variable "REPOSITORY" {
+  description = "ECR repository"
+  type        = string
+}
+
 module "web_app" {    
   source = "../../web-app-module"
 
@@ -55,6 +65,8 @@ module "web_app" {
   access_key_id    = var.access_key_id
   secret_aws_access_key = var.secret_aws_access_key
   run_number  = var.run_number
+  REGISTRY  = var.REGISTRY
+  REPOSITORY = var.REPOSITORY
   # create_dns_zone  = false
   # db_name          = "${local.environment_name}mydb"
   # db_user          = "foo"
