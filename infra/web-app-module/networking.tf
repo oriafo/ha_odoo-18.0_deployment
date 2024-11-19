@@ -398,11 +398,11 @@ resource "aws_launch_template" "custom_lt" {
 # )
 
   user_data = templatefile("web.sh", {
-    AWS_ACCESS_KEY_ID="${var.access_key_id}"
-    AWS_SECRET_ACCESS_KEY="${var.secret_aws_access_key}"
-    REGISTRY="${var.REGISTRY}"
-    REPOSITORY="${var.REPOSITORY}"
-    RUN_NUMBER="${var.run_number}"
+    AWS_ACCESS_KEY_ID=var.access_key_id
+    AWS_SECRET_ACCESS_KEY=var.secret_aws_access_key
+    REGISTRY=var.REGISTRY
+    REPOSITORY=var.REPOSITORY
+    RUN_NUMBER=var.run_number
     })
 
   tag_specifications {
