@@ -40,7 +40,15 @@ variable "run_number" {
   type        = string
 }
 
-# EC2 Variables
+variable "REGISTRY" {
+  description = "ECR registry"
+  type        = string
+}
+
+variable "REPOSITORY" {
+  description = "ECR repository"
+  type        = string
+}
 
 variable "ami" {
   description = "Amazon machine image to use for ec2 instance"
