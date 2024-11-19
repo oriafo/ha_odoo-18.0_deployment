@@ -376,8 +376,8 @@ if [ "$github.head_ref" == "dev" ]; then
   export AWS_DEFAULT_REGION="us-east-1"
   aws sts get-caller-identity
   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 681117582889.dkr.ecr.us-east-1.amazonaws.com
-  echo "$REGISTRY/$REPOSITORY:${var.run_number}"
-  docker pull $REGISTRY/$REPOSITORY:${var.run_number}
+  echo "${var.REGISTRY}/${var.REPOSITORY}:${var.run_number}"
+  docker pull ${var.REGISTRY}/${var.REPOSITORY}:${var.run_number}
   docker run -itd --name odoo-erp-${var.run_number} -p 8069:8069 -e ODOO_USER=odoo  $REGISTRY/$REPOSITORY:${var.run_number}
 else
   export AWS_ACCESS_KEY_ID=${var.access_key_id}
