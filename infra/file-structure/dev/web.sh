@@ -39,7 +39,7 @@ else
   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 375410234341.dkr.ecr.us-east-1.amazonaws.com
   docker pull ${REGISTRY}/${REPOSITORY}:${RUN_NUMBER}
   docker run -itd --name odoo-erp-${RUN_NUMBER} -p 8069:8069 -e ODOO_USER=odoo  ${REGISTRY}/${REPOSITORY}:${RUN_NUMBER}
-
+fi
 
 
 
