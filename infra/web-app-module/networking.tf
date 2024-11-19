@@ -343,75 +343,75 @@ resource "aws_launch_template" "custom_lt" {
 
   vpc_security_group_ids = [aws_security_group.instances.id]
 
-#   user_data = base64encode(<<EOF
-# #!/bin/bash -xe
-# exec > /tmp/script_output.log 2>&1 
-# sleep 10
-# sudo apt-get update -y
-# sudo apt-get install -y ca-certificates curl
-# sudo install -m 0755 -d /etc/apt/keyrings
-# sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-# sudo chmod a+r /etc/apt/keyrings/docker.asc
+  user_data = base64encode(<<EOF
+#!/bin/bash -xe
+exec > /tmp/script_output.log 2>&1 
+sleep 10
+sudo apt-get update -y
+sudo apt-get install -y ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
 
-# echo \
-#   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-#   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-#   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-# sudo apt-get update -y
-# sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin 
-# sudo systemctl start docker
-# sudo systemctl enable docker
-# sudo systemctl status docker.service
-# sudo apt-get update
-# sudo apt-get remove awscli -y
-# curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-# sudo apt-get install unzip -y
-# unzip awscliv2.zip
-# sudo sudo ./aws/install
-# aws --version
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update -y
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin 
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo systemctl status docker.service
+sudo apt-get update
+sudo apt-get remove awscli -y
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+sudo apt-get install unzip -y
+unzip awscliv2.zip
+sudo sudo ./aws/install
+aws --version
 
-# if [ "$github.head_ref" == "dev" ]; then
-#   export AWS_ACCESS_KEY_ID="${var.access_key_id}"
-#   export AWS_SECRET_ACCESS_KEY="${var.secret_aws_access_key}"
-#   export AWS_DEFAULT_REGION="us-east-1"
-#   export REGISTRY="${var.REGISTRY}"
-#   export REPOSITORY="${var.REPOSITORY}"
-#   export RUN_NUMBER="${var.run_number}"
-#   aws sts get-caller-identity
-#   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 681117582889.dkr.ecr.us-east-1.amazonaws.com
-#   echo "${REGISTRY}/${REPOSITORY}:${RUN_NUMBER}"
-#   docker pull ${REGISTRY}/${REPOSITORY}:${RUN_NUMBER}
-#   docker run -itd --name odoo-erp-${RUN_NUMBER} -p 8069:8069 -e ODOO_USER=odoo  ${REGISTRY}/${REPOSITORY}:${RUN_NUMBER}
-# else
-#   export AWS_ACCESS_KEY_ID="${var.access_key_id}"
-#   export AWS_SECRET_ACCESS_KEY="${var.secret_aws_access_key}"
-#   export AWS_DEFAULT_REGION="us-east-1"
-#   export REGISTRY="${var.REGISTRY}"
-#   export REPOSITORY="${var.REPOSITORY}"
-#   export RUN_NUMBER="${var.run_number}"
-#   aws sts get-caller-identity
-#   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 375410234341.dkr.ecr.us-east-1.amazonaws.com
-#   docker pull ${REGISTRY}/${REPOSITORY}:${RUN_NUMBER}
-#   docker run -itd --name odoo-erp-${RUN_NUMBER} -p 8069:8069 -e ODOO_USER=odoo  ${REGISTRY}/${REPOSITORY}:${RUN_NUMBER}
-# fi
-# EOF
-# )
+if [ "$github.head_ref" == "dev" ]; then
+  export AWS_ACCESS_KEY_ID="${var.access_key_id}"
+  export AWS_SECRET_ACCESS_KEY="${var.secret_aws_access_key}"
+  export AWS_DEFAULT_REGION="us-east-1"
+  export REGISTRY="${var.REGISTRY}"
+  export REPOSITORY="${var.REPOSITORY}"
+  export RUN_NUMBER="${var.run_number}"
+  aws sts get-caller-identity
+  aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 681117582889.dkr.ecr.us-east-1.amazonaws.com
+  echo "${REGISTRY}/${REPOSITORY}:${RUN_NUMBER}"
+  docker pull ${REGISTRY}/${REPOSITORY}:${RUN_NUMBER}
+  docker run -itd --name odoo-erp-${RUN_NUMBER} -p 8069:8069 -e ODOO_USER=odoo  ${REGISTRY}/${REPOSITORY}:${RUN_NUMBER}
+else
+  export AWS_ACCESS_KEY_ID="${var.access_key_id}"
+  export AWS_SECRET_ACCESS_KEY="${var.secret_aws_access_key}"
+  export AWS_DEFAULT_REGION="us-east-1"
+  export REGISTRY="${var.REGISTRY}"
+  export REPOSITORY="${var.REPOSITORY}"
+  export RUN_NUMBER="${var.run_number}"
+  aws sts get-caller-identity
+  aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 375410234341.dkr.ecr.us-east-1.amazonaws.com
+  docker pull ${REGISTRY}/${REPOSITORY}:${RUN_NUMBER}
+  docker run -itd --name odoo-erp-${RUN_NUMBER} -p 8069:8069 -e ODOO_USER=odoo  ${REGISTRY}/${REPOSITORY}:${RUN_NUMBER}
+fi
+EOF
+)
 
-  user_data = base64encode(templatefile("web.sh", {
-    AWS_ACCESS_KEY_ID=var.access_key_id
-    AWS_SECRET_ACCESS_KEY=var.secret_aws_access_key
-    REGISTRY=var.REGISTRY
-    REPOSITORY=var.REPOSITORY
-    RUN_NUMBER=var.run_number
-    }))
+#   user_data = base64encode(templatefile("web.sh", {
+#     AWS_ACCESS_KEY_ID=var.access_key_id
+#     AWS_SECRET_ACCESS_KEY=var.secret_aws_access_key
+#     REGISTRY=var.REGISTRY
+#     REPOSITORY=var.REPOSITORY
+#     RUN_NUMBER=var.run_number
+#     }))
 
-  tag_specifications {
-    resource_type = "instance"
-    tags = {
-      Environment = var.environment_name
-    }
-  }
-}
+#   tag_specifications {
+#     resource_type = "instance"
+#     tags = {
+#       Environment = var.environment_name
+#     }
+#   }
+# }
 
 
 # # Launch Template
@@ -452,7 +452,7 @@ resource "aws_launch_template" "custom_lt" {
 #       Environment = var.environment_name
 #     }
 #   }
-# }
+ }
 
 
 # Auto Scaling Group
