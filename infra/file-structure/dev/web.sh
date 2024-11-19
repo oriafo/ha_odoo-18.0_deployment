@@ -25,6 +25,11 @@ sudo sudo ./aws/install
 aws --version
 
 if [ "$github.head_ref" == "dev" ]; then
+  AWS_ACCESS_KEY_ID=var.access_key_id
+  AWS_SECRET_ACCESS_KEY=var.secret_aws_access_key
+  REGISTRY=var.REGISTRY
+  REPOSITORY=var.REPOSITORY
+  RUN_NUMBER=var.run_number
   export AWS_DEFAULT_REGION="us-east-1"
   aws sts get-caller-identity
   aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 681117582889.dkr.ecr.us-east-1.amazonaws.com
