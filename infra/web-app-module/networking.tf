@@ -341,8 +341,6 @@ resource "aws_launch_template" "custom_lt" {
     enabled = true
   }
 
-  vpc_security_group_ids = [aws_security_group.instances.id]
-
   user_data = base64encode(<<EOF
 #!/bin/bash -xe
 exec > /tmp/script_output.log 2>&1 
