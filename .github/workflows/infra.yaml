@@ -60,10 +60,15 @@ jobs:
           REPOSITORY: oriafo/ha_odoo-18.0_deployment
           IMAGE_TAG: ${{ github.run_number }}
         run: |
-          CACHE_FROM="${{ runner.os }}-docker-${{ github.sha }}"
-          docker buildx build --load --cache-from=type=local,src=/tmp/.buildx-cache --cache-to=type=local,dest=/tmp/.buildx-cache,mode=max -t $REGISTRY/$REPOSITORY:${{ github.run_number }} ../../../.
-          # docker build -t $REGISTRY/$REPOSITORY:${{ github.run_number }} ../../../.
-          docker push $REGISTRY/$REPOSITORY:${{ github.run_number }}
+          echo "Trying a feature out"
+          # CACHE_FROM="${{ runner.os }}-docker-${{ github.sha }}"
+          # docker buildx build --load --cache-from=type=local,src=/tmp/.buildx-cache --cache-to=type=local,dest=/tmp/.buildx-cache,mode=max -t $REGISTRY/$REPOSITORY:${{ github.run_number }} ../../../.
+          # # docker build -t $REGISTRY/$REPOSITORY:${{ github.run_number }} ../../../.
+          # docker push $REGISTRY/$REPOSITORY:${{ github.run_number }}
+
+
+
+
 
       # - name: Set profile output
       #   id: check_cfn_stack
@@ -112,6 +117,9 @@ jobs:
       #     echo "Stack already exists, skipping deployment,"
       #   working-directory: ./infra/file-structure/${{github.head_ref}}
   
+
+
+
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
 
