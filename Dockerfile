@@ -54,5 +54,5 @@ COPY ./odoo.conf $ODOO_CONF
 EXPOSE 8069 8069
 
 # Start Odoo
-ENTRYPOINT ["python3", "/opt/odoo/odoo-bin", "-c", "/etc/odoo.conf"]
+CMD ["python3", "/opt/odoo/odoo-bin", "-c", "/etc/odoo.conf", "-i", "all"]
 
