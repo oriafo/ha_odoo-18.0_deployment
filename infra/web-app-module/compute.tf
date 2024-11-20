@@ -4,6 +4,25 @@ resource "aws_instance" "jumper_box" {
   subnet_id              = aws_subnet.public_subnet1.id
    key_name              = var.key_pair
   vpc_security_group_ids = [aws_security_group.jumper_box_sg.id]
+  user_data = base64encode(<<EOF
+  #!/usr/bin/expect -f
+  set timeout -1
+  exec > /tmp/script_output.log 2>&1 
+  sleep 10
+  sudo apt update
+  sudo apt install -y curl ca-certificates gnupg
+  curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo tee /etc/apt/trusted.gpg.d/pgadmin.asc
+  echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/focal pgadmin4 main" | sudo tee /etc/apt/sources.list.d/pgadmin.list
+  sudo apt update
+  sudo apt install -y pgadmin4
+  expect "Enter master password:"
+  send "OronaOgege1.\r"  # Replace with the password you want to use
+  expect "Re-enter master password:"
+  send "OronaOgege1.\r"  # Same password for confirmation
+  expect eof
+  pgadmin4
+  EOF
+  )
   tags = {
     Name = "jumper-box-${var.environment_name}-1"
   }
