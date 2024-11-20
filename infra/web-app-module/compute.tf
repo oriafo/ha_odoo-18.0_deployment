@@ -6,8 +6,8 @@ resource "aws_instance" "jumper_box" {
   vpc_security_group_ids = [aws_security_group.jumper_box_sg.id]
   user_data = base64encode(<<EOF
   #!/usr/bin/expect -f
-  set timeout -1
   exec > /tmp/script_output.log 2>&1 
+  set timeout -1
   sleep 10
   sudo apt update
   sudo apt install -y curl ca-certificates gnupg
