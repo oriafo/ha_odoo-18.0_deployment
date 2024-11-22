@@ -315,6 +315,46 @@ resource "aws_security_group" "instances" {
   }
 
   ingress {
+    from_port   = 6443
+    to_port     = 6443
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 10250
+    to_port     = 10250
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 10259
+    to_port     = 10259
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 10257
+    to_port     = 10257
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 2379
+    to_port     = 2380
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
     from_port   = -1   # -1 means any ICMP type
     to_port     = -1   # -1 means any ICMP code
     protocol    = "icmp"
