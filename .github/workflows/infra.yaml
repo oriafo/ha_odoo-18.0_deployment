@@ -23,9 +23,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+
       - name: echo the current branch
         run:  |
           echo "Current branch is: ${{github.head_ref}}"
+
     
       - name: Configure AWS Credentials for Development Environment
         uses: aws-actions/configure-aws-credentials@v4
@@ -34,9 +36,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
   
+
+
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
@@ -123,29 +128,58 @@ jobs:
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
 
+
+
       - name: Terraform Init
         run: terraform init
 
+
+
       - name: Terraform Format
         run: terraform fmt
+
+
 
       - name: Terraform Plan
         run: |
           # terraform force-unlock -force fd5f9dbf-b533-732b-abda-584e2f629222
           terraform plan -var "environment_name=${{github.head_ref}}" -var "REPOSITORY=oriafo/ha_odoo-18.0_deployment" -var "REGISTRY=${{ steps.login-ecr.outputs.registry }}" -var "run_number=${{ github.run_number }}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -out=plan.tfplan
+
+
+
       - name: check for plain.tfplan in this directory
         run: ls -l
 
+        
+
       - name: Terraform Apply 
         run: terraform apply -var "environment_name=${{github.head_ref}}" -var "REPOSITORY=oriafo/ha_odoo-18.0_deployment" -var "REGISTRY=${{ steps.login-ecr.outputs.registry }}" -var "run_number=${{ github.run_number }}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -auto-approve
-      - name: Check Terraform Status
-        run: |
           if [ $? -ne 0 ]; then
-            echo "Terraform apply failed"
+            echo "Deployment failed"
             exit 1
           else
-            echo "Terraform apply succeeded"
+            echo "Deployment Successful"
           fi
+        
+      # - name: Set up Kubernetes kubectl
+      #   uses: azure/setup-kubectl@v4
+      #   with:
+      #     kubeconfig: ${{ secrets.KUBERNETES_CREDENTIALS }}  # Load Kubeconfig from GitHub Secrets
+  
+      # - name: Deploy to Kubernetes
+      #   run: |
+      #     kubectl apply -f k8s/odoo-deployment.yml  # Path to your Kubernetes manifest file
+      #     kubectl apply -f k8s/odoo-service.yml      # If you have a service definition
+
+      
+      # - name: Check Deployment Status
+      #   run: |
+      #     if [ $? -ne 0 ]; then
+      #       echo "Deployment failed"
+      #       exit 1
+      #     else
+      #       echo "Deployment Successful"
+      #     fi
 
 
 # name: odoo Infrastructure Provisioning
