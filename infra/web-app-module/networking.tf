@@ -101,77 +101,77 @@ resource "aws_route_table_association" "custom_rt2" {
   route_table_id = aws_route_table.custom_rt.id
 }
 
-# resource "aws_eip" "custom_lb1" {
-#   # instance = aws_nat_gateway.custom_ngwl11.id
-#   # domain   = "vpc"
-#   depends_on = [aws_internet_gateway.gw]
-#   tags = {
-#     Name = "Nat1 EIP-${var.environment_name}"
-#   }
-# }
+resource "aws_eip" "custom_lb1" {
+  # instance = aws_nat_gateway.custom_ngwl11.id
+  # domain   = "vpc"
+  depends_on = [aws_internet_gateway.gw]
+  tags = {
+    Name = "Nat1 EIP-${var.environment_name}"
+  }
+}
 
-# resource "aws_nat_gateway" "custom_ngwl11" {
-#   allocation_id = aws_eip.custom_lb1.id
-#   subnet_id     = aws_subnet.public_subnet1.id
+resource "aws_nat_gateway" "custom_ngwl11" {
+  allocation_id = aws_eip.custom_lb1.id
+  subnet_id     = aws_subnet.public_subnet1.id
 
-#   tags = {
-#     Name = "NatgwL11-${var.environment_name}"
-#   }
-#   depends_on = [aws_internet_gateway.gw]
-# }
+  tags = {
+    Name = "NatgwL11-${var.environment_name}"
+  }
+  depends_on = [aws_internet_gateway.gw]
+}
 
-# resource "aws_route_table" "custom_privl1_rt" {
-#   vpc_id = aws_vpc.custom_vpc.id
+resource "aws_route_table" "custom_privl1_rt" {
+  vpc_id = aws_vpc.custom_vpc.id
 
-#   route {
-#     cidr_block     = "0.0.0.0/0"
-#     nat_gateway_id = aws_nat_gateway.custom_ngwl11.id
-#   }
-#   tags = {
-#     Name = "priv_rt_l1-${var.environment_name}"
-#   }
-# }
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.custom_ngwl11.id
+  }
+  tags = {
+    Name = "priv_rt_l1-${var.environment_name}"
+  }
+}
 
-# resource "aws_route_table_association" "privl2_rt1" {
-#   subnet_id      = aws_subnet.private_subnet1.id
-#   route_table_id = aws_route_table.custom_privl1_rt.id
-# }
+resource "aws_route_table_association" "privl2_rt1" {
+  subnet_id      = aws_subnet.private_subnet1.id
+  route_table_id = aws_route_table.custom_privl1_rt.id
+}
 
-# resource "aws_eip" "custom_lb2" {
-#   # instance = aws_nat_gateway.custom_ngwl12.id
-#   # domain   = "vpc"
-#   depends_on = [aws_internet_gateway.gw]
-#   tags = {
-#     Name = "Nat2 EIP-${var.environment_name}"
-#   }
-# }
+resource "aws_eip" "custom_lb2" {
+  # instance = aws_nat_gateway.custom_ngwl12.id
+  # domain   = "vpc"
+  depends_on = [aws_internet_gateway.gw]
+  tags = {
+    Name = "Nat2 EIP-${var.environment_name}"
+  }
+}
 
-# resource "aws_nat_gateway" "custom_ngwl12" {
-#   allocation_id = aws_eip.custom_lb2.id
-#   subnet_id     = aws_subnet.public_subnet2.id
+resource "aws_nat_gateway" "custom_ngwl12" {
+  allocation_id = aws_eip.custom_lb2.id
+  subnet_id     = aws_subnet.public_subnet2.id
 
-#   tags = {
-#     Name = "NatgwL12-${var.environment_name}"
-#   }
-#   depends_on = [aws_internet_gateway.gw]
-# }
+  tags = {
+    Name = "NatgwL12-${var.environment_name}"
+  }
+  depends_on = [aws_internet_gateway.gw]
+}
 
-# resource "aws_route_table" "custom_privl2_rt" {
-#   vpc_id = aws_vpc.custom_vpc.id
+resource "aws_route_table" "custom_privl2_rt" {
+  vpc_id = aws_vpc.custom_vpc.id
 
-#   route {
-#     cidr_block     = "0.0.0.0/0"
-#     nat_gateway_id = aws_nat_gateway.custom_ngwl12.id
-#   }
-#   tags = {
-#     Name = "priv_rt_l2-${var.environment_name}"
-#   }
-# }
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.custom_ngwl12.id
+  }
+  tags = {
+    Name = "priv_rt_l2-${var.environment_name}"
+  }
+}
 
-# resource "aws_route_table_association" "privl2_rt2" {
-#   subnet_id      = aws_subnet.private_subnet2.id
-#   route_table_id = aws_route_table.custom_privl2_rt.id
-# }
+resource "aws_route_table_association" "privl2_rt2" {
+  subnet_id      = aws_subnet.private_subnet2.id
+  route_table_id = aws_route_table.custom_privl2_rt.id
+}
 
 # resource "aws_nat_gateway" "custom_ngwl21" {
 #   connectivity_type = "private"
