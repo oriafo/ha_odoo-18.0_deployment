@@ -154,12 +154,17 @@ jobs:
 
       - name: Terraform Apply 
         run: terraform apply -var "environment_name=${{github.head_ref}}" -var "REPOSITORY=oriafo/ha_odoo-18.0_deployment" -var "REGISTRY=${{ steps.login-ecr.outputs.registry }}" -var "run_number=${{ github.run_number }}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -auto-approve
+
+              
+      - name: Check Deployment Status
+        run: |
           if [ $? -ne 0 ]; then
             echo "Deployment failed"
             exit 1
           else
             echo "Deployment Successful"
           fi
+
         
       # - name: Set up Kubernetes kubectl
       #   uses: azure/setup-kubectl@v4
