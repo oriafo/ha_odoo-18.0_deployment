@@ -572,10 +572,18 @@ resource "aws_security_group" "k8_master_sg" {
     # cidr_blocks = ["${data.http.public_ip.body}/32"]
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
   ingress {
     from_port   = 10257
     to_port     = 10257
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
     protocol    = "tcp"
     # cidr_blocks = ["${data.http.public_ip.body}/32"]
     cidr_blocks = ["0.0.0.0/0"]
@@ -613,6 +621,14 @@ resource "aws_security_group" "k8_worker_sg" {
   ingress {
     from_port   = 10250
     to_port     = 10250
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
     protocol    = "tcp"
     # cidr_blocks = ["${data.http.public_ip.body}/32"]
     cidr_blocks = ["0.0.0.0/0"]
