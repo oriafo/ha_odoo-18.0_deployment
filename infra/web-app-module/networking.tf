@@ -14,7 +14,7 @@ resource "aws_subnet" "public_subnet1" {
   cidr_block              = "10.0.1.0/24"
   availability_zone       = "us-east-1a"
   map_public_ip_on_launch = true
-  depends_on              = [aws_internet_gateway.gw]
+  # depends_on              = [aws_internet_gateway.gw]
   tags = {
     Name = "custom_pubsub1-${var.environment_name}"
   }
@@ -25,7 +25,7 @@ resource "aws_subnet" "public_subnet2" {
   cidr_block              = "10.0.2.0/24"
   availability_zone       = "us-east-1b"
   map_public_ip_on_launch = true
-  depends_on              = [aws_internet_gateway.gw]
+  # depends_on              = [aws_internet_gateway.gw]
   tags = {
     Name = "custom_pubsub2-${var.environment_name}"
   }
