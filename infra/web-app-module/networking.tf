@@ -572,6 +572,7 @@ resource "aws_security_group" "k8_master_sg" {
   }
 
   ingress {
+
     from_port   = 10259
     to_port     = 10259
     protocol    = "tcp"
@@ -654,6 +655,13 @@ resource "aws_security_group" "k8_worker_sg" {
     protocol    = "tcp"
     # cidr_blocks = ["${data.http.public_ip.body}/32"]
     cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = -1   # -1 means any ICMP type
+    to_port     = -1   # -1 means any ICMP code
+    protocol    = "icmp"
+    cidr_blocks = ["0.0.0.0/0"]  # Allow ICMP from anywhere (0.0.0.0/0)
   }
 
   ingress {
