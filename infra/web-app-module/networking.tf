@@ -315,46 +315,6 @@ resource "aws_security_group" "instances" {
   }
 
   ingress {
-    from_port   = 6443
-    to_port     = 6443
-    protocol    = "tcp"
-    # cidr_blocks = ["${data.http.public_ip.body}/32"]
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = 10250
-    to_port     = 10250
-    protocol    = "tcp"
-    # cidr_blocks = ["${data.http.public_ip.body}/32"]
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = 10259
-    to_port     = 10259
-    protocol    = "tcp"
-    # cidr_blocks = ["${data.http.public_ip.body}/32"]
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = 10257
-    to_port     = 10257
-    protocol    = "tcp"
-    # cidr_blocks = ["${data.http.public_ip.body}/32"]
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = 2379
-    to_port     = 2380
-    protocol    = "tcp"
-    # cidr_blocks = ["${data.http.public_ip.body}/32"]
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
     from_port   = -1   # -1 means any ICMP type
     to_port     = -1   # -1 means any ICMP code
     protocol    = "icmp"
@@ -576,8 +536,103 @@ resource "aws_security_group" "jumper_box_sg" {
 }
 
 
+resource "aws_security_group" "k8_master_sg" {
+  name        = "${trimspace(var.environment_name)}-k8-master-sg"
+  description = "Allow HTTP inbound traffic and all outbound traffic"
+  vpc_id      = aws_vpc.custom_vpc.id 
+
+  ingress {
+    from_port   = 6443
+    to_port     = 6443
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 10250
+    to_port     = 10250
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 10259
+    to_port     = 10259
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 10257
+    to_port     = 10257
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 2379
+    to_port     = 2380
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = -1   # -1 means any ICMP type
+    to_port     = -1   # -1 means any ICMP code
+    protocol    = "icmp"
+    cidr_blocks = ["0.0.0.0/0"]  # Allow ICMP from anywhere (0.0.0.0/0)
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"] # Allow all outbound traffic
+  }
+}
+
+resource "aws_security_group" "k8_worker_sg" {
+  name        = "${trimspace(var.environment_name)}-k8-worker-sg"
+  description = "Allow HTTP inbound traffic and all outbound traffic"
+  vpc_id      = aws_vpc.custom_vpc.id 
 
 
+  ingress {
+    from_port   = 10250
+    to_port     = 10250
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 10256
+    to_port     = 10256
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 30000
+    to_port     = 32767
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"] # Allow all outbound traffic
+  }
+}
 
 
 # #!/bin/bash -xe
