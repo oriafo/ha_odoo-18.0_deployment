@@ -71,35 +71,35 @@ resource "aws_subnet" "private_subnet_db2" {
   }
 }
 
-# resource "aws_internet_gateway" "gw" {
-#   vpc_id = aws_vpc.custom_vpc.id
+resource "aws_internet_gateway" "gw" {
+  vpc_id = aws_vpc.custom_vpc.id
 
-#   tags = {
-#     Name = "custom_igw-${var.environment_name}"
-#   }
-# }
+  tags = {
+    Name = "custom_igw-${var.environment_name}"
+  }
+}
 
-# resource "aws_route_table" "custom_rt" {
-#   vpc_id = aws_vpc.custom_vpc.id
+resource "aws_route_table" "custom_rt" {
+  vpc_id = aws_vpc.custom_vpc.id
 
-#   route {
-#     cidr_block = "0.0.0.0/0"
-#     gateway_id = aws_internet_gateway.gw.id
-#   }
-#   tags = {
-#     Name = "custom_rt-${var.environment_name}"
-#   }
-# }
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.gw.id
+  }
+  tags = {
+    Name = "custom_rt-${var.environment_name}"
+  }
+}
 
-# resource "aws_route_table_association" "custom_rt1" {
-#   subnet_id      = aws_subnet.public_subnet1.id
-#   route_table_id = aws_route_table.custom_rt.id
-# }
+resource "aws_route_table_association" "custom_rt1" {
+  subnet_id      = aws_subnet.public_subnet1.id
+  route_table_id = aws_route_table.custom_rt.id
+}
 
-# resource "aws_route_table_association" "custom_rt2" {
-#   subnet_id      = aws_subnet.public_subnet2.id
-#   route_table_id = aws_route_table.custom_rt.id
-# }
+resource "aws_route_table_association" "custom_rt2" {
+  subnet_id      = aws_subnet.public_subnet2.id
+  route_table_id = aws_route_table.custom_rt.id
+}
 
 # resource "aws_eip" "custom_lb1" {
 #   # instance = aws_nat_gateway.custom_ngwl11.id
