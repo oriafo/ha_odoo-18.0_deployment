@@ -12,12 +12,12 @@ output "vpc_custom_vpc" {
 }
 
 # Output the dns_name of the load balancer
-output "custom_lb" {
-  description = "Return the dns name of the load balancer, we can use to access our instances"
-  value       = aws_lb.custom_lb.dns_name
-}
+# output "custom_lb" {
+#   description = "Return the dns name of the load balancer, we can use to access our instances"
+#   value       = aws_lb.custom_lb.dns_name
+# }
 
 # Output the public IP
-output "public_ip" {
-  value = data.http.public_ip.body
-}
+# output "public_ip" {
+#   value = data.http.public_ip.body
+# }
