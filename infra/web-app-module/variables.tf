@@ -1,66 +1,66 @@
-# # General Variables
+# General Variables
 
-# variable "region" {
-#   description = "Default region for provider"
-#   type        = string
-#   default     = "us-east-1"
-# }
+variable "region" {
+  description = "Default region for provider"
+  type        = string
+  default     = "us-east-1"
+}
 
-# variable "key_pair" {
-#   description = "instance Key"
-#   type        = string
-#   default     = "tooplate-key"
-# }
+variable "key_pair" {
+  description = "instance Key"
+  type        = string
+  default     = "tooplate-key"
+}
 
 
-# variable "app_name" {
-#   description = "Name of the web application"
-#   type        = string
-#   default     = "web-app"
-# }
+variable "app_name" {
+  description = "Name of the web application"
+  type        = string
+  default     = "web-app"
+}
 
-# variable "environment_name" {
-#   description = "Deployment environment (dev/staging/production)"
-#   type        = string
-#   # default     = "dev"
-# }
+variable "environment_name" {
+  description = "Deployment environment (dev/staging/production)"
+  type        = string
+  # default     = "dev"
+}
 
-# variable "secret_aws_access_key" {
-#   description = "SAK"
-#   type        = string
-# }
+variable "secret_aws_access_key" {
+  description = "SAK"
+  type        = string
+}
 
-# variable "access_key_id" {
-#   description = "AK"
-#   type        = string
-# }
+variable "access_key_id" {
+  description = "AK"
+  type        = string
+}
 
-# variable "run_number" {
-#   description = "GitHub run number"
-#   type        = string
-# }
+variable "run_number" {
+  description = "GitHub run number"
+  type        = string
+}
 
-# variable "REGISTRY" {
-#   description = "ECR registry"
-#   type        = string
-# }
+variable "REGISTRY" {
+  description = "ECR registry"
+  type        = string
+}
 
-# variable "REPOSITORY" {
-#   description = "ECR repository"
-#   type        = string
-# }
+variable "REPOSITORY" {
+  description = "ECR repository"
+  type        = string
+}
 
-# variable "ami" {
-#   description = "Amazon machine image to use for ec2 instance"
-#   type        = string
-#   default     = "ami-0866a3c8686eaeeba" # Ubuntu 20.04 LTS // us-east-1
-# }
+variable "ami" {
+  description = "Amazon machine image to use for ec2 instance"
+  type        = string
+  default     = "ami-0866a3c8686eaeeba" # Ubuntu 20.04 LTS // us-east-1
+}
 
-# variable "instance_type" {
-#   description = "ec2 instance type"
-#   type        = string
-#   default     = "t3.micro"
-# }
+variable "instance_type" {
+  description = "ec2 instance type"
+  type        = string
+  default     = "t3.micro"
+}
 
 
 

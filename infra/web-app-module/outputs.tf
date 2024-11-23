@@ -7,9 +7,9 @@
 # }
 
 # Output the custom VPC
-# output "vpc_custom_vpc" {
-#   value = aws_vpc.custom_vpc.id
-# }
+output "vpc_custom_vpc" {
+  value = aws_vpc.custom_vpc.id
+}
 
 # Output the dns_name of the load balancer
 # output "custom_lb" {
