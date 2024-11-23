@@ -32,6 +32,12 @@ jobs:
         run:  |
           echo "Current branch is: ${{github.event.inputs.environment}}"
 
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+        with:
+          mask-password: 'true'
+
       - name: Configure AWS Credentials for Development Environment
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -57,7 +63,7 @@ jobs:
 
       # Destroy the Configuration
       - name: Terraform Destroy 
-        run: terraform destroy -var "environment_name=${{github.event.inputs.environment}} " -var "run_number=${{ github.run_number }}" -auto-approve
+        run: terraform destroy -var "environment_name=${{github.event.inputs.environment}}" -var "REPOSITORY=oriafo/ha_odoo-18.0_deployment" -var "REGISTRY=${{ steps.login-ecr.outputs.registry }}"  -var "run_number=${{ github.run_number }}" -auto-approve
 
 
       # # Apply the Configuration
