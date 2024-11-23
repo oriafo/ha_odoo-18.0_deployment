@@ -37,39 +37,39 @@ jobs:
           aws-region: us-east-1
 
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+      # - name: Set up Docker Buildx
+      #   uses: docker/setup-buildx-action@v2
   
 
 
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v2
-        with:
-          mask-password: 'true'
+      # - name: Login to Amazon ECR
+      #   id: login-ecr
+      #   uses: aws-actions/amazon-ecr-login@v2
+      #   with:
+      #     mask-password: 'true'
 
 
-      - name: Cache Docker layers
-        id: cache-docker
-        uses: actions/cache@v3
-        with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-docker-${{ github.sha }}
-          restore-keys: |
-              ${{ runner.os }}-docker-
+      # - name: Cache Docker layers
+      #   id: cache-docker
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: /tmp/.buildx-cache
+      #     key: ${{ runner.os }}-docker-${{ github.sha }}
+      #     restore-keys: |
+      #         ${{ runner.os }}-docker-
         
 
-      - name: Build, tag, and push docker image to Amazon ECR
-        env:
-          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          REPOSITORY: oriafo/ha_odoo-18.0_deployment
-          IMAGE_TAG: ${{ github.run_number }}
-        run: |
-          # echo "Trying a feature out"
-          CACHE_FROM="${{ runner.os }}-docker-${{ github.sha }}"
-          docker buildx build --load --cache-from=type=local,src=/tmp/.buildx-cache --cache-to=type=local,dest=/tmp/.buildx-cache,mode=max -t $REGISTRY/$REPOSITORY:${{ github.run_number }} ../../../.
-          # docker build -t $REGISTRY/$REPOSITORY:${{ github.run_number }} ../../../.
-          docker push $REGISTRY/$REPOSITORY:${{ github.run_number }}
+      # - name: Build, tag, and push docker image to Amazon ECR
+      #   env:
+      #     REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+      #     REPOSITORY: oriafo/ha_odoo-18.0_deployment
+      #     IMAGE_TAG: ${{ github.run_number }}
+      #   run: |
+      #     # echo "Trying a feature out"
+      #     CACHE_FROM="${{ runner.os }}-docker-${{ github.sha }}"
+      #     docker buildx build --load --cache-from=type=local,src=/tmp/.buildx-cache --cache-to=type=local,dest=/tmp/.buildx-cache,mode=max -t $REGISTRY/$REPOSITORY:${{ github.run_number }} ../../../.
+      #     # docker build -t $REGISTRY/$REPOSITORY:${{ github.run_number }} ../../../.
+      #     docker push $REGISTRY/$REPOSITORY:${{ github.run_number }}
 
 
 
