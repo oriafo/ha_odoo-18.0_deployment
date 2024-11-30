@@ -5,7 +5,7 @@ on:
     branches:
       - main                                         # Trigger on pull requests to the main branch
       - staging
-      - dev
+      - dev  
       
 permissions:
   contents: read
