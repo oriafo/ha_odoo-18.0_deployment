@@ -1,6 +1,6 @@
 # Odoo 18.0 High Availability (HA) Deployment
 
-This repository contains the source code and configuration files for deploying **Odoo 18.0** in a **High Availability (HA)** setup. The deployment setup is designed to ensure Odoo's scalability, reliability, and performance in a production environment.
+This repository contains the source code and configuration files for deploying **Odoo 18.0** in a **High Availability (HA)** setup. The deployment setup is designed to ensure Odoo's scalability, reliability, and performance i n a production environment.
 
 ## Project Overview
 
@@ -200,5 +200,5 @@ For example, to trigger a deployment, create a `pull request` to the `staging` a
 ``` bash 
 gh pr create --base <branch to merge into> --head <branch to merge from> --title <"Title of your pull request"> --body <"Detailed description of your changes">
 ```
-GitHub Actions will automatically trigger the `infra.yml` workflow to deploy your changes.
+GitHub Actions will automatically trigger the `infra.yml` workflow to deploy your changes.  
 
