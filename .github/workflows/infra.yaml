@@ -142,7 +142,7 @@ jobs:
 
       - name: Terraform Plan
         run: |
-          # terraform force-unlock -force 3bc49bbd-3201-53b0-def6-d44a2d9258fc
+          terraform force-unlock -force 0cd4d822-dc8b-b901-ecff-75fa1b1866e8
           #terraform plan -var "environment_name=${{github.head_ref}}" -var "REPOSITORY=oriafo/ha_odoo-18.0_deployment" -var "REGISTRY=${{ steps.login-ecr.outputs.registry }}" -var "run_number=${{ github.run_number }}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -out=plan.tfplan
           terraform plan -var "environment_name=${{github.head_ref}}" -var "REPOSITORY=oriafo/ha_odoo-18.0_deployment" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -out=plan.tfplan
 
