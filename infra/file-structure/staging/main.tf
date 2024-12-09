@@ -29,11 +29,6 @@ variable "environment_name" {
   type        = string
 }
 
-# variable "run_number" {
-#   description = "GitHub run number"
-#   type        = string
-# }
-
 variable "secret_aws_access_key" {
   description = "SAK"
   type        = string
@@ -51,6 +46,11 @@ variable "access_key_id" {
 
 # variable "REPOSITORY" {
 #   description = "ECR repository"
+#   type        = string
+# }
+
+# variable "run_number" {
+#   description = "GitHub run number"
 #   type        = string
 # }
 

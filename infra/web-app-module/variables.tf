@@ -35,20 +35,20 @@ variable "access_key_id" {
   type        = string
 }
 
-variable "run_number" {
-  description = "GitHub run number"
-  type        = string
-}
+# variable "run_number" {
+#   description = "GitHub run number"
+#   type        = string
+# }
 
-variable "REGISTRY" {
-  description = "ECR registry"
-  type        = string
-}
+# variable "REGISTRY" {
+#   description = "ECR registry"
+#   type        = string
+# }
 
-variable "REPOSITORY" {
-  description = "ECR repository"
-  type        = string
-}
+# variable "REPOSITORY" {
+#   description = "ECR repository"
+#   type        = string
+# }
 
 variable "ami" {
   description = "Amazon machine image to use for ec2 instance"
