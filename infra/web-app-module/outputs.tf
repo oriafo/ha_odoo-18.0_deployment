@@ -1,10 +1,10 @@
-output "instance_pub_ips" {
-  value = aws_autoscaling_group.custom_asg.instances[*].public_ip
-}
+# output "instance_pub_ips" {
+#   value = aws_autoscaling_group.custom_asg.instances[*].public_ip
+# }
 
-output "db_instance_addr" {
-  value = aws_db_instance.db_instance.address
-}
+# output "db_instance_addr" {
+#   value = aws_db_instance.db_instance.address
+# }
 
 # Output the custom VPC
 output "vpc_custom_vpc" {
