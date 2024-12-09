@@ -64,8 +64,8 @@ module "web_app" {
   instance_type    = "t3.micro"
   access_key_id    = var.access_key_id
   secret_aws_access_key = var.secret_aws_access_key
-  run_number  = var.run_number
 
+  # run_number  = var.run_number
   # REGISTRY  = var.REGISTRY
   # REPOSITORY = var.REPOSITORY
 
