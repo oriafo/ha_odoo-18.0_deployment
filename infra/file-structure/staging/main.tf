@@ -29,10 +29,10 @@ variable "environment_name" {
   type        = string
 }
 
-variable "run_number" {
-  description = "GitHub run number"
-  type        = string
-}
+# variable "run_number" {
+#   description = "GitHub run number"
+#   type        = string
+# }
 
 variable "secret_aws_access_key" {
   description = "SAK"
@@ -64,8 +64,8 @@ module "web_app" {
   instance_type    = "t3.micro"
    access_key_id    = var.access_key_id
   secret_aws_access_key = var.secret_aws_access_key
-  
-  #run_number  = var.run_number
+
+  # run_number  = var.run_number
   # REGISTRY  = var.REGISTRY
   # REPOSITORY = var.REPOSITORY
 
