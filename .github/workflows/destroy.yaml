@@ -32,6 +32,7 @@ jobs:
         run:  |
           echo "Current branch is: ${{github.event.inputs.environment}}"
 
+   
       - name: Configure AWS Credentials for Development Environment
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -39,7 +40,13 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-                         
+          
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+        with:
+          mask-password: 'true'
+          
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
 
@@ -57,7 +64,10 @@ jobs:
 
       # Destroy the Configuration
       - name: Terraform Destroy 
-        run: terraform destroy -var "environment_name=${{github.event.inputs.environment}} " -auto-approve
+        run: |
+          # terraform force-unlock -force dcb846bc-271d-8002-54d6-cdfd4b6df7ae
+          #terraform destroy -var "environment_name=${{github.event.inputs.environment}}" -var "REPOSITORY=oriafo/ha_odoo-18.0_deployment" -var "REGISTRY=${{ steps.login-ecr.outputs.registry }}"  -var "run_number=${{ github.run_number }}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -auto-approve
+          terraform destroy -var "environment_name=${{github.event.inputs.environment}}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -auto-approve
 
 
       # # Apply the Configuration

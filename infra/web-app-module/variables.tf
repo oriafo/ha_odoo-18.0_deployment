@@ -25,7 +25,30 @@ variable "environment_name" {
   # default     = "dev"
 }
 
-# EC2 Variables
+variable "secret_aws_access_key" {
+  description = "SAK"
+  type        = string
+}
+
+variable "access_key_id" {
+  description = "AK"
+  type        = string
+}
+
+# variable "run_number" {
+#   description = "GitHub run number"
+#   type        = string
+# }
+
+# variable "REGISTRY" {
+#   description = "ECR registry"
+#   type        = string
+# }
+
+# variable "REPOSITORY" {
+#   description = "ECR repository"
+#   type        = string
+# }
 
 variable "ami" {
   description = "Amazon machine image to use for ec2 instance"
@@ -38,6 +61,9 @@ variable "instance_type" {
   type        = string
   default     = "t3.micro"
 }
+
+
+
 
 # S3 Variables
 

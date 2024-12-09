@@ -1,65 +1,65 @@
-terraform {
-  backend "s3" {
-    bucket         = "abraham-oriafo-tf-state"
-    key            = "web-app/terraform.tfstate"
-    region         = "us-east-1"
-    dynamodb_table = "abraham-terraform_lock"
-    encrypt        = true
-  }
+# terraform {
+#   backend "s3" {
+#     bucket         = "abraham-oriafo-tf-state"
+#     key            = "web-app/terraform.tfstate"
+#     region         = "us-east-1"
+#     dynamodb_table = "abraham-terraform_lock"
+#     encrypt        = true
+#   }
 
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.0"
-    }
-  }
-}
-
-provider "aws" {
-  region = "us-east-1"
-}
-
-# variable "db_pass_1" {
-#   description = "password for database #1"
-#   type        = string
-#   sensitive   = true
+#   required_providers {
+#     aws = {
+#       source  = "hashicorp/aws"
+#       version = "~> 3.0"
+#     }
+#   }
 # }
 
-# variable "db_pass_2" {
-#   description = "password for database #2"
-#   type        = string
-#   sensitive   = true
+# provider "aws" {
+#   region = "us-east-1"
 # }
-variable "environment_name" {
-  type        = string
-}
 
-module "web_app_1" {
-  source = "../web-app-module"
+# # variable "db_pass_1" {
+# #   description = "password for database #1"
+# #   type        = string
+# #   sensitive   = true
+# # }
 
-  # Input Variables
-  # bucket_prefix    = "web-app-1-data"
-  # domain           = "devopsdeployed.com"
-  app_name         = "web-app-1"
-  environment_name = var.environment_name
-  instance_type    = "t3.micro"
-  # create_dns_zone  = true
-  # db_name          = "webapp1db"
-  # db_user          = "foo"
-  # db_pass          = var.db_pass_1
-}
+# # variable "db_pass_2" {
+# #   description = "password for database #2"
+# #   type        = string
+# #   sensitive   = true
+# # }
+# variable "environment_name" {
+#   type        = string
+# }
 
-module "web_app_2" {
-  source = "../web-app-module"
+# module "web_app_1" {
+#   source = "../web-app-module"
 
-  # Input Variables
-  # bucket_prefix    = "web-app-2-data"
-  # domain           = "anotherdevopsdeployed.com"
-  app_name         = "web-app-2"
-  environment_name = var.environment_name
-  instance_type    = "t3.micro"
-  # create_dns_zone  = true
-  # db_name          = "webapp2db"
-  # db_user          = "bar"
-  # db_pass          = var.db_pass_2
-}
+#   # Input Variables
+#   # bucket_prefix    = "web-app-1-data"
+#   # domain           = "devopsdeployed.com"
+#   app_name         = "web-app-1"
+#   environment_name = var.environment_name
+#   instance_type    = "t3.micro"
+#   # create_dns_zone  = true
+#   # db_name          = "webapp1db"
+#   # db_user          = "foo"
+#   # db_pass          = var.db_pass_1
+# }
+
+# module "web_app_2" {
+#   source = "../web-app-module"
+
+#   # Input Variables
+#   # bucket_prefix    = "web-app-2-data"
+#   # domain           = "anotherdevopsdeployed.com"
+#   app_name         = "web-app-2"
+#   environment_name = var.environment_name
+#   instance_type    = "t3.micro"
+#   # create_dns_zone  = true
+#   # db_name          = "webapp2db"
+#   # db_user          = "bar"
+#   # db_pass          = var.db_pass_2
+# }

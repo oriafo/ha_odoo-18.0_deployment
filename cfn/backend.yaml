@@ -11,12 +11,17 @@ Parameters:
     Type: String
     Description: The name of the DynamoDB table to be created for Terraform state locking.
     Default: abraham-terraform_lock
+  
+  EnvironmentName:
+    Type: String
+    Description: The name of the environment
+    Default: dev
 
 Resources:
   TerraformBackendBucket:
     Type: 'AWS::S3::Bucket'
     Properties:
-      BucketName: !Ref S3BucketName
+      BucketName: !Sub 'abraham-oriafo-tf-state-${EnvironmentName}'
       VersioningConfiguration:
         Status: Enabled
 
