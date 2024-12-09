@@ -140,7 +140,7 @@ resource "aws_route_table_association" "privl2_rt1" {
 resource "aws_eip" "custom_lb2" {
   instance = aws_nat_gateway.custom_ngwl12.id
   domain   = "vpc"
-  depends_on = [aws_internet_gateway.gw]
+  # depends_on = [aws_internet_gateway.gw]
   tags = {
     Name = "Nat2 EIP-${var.environment_name}"
   }
@@ -153,7 +153,7 @@ resource "aws_nat_gateway" "custom_ngwl12" {
   tags = {
     Name = "NatgwL12-${var.environment_name}"
   }
-  depends_on = [aws_internet_gateway.gw]
+  # depends_on = [aws_internet_gateway.gw]
 }
 
 resource "aws_route_table" "custom_privl2_rt" {
