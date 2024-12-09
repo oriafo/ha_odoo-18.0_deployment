@@ -142,9 +142,9 @@ jobs:
 
       - name: Terraform Plan
         run: |
-          terraform force-unlock -force 7ab1d0b9-6e38-9a7e-9eb9-5f67b8b2ce37
+          terraform force-unlock -force d8cb0676-bcff-343c-af1a-237c4af3d75b
           #terraform plan -var "environment_name=${{github.head_ref}}" -var "REPOSITORY=oriafo/ha_odoo-18.0_deployment" -ver "REGISTRY=${{ steps.login-ecr.outputs.registry }}" -var "run_number=${{ github.run_number }}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -out=plan.tfplan
-          terraform plan -var "environment_name=${{github.head_ref}}" -var "REPOSITORY=oriafo/ha_odoo-18.0_deployment" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -out=plan.tfplan
+          terraform plan -var "environment_name=${{github.head_ref}}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -out=plan.tfplan
 
 
 
@@ -155,7 +155,7 @@ jobs:
 
       - name: Terraform Apply 
         #run: terraform apply -var "environment_name=${{github.head_ref}}" -var "REPOSITORY=oriafo/ha_odoo-18.0_deployment" -var "REGISTRY=${{ steps.login-ecr.outputs.registry }}" -var "run_number=${{ github.run_number }}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -auto-approve
-        run: terraform apply -var "environment_name=${{github.head_ref}}" -var "REPOSITORY=oriafo/ha_odoo-18.0_deployment" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -auto-approve
+        run: terraform apply -var "environment_name=${{github.head_ref}}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -auto-approve
 
               
       - name: Check Deployment Status

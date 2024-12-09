@@ -65,8 +65,9 @@ jobs:
       # Destroy the Configuration
       - name: Terraform Destroy 
         run: |
-          terraform force-unlock -force 9af71153-ceff-c230-32f2-9a51ca73bc9d
-          terraform destroy -var "environment_name=${{github.event.inputs.environment}}" -var "REPOSITORY=oriafo/ha_odoo-18.0_deployment" -var "REGISTRY=${{ steps.login-ecr.outputs.registry }}"  -var "run_number=${{ github.run_number }}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -auto-approve
+          # terraform force-unlock -force 9af71153-ceff-c230-32f2-9a51ca73bc9d
+          #terraform destroy -var "environment_name=${{github.event.inputs.environment}}" -var "REPOSITORY=oriafo/ha_odoo-18.0_deployment" -var "REGISTRY=${{ steps.login-ecr.outputs.registry }}"  -var "run_number=${{ github.run_number }}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -auto-approve
+          terraform destroy -var "environment_name=${{github.event.inputs.environment}}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -auto-approve
 
 
       # # Apply the Configuration
