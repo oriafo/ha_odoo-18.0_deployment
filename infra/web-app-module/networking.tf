@@ -344,7 +344,7 @@ resource "aws_launch_template" "custom_lt" {
 
   user_data = base64encode(<<EOF
 #!/bin/bash -xe
-exec > /tmp/script_output.log 2>&1 
+exec > /tmp/k8_worker_output.log 2>&1 
 sudo apt-get update -y
 ../k8/scripts/common.sh
 EOF
