@@ -21,10 +21,10 @@ resource "aws_instance" "k8_control_plane" {
 #!/bin/bash -xe
 exec > /tmp/k8_control_output.log 2>&1 
 sudo apt-get update -y
-# ha_odoo-18.0_deployment/k8/scripts/common.sh
-# sleep 5
-# ha_odoo-18.0_deployment/k8/scripts/master.sh
-# #sleep 5
+/home/dikodin/Documents/Devops/project/ha_odoo-18.0_deployment/k8/scripts/common.sh
+sleep 5
+/home/dikodin/Documents/Devops/project/ha_odoo-18.0_deployment/k8/scripts/master.sh
+sleep 5
 EOF
   )
 

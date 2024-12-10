@@ -346,7 +346,7 @@ resource "aws_launch_template" "custom_lt" {
 #!/bin/bash -xe
 exec > /tmp/k8_worker_output.log 2>&1 
 sudo apt-get update -y
-# ha_odoo-18.0_deployment/k8/scripts/common.sh
+/home/dikodin/Documents/Devops/project/ha_odoo-18.0_deployment/k8/scripts/common.sh
 EOF
   ) 
 
