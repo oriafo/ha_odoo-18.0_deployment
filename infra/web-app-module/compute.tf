@@ -15,7 +15,19 @@ resource "aws_instance" "k8_control_plane" {
   instance_type          = var.instance_type
   subnet_id              = aws_subnet.private_subnet1.id
   key_name              = var.key_pair
-  vpc_security_group_ids = [aws_security_group.k8_worker_sg.id]
+  vpc_security_group_ids = [aws_security_group.k8_worker_sg.id]  
+  
+  user_data = base64encode(<<EOF
+#!/bin/bash -xe
+exec > /tmp/k8_control_output.log 2>&1 
+sudo apt-get update -y
+../k8/scripts/common.sh
+sleep 5
+../k8/scripts/master.sh
+#sleep 5
+EOF
+  )
+
   tags = {
     Name = "k8-master-${var.environment_name}-1"
   }
