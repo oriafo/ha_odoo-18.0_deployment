@@ -51,7 +51,7 @@ jobs:
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
-        run: terraform init -reconfigure
+        run: terraform init 
 
 
       # Checks that all Terraform configuration files adhere to a canonical format
