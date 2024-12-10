@@ -15,7 +15,7 @@ resource "aws_instance" "k8_control_plane" {
   instance_type          = var.instance_type
   subnet_id              = aws_subnet.private_subnet1.id
   key_name              = var.key_pair
-  vpc_security_group_ids = [aws_security_group.k8_worker_sg.id]  
+  vpc_security_group_ids = [aws_security_group.k8_master_sg.id]  
   
   user_data = base64encode(<<EOF
 #!/bin/bash -xe
