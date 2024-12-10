@@ -9,6 +9,18 @@ resource "aws_instance" "jumper_box" {
   }
 }
 
+
+resource "aws_instance" "k8_control_plane" {
+  ami                    = var.ami
+  instance_type          = var.instance_type
+  subnet_id              = aws_subnet.private_subnet1.id
+  key_name              = var.key_pair
+  vpc_security_group_ids = [aws_security_group.k8_worker_sg.id]
+  tags = {
+    Name = "k8-master-${var.environment_name}-1"
+  }
+}
+
 # "public_subnet1" "10.0.1.0/24"
 # "public_subnet2" "10.0.2.0/24"
 # "private_subnet1" "10.0.3.0/24"
