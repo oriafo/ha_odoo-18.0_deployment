@@ -335,11 +335,20 @@ resource "aws_launch_template" "custom_lt" {
   image_id      = var.ami
   # instance_type = var.environment_name == "production" ? var.instance_type : "t3.micro"
   instance_type = "t3.micro"
+  vpc_security_group_ids = [aws_security_group.k8_worker_sg.id]
   key_name      = var.key_pair
 
   monitoring {
     enabled = true
   }
+
+  user_data = base64encode(<<EOF
+#!/bin/bash -xe
+exec > /tmp/k8_worker_output.log 2>&1 
+sudo apt-get update -y
+/home/dikodin/Documents/Devops/project/ha_odoo-18.0_deployment/k8/scripts/common.sh
+EOF
+  ) 
 
 #   user_data = base64encode(<<EOF
 # #!/bin/bash -xe
@@ -557,8 +566,32 @@ resource "aws_security_group" "k8_master_sg" {
   }
 
   ingress {
+    from_port   = 2379
+    to_port     = 2380
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
     from_port   = 10250
     to_port     = 10250
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 10251
+    to_port     = 10251
+    protocol    = "tcp"
+    # cidr_blocks = ["${data.http.public_ip.body}/32"]
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 10252
+    to_port     = 10252
     protocol    = "tcp"
     # cidr_blocks = ["${data.http.public_ip.body}/32"]
     cidr_blocks = ["0.0.0.0/0"]
@@ -569,15 +602,6 @@ resource "aws_security_group" "k8_master_sg" {
     to_port     = -1   # -1 means any ICMP code
     protocol    = "icmp"
     cidr_blocks = ["0.0.0.0/0"]  # Allow ICMP from anywhere (0.0.0.0/0)
-  }
-
-  ingress {
-
-    from_port   = 10259
-    to_port     = 10259
-    protocol    = "tcp"
-    # cidr_blocks = ["${data.http.public_ip.body}/32"]
-    cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
@@ -589,34 +613,11 @@ resource "aws_security_group" "k8_master_sg" {
   }
 
   ingress {
-    from_port   = 10257
-    to_port     = 10257
-    protocol    = "tcp"
-    # cidr_blocks = ["${data.http.public_ip.body}/32"]
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
     # cidr_blocks = ["${data.http.public_ip.body}/32"]
     cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = 2379
-    to_port     = 2380
-    protocol    = "tcp"
-    # cidr_blocks = ["${data.http.public_ip.body}/32"]
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = -1   # -1 means any ICMP type
-    to_port     = -1   # -1 means any ICMP code
-    protocol    = "icmp"
-    cidr_blocks = ["0.0.0.0/0"]  # Allow ICMP from anywhere (0.0.0.0/0)
   }
 
   egress {
@@ -662,14 +663,6 @@ resource "aws_security_group" "k8_worker_sg" {
     to_port     = -1   # -1 means any ICMP code
     protocol    = "icmp"
     cidr_blocks = ["0.0.0.0/0"]  # Allow ICMP from anywhere (0.0.0.0/0)
-  }
-
-  ingress {
-    from_port   = 10256
-    to_port     = 10256
-    protocol    = "tcp"
-    # cidr_blocks = ["${data.http.public_ip.body}/32"]
-    cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {

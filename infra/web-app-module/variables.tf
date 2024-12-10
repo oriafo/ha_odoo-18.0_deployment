@@ -16,7 +16,7 @@ variable "key_pair" {
 variable "app_name" {
   description = "Name of the web application"
   type        = string
-  default     = "web-app"
+  default     = "worker-node"
 }
 
 variable "environment_name" {
