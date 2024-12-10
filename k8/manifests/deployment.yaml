@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: odooERP
+  labels:
+    app: odooERP
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: odooERP
+  template:
+    metadata:
+      labels:
+        app: odooERP
+    spec:
+      containers: 
+      - name: odoo_ERP
+        image: odoo:18.0
+        ports:
+        - containerPort: 8069
+      nodeSelector:
+        Environment: "worker-node-${var.environment_name}"
