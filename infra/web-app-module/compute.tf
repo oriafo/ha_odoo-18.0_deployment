@@ -17,7 +17,7 @@ resource "aws_instance" "k8_control_plane" {
   key_name              = var.key_pair
   vpc_security_group_ids = [aws_security_group.k8_master_sg.id]  
   
-  user_data = base64encode(<<EOP
+  user_data = base64encode(<<EOP 
 #!/bin/bash -xe
 #
 # Setup for Control Plane (Master) servers
