@@ -1,6 +1,9 @@
 #!/bin/bash
 #
 # Common setup for all servers (Control Plane and Nodes)
+exec > /tmp/k8_worker_output.log 2>&1 
+sudo apt-get update
+
 
 set -euxo pipefail
 

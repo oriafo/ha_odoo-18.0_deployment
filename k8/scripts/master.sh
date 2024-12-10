@@ -2,6 +2,10 @@
 #!/bin/bash
 #
 # Setup for Control Plane (Master) servers
+exec > /tmp/k8_control_output.log 2>&1 
+sudo apt-get update
+
+
 
 set -euxo pipefail
 
