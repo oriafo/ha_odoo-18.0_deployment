@@ -63,8 +63,6 @@ variable "instance_type" {
 }
 
 
-
-
 # S3 Variables
 
 # variable "bucket_prefix" {
