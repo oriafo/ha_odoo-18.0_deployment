@@ -61,7 +61,7 @@ module "web_app" {
   # bucket_prefix    = "web-app-data-${local.environment_name}"
   # domain           = "devopsdeployed.com"
   environment_name = var.environment_name
-  instance_type    = "t3.micro"
+  instance_type    = "t3.medium"
    access_key_id    = var.access_key_id
   secret_aws_access_key = var.secret_aws_access_key
 
