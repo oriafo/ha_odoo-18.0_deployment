@@ -1,8 +1,8 @@
 resource "aws_instance" "jumper_box" {
   ami                    = var.ami
-  instance_type          = var.instance_type
+  instance_type          = "t2.micro"
   subnet_id              = aws_subnet.public_subnet1.id
-  key_name              = "t2.micro"
+  key_name              = var.key_pair
   vpc_security_group_ids = [aws_security_group.jumper_box_sg.id]
   tags = {
     Name = "jumper-box-${var.environment_name}-1"
