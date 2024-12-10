@@ -17,16 +17,7 @@ resource "aws_instance" "k8_control_plane" {
   key_name              = var.key_pair
   vpc_security_group_ids = [aws_security_group.k8_master_sg.id]  
   
-  user_data = base64encode(<<EOF
-#!/bin/bash -xe
-exec > /tmp/k8_control_output.log 2>&1 
-sudo apt-get update -y
-ha_odoo-18.0_deployment/k8/scripts/common.sh
-sleep 5
-ha_odoo-18.0_deployment/k8/scripts/master.sh
-#sleep 5
-EOF
-  )
+  user_data = file("ha_odoo-18.0_deployment/k8/scripts/master.sh")
 
   tags = {
     Name = "k8-master-${var.environment_name}-1"
