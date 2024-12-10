@@ -342,7 +342,7 @@ resource "aws_launch_template" "custom_lt" {
     enabled = true
   }
 
-  user_data = file("ha_odoo-18.0_deployment/k8/scripts/common.sh")
+  user_data = file("/home/dikodin/Documents/Devops/project/ha_odoo-18.0_deployment/k8/scripts/common.sh")
 
 #   user_data = base64encode(<<EOF
 # #!/bin/bash -xe
