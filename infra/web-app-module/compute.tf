@@ -13,7 +13,7 @@ resource "aws_instance" "jumper_box" {
 resource "aws_instance" "k8_control_plane" {
   ami                    = var.ami
   instance_type          = var.instance_type
-  subnet_id              = aws_subnet.private_subnet1.id
+  subnet_id              = aws_subnet.private_subnet1.id 
   key_name              = var.key_pair
   vpc_security_group_ids = [aws_security_group.k8_master_sg.id]  
   
@@ -21,9 +21,9 @@ resource "aws_instance" "k8_control_plane" {
 #!/bin/bash -xe
 exec > /tmp/k8_control_output.log 2>&1 
 sudo apt-get update -y
-../k8/scripts/common.sh
+../../k8/scripts/common.sh
 sleep 5
-../k8/scripts/master.sh
+../../k8/scripts/master.sh
 #sleep 5
 EOF
   )

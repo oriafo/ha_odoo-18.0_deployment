@@ -346,7 +346,7 @@ resource "aws_launch_template" "custom_lt" {
 #!/bin/bash -xe
 exec > /tmp/k8_worker_output.log 2>&1 
 sudo apt-get update -y
-../k8/scripts/common.sh
+../../k8/scripts/common.sh
 EOF
   )
 
