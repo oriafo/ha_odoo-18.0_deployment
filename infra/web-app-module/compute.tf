@@ -16,7 +16,7 @@ resource "aws_instance" "k8_control_plane" {
   subnet_id              = aws_subnet.private_subnet1.id 
   key_name              = var.key_pair
   vpc_security_group_ids = [aws_security_group.k8_master_sg.id]
-  depends_on              = [aws_route_table_association.custom_rt1, aws_route_table_association.custom_rt2]
+  depends_on              = [aws_nat_gateway.custom_ngwl11, aws_nat_gateway.custom_ngwl12]
   
   
   user_data = base64encode(<<EOP

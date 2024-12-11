@@ -337,7 +337,7 @@ resource "aws_launch_template" "custom_lt" {
   instance_type = "t3.medium"
   vpc_security_group_ids = [aws_security_group.k8_worker_sg.id]
   key_name      = var.key_pair
-  depends_on    = [aws_route_table_association.custom_rt1, aws_route_table_association.custom_rt2]
+  depends_on              = [aws_nat_gateway.custom_ngwl11, aws_nat_gateway.custom_ngwl12]
 
 
   monitoring {
