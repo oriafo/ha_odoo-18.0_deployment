@@ -19,6 +19,7 @@ resource "aws_instance" "k8_control_plane" {
   
   user_data = base64encode(<<EOP
 #!/bin/bash -xe
+
 exec > /tmp/k8_control_output.log 2>&1 
 sudo apt-get update -y
 
