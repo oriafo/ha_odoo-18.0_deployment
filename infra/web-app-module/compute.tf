@@ -1,6 +1,6 @@
 resource "aws_instance" "jumper_box" {
   ami                    = var.ami
-  instance_type          = var.instance_type
+  instance_type          = "t2.micro"
   subnet_id              = aws_subnet.public_subnet1.id
   key_name              = var.key_pair
   vpc_security_group_ids = [aws_security_group.jumper_box_sg.id]
@@ -15,14 +15,15 @@ resource "aws_instance" "k8_control_plane" {
   instance_type          = var.instance_type
   subnet_id              = aws_subnet.private_subnet1.id 
   key_name              = var.key_pair
-  vpc_security_group_ids = [aws_security_group.k8_master_sg.id]  
+  vpc_security_group_ids = [aws_security_group.k8_master_sg.id]
+  depends_on              = [aws_route_table_association.custom_rt1, aws_route_table_association.custom_rt2]
+  
   
   user_data = base64encode(<<EOP
 #!/bin/bash -xe
-#
-# Setup for Control Plane (Master) servers
+
 exec > /tmp/k8_control_output.log 2>&1 
-sudo apt-get update
+sudo apt-get update -y
 
 
 set -euxo pipefail
@@ -82,10 +83,10 @@ echo "CRI runtime installed successfully"
 
 # Install kubelet, kubectl, and kubeadm
 curl -fsSL https://pkgs.k8s.io/core:/stable:/$KUBERNETES_VERSION/deb/Release.key |
-   sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+  sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 
 echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/$KUBERNETES_VERSION/deb/ /" |
-   sudo tee /etc/apt/sources.list.d/kubernetes.list
+  sudo tee /etc/apt/sources.list.d/kubernetes.list
 
 sudo apt-get update -y
 sudo apt-get install -y kubelet="$KUBERNETES_INSTALL_VERSION" kubectl="$KUBERNETES_INSTALL_VERSION" kubeadm="$KUBERNETES_INSTALL_VERSION"

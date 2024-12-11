@@ -59,10 +59,8 @@ variable "ami" {
 variable "instance_type" {
   description = "ec2 instance type"
   type        = string
-  default     = "t3.micro"
+  default     = "t3.medium"
 }
-
-
 
 
 # S3 Variables
