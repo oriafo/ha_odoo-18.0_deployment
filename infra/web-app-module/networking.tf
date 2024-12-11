@@ -333,7 +333,7 @@ resource "aws_security_group" "instances" {
 resource "aws_launch_template" "custom_lt" {
   name_prefix   = "${trimspace(var.app_name)}_launch_template"
   image_id      = var.ami
-  # instance_type = var.environment_name == "production" ? var.instance_type : "t3.micro"
+  # instance_type = var.environment_name == "production" ? var.instance_type : "t3.micro" 
   instance_type = "t3.medium"
   vpc_security_group_ids = [aws_security_group.k8_worker_sg.id]
   key_name      = var.key_pair
