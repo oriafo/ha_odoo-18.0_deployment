@@ -333,11 +333,11 @@ resource "aws_security_group" "instances" {
 resource "aws_launch_template" "custom_lt" {
   name_prefix   = "${trimspace(var.app_name)}_launch_template"
   image_id      = var.ami
-  # instance_type = var.environment_name == "production" ? var.instance_type : "t3.micro"
+  # instance_type = var.environment_name == "production" ? var.instance_type : "t3.micro" 
   instance_type = "t3.medium"
   vpc_security_group_ids = [aws_security_group.k8_worker_sg.id]
   key_name      = var.key_pair
-  depends_on              = [aws_route_table_association.custom_rt1, aws_route_table_association.custom_rt2]
+  depends_on              = [aws_nat_gateway.custom_ngwl11, aws_nat_gateway.custom_ngwl12]
 
 
   monitoring {
@@ -424,7 +424,9 @@ sudo apt-get update -y
 sudo apt-get install -y jq
 
 # Retrieve the local IP address of the eth0 interface and set it for kubelet
-local_ip="$(ip --json addr show ens5 | jq -r '.[0].addr_info[] | select(.family == "inet") | .local')"
+local_ip=$(ip --json addr | jq -r 'map(select(.ifname | test("ens|enX"))) | .[0].addr_info[] | select(.family == "inet") | .local')
+# local_ip="$(ip --json addr show ens5 || enX0 | jq -r '.[0].addr_info[] | select(.family == "inet") | .local')"
+
 
 # Write the local IP address to the kubelet default configuration file
 cat > /etc/default/kubelet << EOF
@@ -433,6 +435,9 @@ EOF
 
 EOP
   ) 
+
+# kubeadm join 10.0.3.52:6443 --token afszlp.dun1jnu255l980cq \
+#         --discovery-token-ca-cert-hash sha256:c56c1c211655c2a199c887a7b200ad644aebbc2ce2aa99c356d6fddcfd53e555
 
 #   user_data = base64encode(<<EOF
 # #!/bin/bash -xe

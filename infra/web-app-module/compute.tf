@@ -16,7 +16,7 @@ resource "aws_instance" "k8_control_plane" {
   subnet_id              = aws_subnet.private_subnet1.id 
   key_name              = var.key_pair
   vpc_security_group_ids = [aws_security_group.k8_master_sg.id]
-  depends_on              = [aws_route_table_association.custom_rt1, aws_route_table_association.custom_rt2]
+  depends_on              = [aws_nat_gateway.custom_ngwl11, aws_nat_gateway.custom_ngwl12]
   
   
   user_data = base64encode(<<EOP
@@ -100,7 +100,9 @@ sudo apt-get update -y
 sudo apt-get install -y jq
 
 # Retrieve the local IP address of the eth0 interface and set it for kubelet
-local_ip="$(ip --json addr show ens5 | jq -r '.[0].addr_info[] | select(.family == "inet") | .local')"
+local_ip=$(ip --json addr | jq -r 'map(select(.ifname | test("ens|enX"))) | .[0].addr_info[] | select(.family == "inet") | .local')
+# local_ip="$(ip --json addr show ens5 || enX0 | jq -r '.[0].addr_info[] | select(.family == "inet") | .local')"
+
 
 # Write the local IP address to the kubelet default configuration file
 cat > /etc/default/kubelet << EOF
