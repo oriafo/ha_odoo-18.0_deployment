@@ -434,6 +434,9 @@ EOF
 EOP
   ) 
 
+# kubeadm join 10.0.3.7:6443 --token 2lroc2.ek1ki80nkp41d8qk \
+#         --discovery-token-ca-cert-hash sha256:d706bb6bbb24415fb329e78944510d4ed5bdff11ebed344447440b47c4c4f655
+
 #   user_data = base64encode(<<EOF
 # #!/bin/bash -xe
 # exec > /tmp/script_output.log 2>&1 
