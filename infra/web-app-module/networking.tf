@@ -424,7 +424,9 @@ sudo apt-get update -y
 sudo apt-get install -y jq
 
 # Retrieve the local IP address of the eth0 interface and set it for kubelet
-local_ip="$(ip --json addr show ens5 | jq -r '.[0].addr_info[] | select(.family == "inet") | .local')"
+local_ip=$(ip --json addr | jq -r 'map(select(.ifname | test("ens|enX"))) | .[0].addr_info[] | select(.family == "inet") | .local')
+# local_ip="$(ip --json addr show ens5 || enX0 | jq -r '.[0].addr_info[] | select(.family == "inet") | .local')"
+
 
 # Write the local IP address to the kubelet default configuration file
 cat > /etc/default/kubelet << EOF
@@ -434,8 +436,8 @@ EOF
 EOP
   ) 
 
-# kubeadm join 10.0.3.7:6443 --token 2lroc2.ek1ki80nkp41d8qk \
-#         --discovery-token-ca-cert-hash sha256:d706bb6bbb24415fb329e78944510d4ed5bdff11ebed344447440b47c4c4f655
+# kubeadm join 10.0.3.52:6443 --token afszlp.dun1jnu255l980cq \
+#         --discovery-token-ca-cert-hash sha256:c56c1c211655c2a199c887a7b200ad644aebbc2ce2aa99c356d6fddcfd53e555
 
 #   user_data = base64encode(<<EOF
 # #!/bin/bash -xe
