@@ -459,7 +459,6 @@ resource "aws_security_group" "k8_worker_sg" {
   name        = "${trimspace(var.environment_name)}-k8-worker-sg"
   description = "Allow HTTP inbound traffic and all outbound traffic"
   vpc_id      = aws_vpc.custom_vpc.id 
-  depends_on = [aws_subnet.private_subnet1, aws_subnet.private_subnet2]
 
   ingress {
     from_port   = 10250
@@ -618,8 +617,6 @@ resource "aws_eks_node_group" "k8_node_group" {
     aws_iam_role_policy_attachment.k8_node_group_role-AmazonEKSWorkerNodePolicy,
     aws_iam_role_policy_attachment.k8_node_group_role-AmazonEKS_CNI_Policy,
     aws_iam_role_policy_attachment.k8_node_group_role-AmazonEC2ContainerRegistryReadOnly,
-    aws_eks_cluster.k8_cluster,
-    aws_security_group.k8_worker_sg,
   ]
 
   security_groups = [aws_security_group.k8_worker_sg.id]
