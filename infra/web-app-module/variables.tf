@@ -64,11 +64,6 @@ variable "environment_name" {
 }
 
 
-variable "my_cluster" {
-  description = "cluster name"
-  type        = string
-}
-
 # S3 Variables
 
 # variable "bucket_prefix" {
