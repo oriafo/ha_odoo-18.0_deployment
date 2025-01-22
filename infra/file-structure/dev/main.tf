@@ -20,7 +20,7 @@ provider "aws" {
 }
 
 module "web_app" {    
-  source = "../../web-app-module/*"
+  source = "../../web-app-module"
 
   # Input Variables
   # bucket_prefix    = "web-app-data-${local.environment_name}"
