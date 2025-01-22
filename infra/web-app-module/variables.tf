@@ -25,15 +25,15 @@ variable "environment_name" {
   # default     = "dev"
 }
 
-variable "secret_aws_access_key" {
-  description = "SAK"
-  type        = string
-}
+# variable "secret_aws_access_key" {
+#   description = "SAK"
+#   type        = string
+# }
 
-variable "access_key_id" {
-  description = "AK"
-  type        = string
-}
+# variable "access_key_id" {
+#   description = "AK"
+#   type        = string
+# }
 
 # variable "run_number" {
 #   description = "GitHub run number"
@@ -62,6 +62,10 @@ variable "instance_type" {
   default     = "t3.medium"
 }
 
+variable "my_cluster" {
+  description = "cluster name"
+  type        = string
+}
 
 # S3 Variables
 
