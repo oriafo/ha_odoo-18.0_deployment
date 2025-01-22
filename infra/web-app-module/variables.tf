@@ -19,11 +19,6 @@ variable "app_name" {
   default     = "worker-node"
 }
 
-variable "environment_name" {
-  description = "Deployment environment (dev/staging/production)"
-  type        = string
-  # default     = "dev"
-}
 
 # variable "secret_aws_access_key" {
 #   description = "SAK"
@@ -61,6 +56,13 @@ variable "instance_type" {
   type        = string
   default     = "t3.medium"
 }
+
+variable "environment_name" {
+  description = "Deployment environment (dev/staging/production)"
+  type        = string
+  # default     = "dev"
+}
+
 
 variable "my_cluster" {
   description = "cluster name"
