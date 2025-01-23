@@ -596,7 +596,8 @@ resource "aws_eks_node_group" "k8_node_group" {
   node_role_arn   = aws_iam_role.k8_node_group_role.arn
   subnet_ids      = [aws_subnet.private_subnet1.id, aws_subnet.private_subnet2.id]
   instance_types  = ["t3.medium"]
-  ami_type        = var.ami
+  ami_type        = "CUSTOM"
+  #ami_id          = var.ami
 
   remote_access {
     ec2_ssh_key     = var.key_pair
@@ -619,5 +620,5 @@ resource "aws_eks_node_group" "k8_node_group" {
     aws_iam_role_policy_attachment.k8_node_group_role-AmazonEC2ContainerRegistryReadOnly,
   ]
 
-  security_groups = [aws_security_group.k8_worker_sg.id]
+  #security_groups = [aws_security_group.k8_worker_sg.id]
 }
