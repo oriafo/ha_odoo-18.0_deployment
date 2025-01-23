@@ -162,7 +162,6 @@ jobs:
       - name: Show Terraform Output
         run: echo "Terraform Output: ${{ steps.terraform_output.outputs.stdout }}"
 
-        
       - name: Set up AWS CLI and Kubectl utility
         run: |
           sudo apt-get update
