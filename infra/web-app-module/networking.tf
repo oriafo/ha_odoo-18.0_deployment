@@ -596,7 +596,7 @@ resource "aws_eks_node_group" "k8_node_group" {
   node_role_arn   = aws_iam_role.k8_node_group_role.arn
   subnet_ids      = [aws_subnet.private_subnet1.id, aws_subnet.private_subnet2.id]
   instance_types  = ["t3.medium"]
-  ami_type        = "CUSTOM"
+  ami_type        = "AL2_x86_64"
   #ami_id          = var.ami
 
   remote_access {
