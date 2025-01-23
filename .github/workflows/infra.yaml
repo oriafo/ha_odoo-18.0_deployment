@@ -136,7 +136,7 @@ jobs:
         run: |
           #terraform force-unlock -force ce9661a5-baab-63e7-a019-55fd12373997
           #terraform plan -var "environment_name=${{github.head_ref}}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -out=plan.tfplan
-          terraform refresh -var "environment_name=${{github.head_ref}}"
+          #terraform refresh -var "environment_name=${{github.head_ref}}"
           terraform plan -var "environment_name=${{github.head_ref}}" -out=plan.tfplan
 
       - name: check for plain.tfplan in this directory
@@ -158,7 +158,7 @@ jobs:
       - name: Terraform Output to get the Cluster Name
         run: |
           terraform output -json > tf_output.json
-          echo $(terraform output eks_cluster_name)
+          echo This is the terraform outputs; $(terraform output)
           EKS_CLUSTER_NAME=$(jq -r '.eks_cluster_name.value' tf_output.json)
           if [ -z "$EKS_CLUSTER_NAME" ]; then
             echo "Error: Cluster not created."
