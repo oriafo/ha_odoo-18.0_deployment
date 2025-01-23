@@ -134,7 +134,7 @@ jobs:
 
       - name: Terraform Plan
         run: |
-          # terraform force-unlock -force 58438d7c-2335-1f96-ecd7-b198c50ee504
+          terraform force-unlock -force ce9661a5-baab-63e7-a019-55fd12373997
           #terraform plan -var "environment_name=${{github.head_ref}}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -out=plan.tfplan
           terraform refresh -var "environment_name=${{github.head_ref}}"
           terraform plan -var "environment_name=${{github.head_ref}}" -out=plan.tfplan
