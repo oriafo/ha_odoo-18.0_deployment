@@ -25,8 +25,8 @@ module "web_app" {
   # Input Variables
   # bucket_prefix    = "web-app-data-${local.environment_name}"
   # domain           = "devopsdeployed.com"
-  environment_name =  module.web_app.environment_name
-  instance_type    =  module.web_app.instance_type
+  environment_name =  var.environment_name
+  instance_type    =  var.instance_type
   #create_dns_zone  = false
   # db_name          = "${local.environment_name}mydb"
   # db_user          = "foo"
