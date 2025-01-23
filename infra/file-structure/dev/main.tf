@@ -19,6 +19,11 @@ provider "aws" {
   region = "us-east-1"
 }
 
+output "eks_cluster_name" {
+  value = aws_eks_cluster.k8_cluster.name
+}
+
+
 module "web_app" {    
   source = "../../web-app-module"
 
