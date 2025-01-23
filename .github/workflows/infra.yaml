@@ -157,7 +157,7 @@ jobs:
       - name: Terraform Output to get the Cluster Name
         run: |
           terraform output -json > tf_output.json
-          echo $(terraform output -json)
+          echo $tf_output.json
           EKS_CLUSTER_NAME=$(jq -r '.eks_cluster_name.value' tf_output.json)
           if [ -z "$EKS_CLUSTER_NAME" ]; then
             echo "Error: Cluster not created."
