@@ -19,7 +19,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
-output "eks_cluster_name" {
+output "eks_cluster_namee" {
   value = aws_eks_cluster.k8_cluster.name
 }
 
