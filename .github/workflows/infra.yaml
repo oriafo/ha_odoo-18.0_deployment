@@ -73,7 +73,6 @@ jobs:
 
 
 
-
       # - name: Set profile output
       #   id: check_cfn_stack
       #   run: |
