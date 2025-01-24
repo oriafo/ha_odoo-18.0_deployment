@@ -9,3 +9,14 @@ variable "environment_name" {
   type        = string
   # default     = "dev"
 }
+
+
+variable "secret_aws_access_key" {
+  description = "SAK"
+  type        = string
+}
+
+variable "access_key_id" {
+  description = "AK"
+  type        = string
+}
