@@ -74,7 +74,6 @@ jobs:
 
 
 
-
       # - name: Set profile output
       #   id: check_cfn_stack
       #   run: |
@@ -183,7 +182,7 @@ jobs:
 
 
 
-        
+
       - name: Set up AWS CLI and Kubectl utility
         run: |
           sudo apt-get update
