@@ -174,7 +174,9 @@ jobs:
 
       - name: Terraform Output
         id: terraform_output
-        run: terraform output -json
+        run: |
+          echo $(terraform output -json)
+          terraform output -json
 
       - name: Show Terraform Output
         run: echo "Terraform Output: ${{ steps.terraform_output.outputs.stdout }}"
