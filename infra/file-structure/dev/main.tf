@@ -19,14 +19,14 @@ provider "aws" {
   region = "us-east-1"
 }
 
-module "web_app" {    
+module "web_app" {
   source = "../../web-app-module"
 
   # Input Variables
   # bucket_prefix    = "web-app-data-${local.environment_name}"
   # domain           = "devopsdeployed.com"
-  environment_name =  var.environment_name
-  instance_type    =  var.instance_type
+  environment_name = var.environment_name
+  instance_type    = var.instance_type
   # create_dns_zone  = false
   # db_name          = "${local.environment_name}mydb"
   # db_user          = "foo"
