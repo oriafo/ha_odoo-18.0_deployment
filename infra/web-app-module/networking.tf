@@ -229,7 +229,7 @@ resource "aws_lb" "custom_lb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.instances.id]
-  subnets            = [aws_subnet.public_subnet1.id, aws_subnet.public_subnet2.id] 
+  subnets            = [aws_subnet.private_subnet1.id, aws_subnet.private_subnet2.id] 
 
   enable_deletion_protection = false
 
@@ -250,8 +250,8 @@ resource "aws_lb_target_group" "lb_tg" {
     path                = "/*"
     port                = 80
     protocol            = "HTTP"
-    interval            = 45
-    timeout             = 40
+    interval            = 60
+    timeout             = 50
     healthy_threshold   = 3
     unhealthy_threshold = 3
     matcher             = "200"
