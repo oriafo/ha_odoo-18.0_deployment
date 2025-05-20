@@ -140,8 +140,8 @@ jobs:
           terraform init 
           # exit
           terraform fmt
-          terraform plan -var "environment_name=${{github.head_ref}}" -out=plan.tfplan
-          terraform apply -var "environment_name=${{github.head_ref}}" -auto-approve
+          terraform plan -var "environment_name=${{github.head_ref}}" -var "access_key_id=${{secrets.AWS_ACCESS_KEY_ID}}" -var "secret_aws_access_key=${{secrets.AWS_SECRET_ACCESS_KEY}}"-out=plan.tfplan
+          terraform apply -var "environment_name=${{github.head_ref}}" -var "access_key_id=${{secrets.AWS_ACCESS_KEY_ID}}" -var "secret_aws_access_key=${{secrets.AWS_SECRET_ACCESS_KEY}}" -auto-approve
           if [ $? -ne 0 ]; then
             echo "Infrastructure Provisioning failed"
             exit 1 
