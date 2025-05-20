@@ -126,21 +126,17 @@ jobs:
 
       - name: Terraform Init
         run: |
-          node -v
+          #install nvm so i can use the nvm command to select a higher node version in my self-hosted machine, since the terraform command are trowing error from old installed node version
           curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-           export NVM_DIR="$HOME/.nvm"
+          export NVM_DIR="$HOME/.nvm"
           [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
           [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
           nvm list
           nvm use 18
           node -v
-          # sudo su
-          # curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
-          # sudo apt-get install -y nodejs
           terraform init 
-          # exit
           terraform fmt
-          terraform force-unlock -force 1a8f667a-89d1-20c2-4e8b-8775843a6cf3
+          # terraform force-unlock -force 1a8f667a-89d1-20c2-4e8b-8775843a6cf3
           terraform plan -var "environment_name=${{github.head_ref}}" -var "access_key_id=${{secrets.AWS_ACCESS_KEY_ID}}" -var "secret_aws_access_key=${{secrets.AWS_SECRET_ACCESS_KEY}}"-out=plan.tfplan
           terraform apply -var "environment_name=${{github.head_ref}}" -var "access_key_id=${{secrets.AWS_ACCESS_KEY_ID}}" -var "secret_aws_access_key=${{secrets.AWS_SECRET_ACCESS_KEY}}" -auto-approve
           if [ $? -ne 0 ]; then
