@@ -127,11 +127,11 @@ jobs:
       - name: Terraform Init
         run: |
           node -v
-          sudo su
-          curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
-          sudo apt-get install -y nodejs
+          # sudo su
+          # curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
+          # sudo apt-get install -y nodejs
           terraform init 
-          exit
+          # exit
 
       - name: Terraform Format
         run: terraform fmt
