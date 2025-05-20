@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   Infra_provisioning:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     environment: ${{github.head_ref}}
     defaults:
       run:
@@ -179,7 +179,8 @@ jobs:
           terraform output -json
 
       - name: Show Terraform Output
-        run: echo "Terraform Output: ${{ steps.terraform_output.outputs.stdout }}"
+        run:  |
+          echo "Terraform Output: ${{ steps.terraform_output.outputs.stdout }}"
 
 
 
