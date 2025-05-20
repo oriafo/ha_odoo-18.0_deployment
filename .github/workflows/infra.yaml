@@ -141,7 +141,9 @@ jobs:
           # exit
 
       - name: Terraform Format
-        run: terraform fmt
+        run: |
+          nvm use 18
+          terraform fmt
 
       - name: Terraform Plan
         run: |
