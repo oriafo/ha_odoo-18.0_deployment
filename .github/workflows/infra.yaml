@@ -129,6 +129,7 @@ jobs:
           node -v
           nvm list
           nvm use 18
+          node -v
           # sudo su
           # curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
           # sudo apt-get install -y nodejs
