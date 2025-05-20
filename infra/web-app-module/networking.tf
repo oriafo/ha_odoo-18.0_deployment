@@ -229,7 +229,7 @@ resource "aws_lb" "custom_lb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.instances.id]
-  subnets            = [aws_subnet.public_subnet1.id, aws_subnet.public_subnet2.id] 
+  subnets            = [aws_subnet.private_subnet1.id, aws_subnet.private_subnet2.id] 
 
   enable_deletion_protection = false
 
@@ -247,11 +247,11 @@ resource "aws_lb_target_group" "lb_tg" {
   vpc_id      = aws_vpc.custom_vpc.id
 
   health_check {
-    path                = "/"
+    path                = "/*"
     port                = 80
     protocol            = "HTTP"
-    interval            = 45
-    timeout             = 40
+    interval            = 60
+    timeout             = 50
     healthy_threshold   = 3
     unhealthy_threshold = 3
     matcher             = "200"
@@ -264,7 +264,7 @@ resource "aws_lb_target_group" "lb_tg" {
 
 # resource "aws_lb_target_group_attachment" "lb_tg_attach" {
 #   target_group_arn = aws_lb_target_group.lb_tg.arn
-#   target_id        = aws_eks_node_group.k8_node_group.id  
+#   target_id        = eks-worker-node_node_group-60ca5593-a9f6-02a5-62c5-4e8f5aba9f62.id
 #   port             = 80
 # }  
 
@@ -598,10 +598,11 @@ resource "aws_eks_node_group" "k8_node_group" {
   instance_types  = ["t3.medium"]
   ami_type        = "AL2_x86_64"
   #ami_id          = var.ami
+  # additional_security_groups = [aws_security_group.k8_worker_sg.id]
 
   remote_access {
     ec2_ssh_key     = var.key_pair
-    #source_security_group_ids = []
+    source_security_group_ids = [aws_security_group.jumper_box_sg.id]
   }
 
   scaling_config {

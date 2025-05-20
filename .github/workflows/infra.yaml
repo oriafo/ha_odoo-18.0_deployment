@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   Infra_provisioning:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     environment: ${{github.head_ref}}
     defaults:
       run:
@@ -73,7 +73,6 @@ jobs:
 
 
 
-
       # - name: Set profile output
       #   id: check_cfn_stack
       #   run: |
@@ -126,93 +125,121 @@ jobs:
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
-        run: terraform init 
-
-      - name: Terraform Format
-        run: terraform fmt
-
-      - name: Terraform Plan
         run: |
-          #terraform force-unlock -force ce9661a5-baab-63e7-a019-55fd12373997
-          #terraform plan -var "environment_name=${{github.head_ref}}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -out=plan.tfplan
-          #terraform refresh -var "environment_name=${{github.head_ref}}"
-          terraform plan -var "environment_name=${{github.head_ref}}" -out=plan.tfplan
-
-      - name: check for plain.tfplan in this directory
-        run: ls -l
-
-      - name: Terraform Apply 
-        #run: terraform apply -var "environment_name=${{github.head_ref}}" -var "REPOSITORY=oriafo/ha_odoo-18.0_deployment" -var "REGISTRY=${{ steps.login-ecr.outputs.registry }}" -var "run_number=${{ github.run_number }}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -auto-approve
-        run: terraform apply -var "environment_name=${{github.head_ref}}" -auto-approve
-
-      - name: Check Provisioning Status
-        run: |
+          node -v
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+           export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+          [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
+          nvm list
+          nvm use 18
+          node -v
+          # sudo su
+          # curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
+          # sudo apt-get install -y nodejs
+          terraform init 
+          # exit
+          terraform fmt
+          terraform force-unlock -force 1a8f667a-89d1-20c2-4e8b-8775843a6cf3
+          terraform plan -var "environment_name=${{github.head_ref}}" -var "access_key_id=${{secrets.AWS_ACCESS_KEY_ID}}" -var "secret_aws_access_key=${{secrets.AWS_SECRET_ACCESS_KEY}}"-out=plan.tfplan
+          terraform apply -var "environment_name=${{github.head_ref}}" -var "access_key_id=${{secrets.AWS_ACCESS_KEY_ID}}" -var "secret_aws_access_key=${{secrets.AWS_SECRET_ACCESS_KEY}}" -auto-approve
           if [ $? -ne 0 ]; then
             echo "Infrastructure Provisioning failed"
-            exit 1
+            exit 1 
           else
             echo "Infrastructure Provisioning Successful"
           fi
 
-      # - name: Terraform Output to get the Cluster Name
+      # - name: Terraform Format
       #   run: |
-      #     terraform output -json > tf_output.json
-      #     echo This is the terraform outputs; $(terraform output)
-      #     EKS_CLUSTER_NAME=$(jq -r '.eks_cluster_name.value' tf_output.json)
-      #     if [ -z "$EKS_CLUSTER_NAME" ]; then
-      #       echo "Error: Cluster not created."
+      #     nvm use 18
+      #     terraform fmt
+
+      # - name: Terraform Plan
+      #   run: |
+      #     #terraform force-unlock -force ce9661a5-baab-63e7-a019-55fd12373997
+      #     #terraform plan -var "environment_name=${{github.head_ref}}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -out=plan.tfplan
+      #     #terraform refresh -var "environment_name=${{github.head_ref}}"
+      #     terraform plan -var "environment_name=${{github.head_ref}}" -out=plan.tfplan
+
+      # - name: check for plain.tfplan in this directory
+      #   run: ls -l
+
+      # - name: Terraform Apply 
+      #   #run: terraform apply -var "environment_name=${{github.head_ref}}" -var "REPOSITORY=oriafo/ha_odoo-18.0_deployment" -var "REGISTRY=${{ steps.login-ecr.outputs.registry }}" -var "run_number=${{ github.run_number }}" -var "access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" -var "secret_aws_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -auto-approve
+      #   run: terraform apply -var "environment_name=${{github.head_ref}}" -auto-approve
+
+      # - name: Check Provisioning Status
+      #   run: |
+      #     if [ $? -ne 0 ]; then
+      #       echo "Infrastructure Provisioning failed"
       #       exit 1
+      #     else
+      #       echo "Infrastructure Provisioning Successful"
       #     fi
-      #     echo "EKS_CLUSTER_NAME=$EKS_CLUSTER_NAME" >> $GITHUB_ENV
-      #     echo "Captured EKS CLUSTER NAME: $EKS_CLUSTER_NAME"
 
-      # - name: Check if the Cluster Name was captured
-      #   if: ${{ env.EKS_CLUSTER_NAME == '' }}
+      # # - name: Terraform Output to get the Cluster Name
+      # #   run: |
+      # #     terraform output -json > tf_output.json
+      # #     echo This is the terraform outputs; $(terraform output)
+      # #     EKS_CLUSTER_NAME=$(jq -r '.eks_cluster_name.value' tf_output.json)
+      # #     if [ -z "$EKS_CLUSTER_NAME" ]; then
+      # #       echo "Error: Cluster not created."
+      # #       exit 1
+      # #     fi
+      # #     echo "EKS_CLUSTER_NAME=$EKS_CLUSTER_NAME" >> $GITHUB_ENV
+      # #     echo "Captured EKS CLUSTER NAME: $EKS_CLUSTER_NAME"
+
+      # # - name: Check if the Cluster Name was captured
+      # #   if: ${{ env.EKS_CLUSTER_NAME == '' }}
+      # #   run: |
+      # #     echo "Error: Eks Cluster Name is empty. Exiting."
+      # #     exit 1   
+
+
+      # - name: Terraform Output
+      #   id: terraform_output
       #   run: |
-      #     echo "Error: Eks Cluster Name is empty. Exiting."
-      #     exit 1   
+      #     echo $(terraform output -json)
+      #     terraform output -json
 
-
-      - name: Terraform Output
-        id: terraform_output
-        run: terraform output -json
-
-      - name: Show Terraform Output
-        run: echo "Terraform Output: ${{ steps.terraform_output.outputs.stdout }}"
+      # - name: Show Terraform Output
+      #   run:  |
+      #     echo "Terraform Output: ${{ steps.terraform_output.outputs.stdout }}"
 
 
 
 
-      - name: Set up AWS CLI and Kubectl utility
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y unzip
-          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-          unzip awscliv2.zip
-          sudo ./aws/install --update
-          aws --version
-          curl -LO "https://dl.k8s.io/release/v1.24.0/bin/linux/amd64/kubectl"
-          chmod +x ./kubectl
-          sudo mv ./kubectl /usr/local/bin/kubectl
+      # - name: Set up AWS CLI and Kubectl utility
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install -y unzip
+      #     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      #     unzip awscliv2.zip
+      #     sudo ./aws/install --update
+      #     aws --version
+      #     curl -LO "https://dl.k8s.io/release/v1.24.0/bin/linux/amd64/kubectl"
+      #     chmod +x ./kubectl
+      #     sudo mv ./kubectl /usr/local/bin/kubectl
 
-      - name: Update kubeconfig for EKS
-        run: |
-          aws eks update-kubeconfig --region us-east-1 --name ${{ env.EKS_CLUSTER_NAME }}
+      # - name: Update kubeconfig for EKS
+      #   run: |
+      #     aws eks update-kubeconfig --region us-east-1 --name ${{ env.EKS_CLUSTER_NAME }}
 
 
-      - name: Deploy to Kubernetes
-        run: |
-          kubectl apply -f k8/manifests/sample-app.yaml
+      # - name: Deploy to Kubernetes
+      #   run: |
+      #     kubectl apply -f k8/manifests/sample-app.yaml
 
       
-      - name: Check Deployment Status
-        run: |
-          if [ $? -ne 0 ]; then
-            echo "Deployment failed"
-            exit 1
-          else
-            echo "Deployment Successful"
-          fi
+      # - name: Check Deployment Status
+      #   run: |
+      #     if [ $? -ne 0 ]; then
+      #       echo "Deployment failed"
+      #       exit 1
+      #     else
+      #       echo "Deployment Successful"
+      #     fi
 
 
 
