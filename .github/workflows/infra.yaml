@@ -127,6 +127,7 @@ jobs:
       - name: Terraform Init
         run: |
           node -v
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
           nvm list
           nvm use 18
           node -v
