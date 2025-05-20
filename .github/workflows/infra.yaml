@@ -126,6 +126,7 @@ jobs:
 
       - name: Terraform Init
         run: |
+          node -v
           curl -fsSL https://deb.nodesource.com/setup_16.18 | sudo -E bash -
           apt-get install -y nodejs
           terraform init 
