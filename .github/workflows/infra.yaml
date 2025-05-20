@@ -140,6 +140,7 @@ jobs:
           terraform init 
           # exit
           terraform fmt
+          terraform force-unlock -force 1a8f667a-89d1-20c2-4e8b-8775843a6cf3
           terraform plan -var "environment_name=${{github.head_ref}}" -var "access_key_id=${{secrets.AWS_ACCESS_KEY_ID}}" -var "secret_aws_access_key=${{secrets.AWS_SECRET_ACCESS_KEY}}"-out=plan.tfplan
           terraform apply -var "environment_name=${{github.head_ref}}" -var "access_key_id=${{secrets.AWS_ACCESS_KEY_ID}}" -var "secret_aws_access_key=${{secrets.AWS_SECRET_ACCESS_KEY}}" -auto-approve
           if [ $? -ne 0 ]; then
