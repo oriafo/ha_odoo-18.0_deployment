@@ -6,7 +6,7 @@ terraform {
     dynamodb_table = "abraham-terraform_lock"
     encrypt        = true
   }
-
+   
   required_providers {
     aws = {
       source  = "hashicorp/aws"
