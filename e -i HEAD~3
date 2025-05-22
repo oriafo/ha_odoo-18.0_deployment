@@ -1,0 +1,2353 @@
+[33mcommit 6b7a502448a58b8184bdc75e2a6acb65061cb1e2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdev[m[33m)[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu May 22 22:49:38 2025 +0100
+
+    Doc: push to github so i can format my system
+
+[33mcommit af19cdeee6f93473dc3d53ff69b036c62e30e0ed[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu May 22 22:37:28 2025 +0100
+
+    Doc: push to github so i can format my system
+
+[33mcommit 15f2a0b250e67a0d5273ee9defbcec37f40d92a6[m[33m ([m[1;31morigin/dev[m[33m)[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 14:12:43 2025 +0100
+
+    REFAC: comment the force-unlock command
+
+[33mcommit 868f8683ce7690d8e8de2e8c18cc6dfeda845fc6[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 13:19:23 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit 6ee3a8ebe9db417de82c276617ddff52be80c807[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 13:11:04 2025 +0100
+
+    DEL:remove the file
+
+[33mcommit aae7f923b5e2bdbb1cdbbc5f2d2bab506c7fa305[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 12:50:52 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit 4cddcd2cccbfe65320fb3b2866485349d3389290[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 12:30:14 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit 4720d73593f9cb39728664dc739f21c601288c90[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 12:23:29 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit 2fc4acf8240a0242b62dd22eab43af25d8a6a931[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 12:03:46 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit 97a52aa6f317720a29ee51abf15b9aff5aee4141[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 11:52:21 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit 237bc68b4603f13533239213f559345f2eff0b1e[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 11:47:55 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit ae63d913204dea8d7769fda8c69d2b47b1cf8e50[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 11:41:32 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit 0c53fa56bae927fe0e3380e413629d597fd35335[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 11:38:38 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit 78990f35fa34e84b84d83c1cb4f722cf273fa3f0[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 11:38:08 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit 1b7096daee8cfe2e2ac30e2605cbe4f78cb71ffc[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 11:36:15 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit 7cd50c730a618146fc602e9287fc9bc965aa3602[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 11:31:12 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit 8e7ce465c97e372429bc594ddf64a9e232c8e03d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 11:08:54 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit 0c7aeef023c9456cb93ab78a2a74f4c326be16cb[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 10:49:42 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit b5693a8e7317f74d821d60076329a02a2d6b83b9[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 10:22:05 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit f1085d09e5ba6b5f4a88b9134b767a7a446231b2[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 10:21:06 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit 886aaa712d557ce02899cc0daccac0121746d222[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 10:16:02 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit aa27e5fa4c60286584066d5e4be7b97320e506c8[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue May 20 08:45:23 2025 +0100
+
+    REFACTOR: configured self hosted runner
+
+[33mcommit d2d42c451c055108c67e21a48b6a8e9fe9216153[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Jan 29 11:07:01 2025 +0100
+
+    fix: change the service type from nodeport to clusterIp
+
+[33mcommit c47b5d01d4eaad557f060de285017f98b301c6ed[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Jan 29 11:05:54 2025 +0100
+
+    fix: move the load balancer to the private subnet
+
+[33mcommit a0719db687e888dcfcea556ea72f8135a6949ceb[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Jan 28 07:28:29 2025 +0100
+
+    refactor: minir change
+
+[33mcommit 3e86617b00caff909634a35742ca431c2080f7c9[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Jan 28 07:27:10 2025 +0100
+
+    fix: attaching eks created instance to load balancer target group
+
+[33mcommit edb86a0e1942e65a68393facba901c25827c4661[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Jan 24 09:57:53 2025 +0100
+
+    refactor: minor change
+
+[33mcommit 871f24761a3da9487f7385b19c772af8c1c3cb53[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Jan 24 08:27:50 2025 +0100
+
+    fix: added some variables to the different environment root module
+
+[33mcommit 321e905ed3be9b06a5dc01ae415a5952a6acdc9c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Jan 24 08:26:46 2025 +0100
+
+    refactor: minor change
+
+[33mcommit db7f5be2ee1696d6ffdc2b6e21d191a3a2b68ceb[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Jan 24 08:06:01 2025 +0100
+
+    fix: added some variables to the different environment root module
+
+[33mcommit 65cd636b91877aaa5c0c3985f37759bcf84c6435[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Jan 24 07:49:08 2025 +0100
+
+    refactor: minor change
+
+[33mcommit a34faca5cc688f68fdafb771f28c3c1b4d1dae2a[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Jan 24 07:31:22 2025 +0100
+
+    refactor: minor change
+
+[33mcommit 16f70cbaa6c8905ffe95362959cc06f22d50ff70[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 18:48:16 2025 +0100
+
+    refactor: minor change
+
+[33mcommit 5b3b3fe71eaee6356108be716acaa5eac25c7c7c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 18:36:57 2025 +0100
+
+    refactor: minor change
+
+[33mcommit 4b0258d43745f9f848837b6a4f11992495c98f54[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 18:34:02 2025 +0100
+
+    refactor: minor change
+
+[33mcommit 125daeb9d67791298288a24e78da3c7f78fe577b[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 18:30:50 2025 +0100
+
+    refactor: minor change
+
+[33mcommit 883167fe85a1ef1efb34da38acc92e471a77900a[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 18:26:32 2025 +0100
+
+    fix: corrected the outputed resource attribute
+
+[33mcommit 35d56310177df3635bd56818e1b937c7adf9107c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 18:25:43 2025 +0100
+
+    refactor: minor change
+
+[33mcommit bce4e4f01f5123dd0c2d9528a416e118e4947591[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 15:04:07 2025 +0100
+
+    fix: sync the terraform remote state with local state
+
+[33mcommit 0bdc2fb4f4170113ac47c73da53e6e3966ee4f4c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 15:01:09 2025 +0100
+
+    fix: sync the terraform remote state with local state
+
+[33mcommit 1e80ff8221bcedc3203bea8f9b2e82b7a521492a[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 14:59:38 2025 +0100
+
+    fix: sync the terraform remote state with local state
+
+[33mcommit 2284ad50c52ab177701a690b6b5ab3a14dd7c34c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 14:56:46 2025 +0100
+
+    fix: sync the terraform remote state with local state
+
+[33mcommit 9c49c29dc549dabdc0f65fe55c8402b72a75db58[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 14:54:12 2025 +0100
+
+    refactor: minor change
+
+[33mcommit 90a9ca18bdc99e2cce9772ff7a6481e07fb94fbe[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 14:48:21 2025 +0100
+
+    refactor: minor change
+
+[33mcommit 70e3f55d0e78ee19c02ee4bdf85c510e9ea5441c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 14:43:33 2025 +0100
+
+    fix: added the output file to the dev root module
+
+[33mcommit 98c62749f288340b8893a35df0b54aaea7e76549[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 14:42:06 2025 +0100
+
+    fix: added the output file to the dev root module
+
+[33mcommit 342391aaeccb51c1bca23f887403381d5b9b2d89[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 14:40:24 2025 +0100
+
+    fix: added the output file to the dev root module
+
+[33mcommit d2d4f23ab75f739f998af4e701a6ed51b8e0700c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 14:30:32 2025 +0100
+
+    fix: added the output file to the dev root module
+
+[33mcommit 9c6800f2421695598f960a317662d98543ee7d4b[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 14:25:10 2025 +0100
+
+    refactor: minor change
+
+[33mcommit 6379b0a96dd2408d225ce7388190fedbdb5d18ca[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 14:15:45 2025 +0100
+
+    refactor: minor change
+
+[33mcommit 87646b6292ac2df384dca70b33d0a4200c9502b1[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 14:14:10 2025 +0100
+
+    refactor: minor change
+
+[33mcommit 8d7a4e41146739ea0dd57d6b4ecaa9c7bae922b5[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 14:09:50 2025 +0100
+
+    refactor: minor change
+
+[33mcommit 3a40b6b5839072a3d8ff8ef0fc0822dc5e76f26b[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 11:46:36 2025 +0100
+
+    refactor: remove the k8_control_plane compute
+
+[33mcommit b8be123fa70937a2d00a59bfcf33c85ecb7edbb2[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 09:59:00 2025 +0100
+
+    fix: added update falg to the aws cli install command
+
+[33mcommit 888c6bd9e52172616c5407d5c340548338569ebc[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 09:51:19 2025 +0100
+
+    fix: removed the resources attaching the instances to the target group since am using managed node group
+
+[33mcommit d4ad0ea46d8026a84589c7a431087865e9060e9b[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 09:34:11 2025 +0100
+
+    fix: corrected the nodegroup ami_type value
+
+[33mcommit d6de448729143d0eb061693695e029f8c9f6ea12[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 09:31:30 2025 +0100
+
+    fix: corrected variable value
+
+[33mcommit aa39a011c2ea367a444f4c474db57b422b611f8d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 09:08:34 2025 +0100
+
+    fix: corrected variable value
+
+[33mcommit c427ed45b28606a681d96ad42a02c47780803290[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Jan 23 08:16:14 2025 +0100
+
+    fix: circular dependency
+
+[33mcommit 49aae850151fc6d0b11945f53dc49a8e0443a2fa[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Jan 22 21:18:31 2025 +0100
+
+    fix: specified dependent resources
+
+[33mcommit 0a72dfa2904580124c47676ca530b3f54a2871f0[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Jan 22 21:11:49 2025 +0100
+
+    fix: specified dependent resources
+
+[33mcommit 1837f011389cab974b3abb4fe49673b4be72ee6a[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Jan 22 21:02:01 2025 +0100
+
+    fix: deleted the my_cluster variable
+
+[33mcommit 1bb8ccd76653885ddcfd5c91aa79f0c651f5fb88[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Jan 22 20:42:07 2025 +0100
+
+    fix: deleted the wildcard appearing in the root module source line
+
+[33mcommit 9aef688bc4d6d796d548a0197e30d7c0cab76605[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Jan 22 20:39:45 2025 +0100
+
+    refactor: minor change
+
+[33mcommit f339d6ee39522a601a8b17d745c4e77db576588c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Jan 22 20:38:57 2025 +0100
+
+    docs: added variable file to the root modules
+
+[33mcommit a824e589f71994778e90ea6327efe745fd9fd500[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Jan 22 19:00:53 2025 +0100
+
+    feat: Ran necessary configuration and the kubernetes deployment in the github workflow
+
+[33mcommit 84470f75c55da4170fa798ff28aba39dedfaaab3[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Jan 22 18:59:10 2025 +0100
+
+    refactor: minor change
+
+[33mcommit 079e6c2bc4eb4bfc162508d767f35700c7b16666[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Jan 22 18:58:21 2025 +0100
+
+    refactor: outputed some eks information
+
+[33mcommit 0316d78958be835fd50a2e424c37a00efbda1a2f[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Jan 22 18:56:59 2025 +0100
+
+    feat: included the eks cluster and node group resources, removing the previous defined Lunch Template and Auto-Scaling group, attached the created eks node group to the target group, then minor changes
+
+[33mcommit 559f5b386c93d5e1d9305b1e54ae6554c17a8c2a[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Jan 22 18:50:29 2025 +0100
+
+    refactor: minor change
+
+[33mcommit c4c47f949c98e344e1c00b44adbe3eb63f32475d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Jan 22 18:48:05 2025 +0100
+
+    style: accessed defined resources from the module the proper way
+
+[33mcommit f444806a4a5350bda9dbbe9eef4ed068b27c6f23[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Dec 12 14:18:12 2024 +0100
+
+    REFACTOR: minor fix
+
+[33mcommit f624e47708e363a1776235bdc4dbcc2614c0068c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Dec 12 14:10:53 2024 +0100
+
+    FIX: corrected the instance interface for kubernetes configuration
+
+[33mcommit 385435860737d99acf35d2e49e4670aecebc0ae6[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Dec 12 14:07:53 2024 +0100
+
+    FIX: corrected the instance interface for kubernetes configuration
+
+[33mcommit 81f0b647bc9ff3396c83a209fdb29a3d7fcd6a65[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Dec 12 14:05:20 2024 +0100
+
+    FIX: corrected the instance interface for kubernetes configuration
+
+[33mcommit 65e2e86819fae957d1022a3678290efbce4ec292[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Dec 12 13:25:03 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit d566d0e21d6ae27aca250920e8fe6ff3bcf60f3a[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Dec 11 13:34:21 2024 +0100
+
+    FIX: added a deppends_on attribute to the nodes to wait for the nat gateway to finish creating before creating so that the instance configuaration data will be able to access the internet
+
+[33mcommit 1c4c246538cc3c560a7c44814189f9151f39f198[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Dec 11 13:06:58 2024 +0100
+
+    FIX: added a deppends_on attribute to the nodes to wait for the nat gateway to finish creating before creating so that the instance configuaration data will be able to access the internet
+
+[33mcommit b1fc00017f2807a6d9730b8d850cfeed123992e8[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Dec 11 13:04:39 2024 +0100
+
+    FIX: added a deppends_on attribute to the control plane to wait for the nat gateway to finish creating before creating so that the instance configuaration data will be able to access the internet
+
+[33mcommit 2e358cb4c58f80d8c222c78b541a08edde923c42[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Dec 11 12:56:47 2024 +0100
+
+    FIX: added a deppends_on attribute to the control plane to wait for the nat gateway to finish creating before creating so that the instance configuaration data will be able to access the internet
+
+[33mcommit 4504c99275388a9a3fe639cafad9529e6301ffd1[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Dec 11 12:56:02 2024 +0100
+
+    FIX: added a deppends_on attribute to the control plane to wait for the nat gateway to finish creating before creating so that the instance configuaration data will be able to access the internet
+
+[33mcommit 594d9d69d089581b6f96e8c826e830434f9f1377[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Dec 11 12:36:56 2024 +0100
+
+    FIX: reducing the jumperbox instance to t2.micro to save cost
+
+[33mcommit 567c749fed2338fc8a6983cdfade5e69fa2bdc8b[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 23:42:49 2024 +0100
+
+    FIX: reducing the jumperbox instance to t2.micro to save cost
+
+[33mcommit 593239dccea9a68d1dee3942e51232202f0f4b8c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 23:39:28 2024 +0100
+
+    FIX: reducing the jumperbox instance to t2.micro to save cost
+
+[33mcommit feaa8bd3f9f13748b7b11b118223208c79b32c0d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 23:34:45 2024 +0100
+
+    FIX: the correction to change my running instance to t3.medium wasnt effected because i did'nt push the variable.tf file
+
+[33mcommit 947fb1d12ec072bc71e0d49da2b7cad9748e31e7[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 23:19:49 2024 +0100
+
+    FIX: added the reconfigure flag to the terraform init command to reinitialize the backend
+
+[33mcommit 79f161aa4457a8335b9f0281f65145572fa79f65[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 23:08:00 2024 +0100
+
+    FIX: added the reconfigure flag to the terraform init command to reinitialize the backend
+
+[33mcommit 5601768bfc9355f75ac202a5ac08bb4cde5960a0[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 23:02:32 2024 +0100
+
+    FIX: added the reconfigure flag to the terraform init command to reinitialize the backend
+
+[33mcommit 68718c4e85e65ff1a33a781749d86eec01d8261e[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 23:00:47 2024 +0100
+
+    FIX: added the reconfigure flag to the terraform init command to reinitialize the backend
+
+[33mcommit 9197af23fc5123428828eb25f3e1ebe8229b134c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 22:40:03 2024 +0100
+
+    FIX: added the reconfigure flag to the terraform init command to reinitialize the backend
+
+[33mcommit 83a9aff5da44175e64c6214d7379b909865ee944[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 22:28:17 2024 +0100
+
+    FIX: added the reconfigure flag to the terraform init command to reinitialize the backend
+
+[33mcommit 960636e1c8bb1546f8fb8fd0299cbb28e601cc43[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 22:20:10 2024 +0100
+
+    FIX: added the reconfigure flag to the terraform init command to reinitialize the backend
+
+[33mcommit a38076596b818de46e3786134d4e0df075a29d94[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 21:19:51 2024 +0100
+
+    FIX: added the reconfigure flag to the terraform init command to reinitialize the backend
+
+[33mcommit eca6e6d8d26a48ebb052cbeedf6e803bb3ccc75a[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 21:16:24 2024 +0100
+
+    FIX: the correction to change my running instance to t3.medium wasnt effected because i did'nt push the variable.tf file
+
+[33mcommit bc6d33f85414f369662b8017f40f7639ae09d4b5[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 18:59:17 2024 +0100
+
+    FIX: the correction to change my running instance to t3.medium wasnt effected because i did'nt push the variable.tf file
+
+[33mcommit af1fac461b8ffee8e90d5290c76bcb23ad1db9fd[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 18:56:47 2024 +0100
+
+    FIX: the correction to change my running instance to t3.medium wasnt effected because i did'nt push the variable.tf file
+
+[33mcommit 30d6e27c90fb6b290b449cfcc5b1f0f65dae7ef0[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 18:37:13 2024 +0100
+
+    FIX: installing the necssary process in both the control-plane and worker node. had to increase the instance type because kubernetes requires a mininum of 1700MB Ram
+
+[33mcommit bbb1aff36047cf98fac43c79bb6f71232b428fca[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 18:17:09 2024 +0100
+
+    FIX: installing the necssary process in both the control-plane and worker node
+
+[33mcommit 24fd344ce345508161c5ef5ceec499e0fccc11cc[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 17:42:29 2024 +0100
+
+    FIX: installing the necssary process in both the control-plane and worker node
+
+[33mcommit c6ccca03c704f3126b725e50008062d91adc5985[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 17:34:06 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit b7627696d513897a0e2bb0224bd1b19d7de738e8[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 17:18:08 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit de7ecd20f6c6e09ad3fd5aa6eddca2c477385082[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 13:42:47 2024 +0100
+
+    FIX: outputed the installation process inside a file
+
+[33mcommit 616cfbb27023cd26e7aee34dc8e0fa480659bdac[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 13:02:51 2024 +0100
+
+    FIX: outputed the installation process inside a file
+
+[33mcommit 3a897956a22ff56c218a40cf9b5891aa0b2db942[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 12:56:28 2024 +0100
+
+    FIX: outputed the installation process inside a file
+
+[33mcommit 030acc7f731d16076ce9422151878e9aa8743cc4[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 12:53:22 2024 +0100
+
+    Fix: shell script file was passed to Ec2 userdata attribute
+
+[33mcommit e30c86e8f16dfa5370ba1c41edf1aced8a8edd11[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 12:18:06 2024 +0100
+
+    REFACTOR: minor update
+
+[33mcommit 8bb6bf9632371ac61f126781602feae85f6d38c2[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 11:58:23 2024 +0100
+
+    REFACTOR: minor update
+
+[33mcommit 3b8e5a64c8125669a1a950ae138e1b15f060316c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 11:52:46 2024 +0100
+
+    REFACTOR: minor update
+
+[33mcommit 0be9e8d74f7b08ad8d27752e81694e43e171e6e7[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 10:44:21 2024 +0100
+
+    DOC: hold the kubernetes installation scripts and the deployment files
+
+[33mcommit 6bdf8f86f4d806632c214dcb6068f470b4442991[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 10:43:32 2024 +0100
+
+    FIX: execute the script that holds the k8 installation codes of the control-plane
+
+[33mcommit 896e770bfe50dbe5bac37487537f9a6f6cd1c82f[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 10:42:10 2024 +0100
+
+    FIX: added the script that holds the k8 installation codes to the launch template creating the k8-nodes
+
+[33mcommit ad62d4269340a43f83ba9d1dc023994fcc1130aa[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 10:35:52 2024 +0100
+
+    FEATURE: created the k8-control plane
+
+[33mcommit 886df339fc34bdcf3740db8d5198ee5a1de53a75[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 10:35:05 2024 +0100
+
+    FIX: added the script that holds the k8 installation codes to the launch template creating the k8-nodes
+
+[33mcommit 704180a693b1eea45f50d470e87ad44ec1d01a25[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Dec 10 10:30:24 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 264c8dfc8f21a7a553516fa00a457fecfc6d386f[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 18:18:43 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 4a1209c3d5cbfc6987c6fde7f2bbac3a5da1db16[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 18:12:56 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 7727d21b27016b6c664b25ba87552188c01da12d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 18:05:38 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 1629db7f8890905b6b02b5226d02502580b4185b[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 18:00:22 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit cc49d37774b3c7bedae9480a41bd1b75bcc65b07[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 17:33:26 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 24779ffd06b00bbd5a7baa8e3943825f0e6a4e41[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 17:32:24 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit a0fb9f5bb33dcaaf1f5ce1ac974946e1ca94c724[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 17:28:57 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit f91936fd68c97d2c43ae8d14360f3ea2d94b12b7[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 17:26:58 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit cd1cb630456cc992fedd8ec7c82f0f0ae08bd1d9[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 16:43:25 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 8e16f40f114dd6c4703aec23e3453d18b1bcc37f[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 16:39:25 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 2745e94548207989b991172c5d2ef8d291b68218[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 16:36:17 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 114166ea2f4bf876a945304264d31c4ad5a4aaf6[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 15:55:28 2024 +0100
+
+    FIX: comented the run_number variable
+
+[33mcommit 2e0cc2f57a3fbace20c2de3bbad872f7d5690807[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 15:49:26 2024 +0100
+
+    FIX: resolving state lock issue
+
+[33mcommit 2df09764a8594e7471d1c24790dcd69b77941aa9[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 15:48:02 2024 +0100
+
+    FIX: comented the run_number variable
+
+[33mcommit c5a24e742f740e119cf9a788e7452d5d7ce2d178[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 15:42:57 2024 +0100
+
+    FIX: removed so variable that was passed to terraform apply and destroy command
+
+[33mcommit 9d8177600767da1e7e24af185a507d0d27e72aa6[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 15:37:24 2024 +0100
+
+    REFACTOR: commented the run_number variable
+
+[33mcommit ae76438bafe57c58c1be1624e403200d14849df1[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 15:34:16 2024 +0100
+
+    FIX: resolving state lock issue
+
+[33mcommit 76e10faf1249048ce9126fc281027025259d2ff2[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 15:33:03 2024 +0100
+
+    FIX: resolving state lock issue
+
+[33mcommit eec2170fced840a1453102a08f05580c2b12dceb[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 14:57:45 2024 +0100
+
+    REFACTOR: commented some parameters for testing
+
+[33mcommit 326184dfad66422f8c49e8a7d67bac64d372fca4[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 14:57:03 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 193f05a1cbac1eb399b0ccf7416c797fe20cbef0[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 14:56:18 2024 +0100
+
+    REFACTOR: commented some parameters for testing
+
+[33mcommit ba5f97a263cffadef5fef796e46bb13851bfadf7[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 12:32:07 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit a1c29d5d85785d8c2a701b30f74576b60a757bb7[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Dec 9 12:30:19 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 5a238cfa9f080b9bfc66cab01a903dfca6bbd45d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 30 19:48:24 2024 +0100
+
+    REFACTOR: minor fix
+
+[33mcommit 15b695e575ff4c936ba6b9868315cf7ffb5e8af7[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 30 03:27:29 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 98f409e02dd2548a1969c2563c4b5262b489d3dc[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 23 12:15:00 2024 +0100
+
+    FIX: minor change
+
+[33mcommit b21b97d404fe7979533625a428e1165b80440293[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 23 12:09:55 2024 +0100
+
+    FIX: minor change
+
+[33mcommit 79b5b2f232957ed8033f5665ec795dc3fcf8c74c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 23 12:06:04 2024 +0100
+
+    FIX: minor change
+
+[33mcommit cbc4d7ccc00af2a6a8d65def4a30b45897bfa41d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 23 12:02:44 2024 +0100
+
+    FIX: minor change
+
+[33mcommit 81cbab868633c4d73e9075fa66ad310788db8c3d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 23 11:27:51 2024 +0100
+
+    Fix: minor change
+
+[33mcommit c9fdd791cb72514d2e8733fe703e1f87d5fb7ec5[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 23 11:13:20 2024 +0100
+
+    Fix: minor change
+
+[33mcommit fa913b977e3130d8306e4f86c95098bcb6169ff1[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 23 11:07:24 2024 +0100
+
+    FIX: minor change
+
+[33mcommit 40c480533382b6b900af4faf47cdf60c60e18009[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 23 10:56:02 2024 +0100
+
+    FIX: minor change
+
+[33mcommit cbe2aeb020748f1188f90bc3567f645fa5423bd1[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 23 10:51:22 2024 +0100
+
+    FIX: minor change
+
+[33mcommit 5cfad219188c6d69063cc4e09b3f570a22798d38[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 23 10:44:26 2024 +0100
+
+    FIX: minor change
+
+[33mcommit f403e056edc4baa81d64cac1d9101baa8513eaae[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 23 10:38:15 2024 +0100
+
+    FIX: minor changes
+
+[33mcommit 82cff31ed6f7dd800004e9707e4a63c56e27c498[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 22 20:43:19 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit f2d393c8c743cb66353ed3ece468d40e52078a3f[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 22 20:16:07 2024 +0100
+
+    FEATURE: created 2 seperate security group for both the control plane and the worker k8 node
+
+[33mcommit 7a4f612e630c6c14d8d14aaaadf9b1da8744dee1[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 22 20:03:19 2024 +0100
+
+    FEATURE: created 2 seperate security group for both the control plane and the worker k8 node
+
+[33mcommit 77215cdeaf0b9f2f523abaa50acd8935094a0d57[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 22 19:44:26 2024 +0100
+
+    FEATURE: created 2 seperate security group for both the control plane and the worker k8 node
+
+[33mcommit e0ec8457a26f105ea887d4127d85723086c47f4e[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 22 19:02:31 2024 +0100
+
+    FEATURE: created 2 seperate security group for both the control plane and the worker k8 node
+
+[33mcommit 203bbb06a4d92003b95fb33328af00b6890b51c1[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 22 18:42:56 2024 +0100
+
+    FEATURE: created 2 seperate security group for both the control plane and the worker k8 node
+
+[33mcommit 10eff41ff5a70ba8e109fd90262480f28b63310f[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 22 18:00:39 2024 +0100
+
+    FIX: added more ingress rule for kubernetes component to communicate well
+
+[33mcommit 6324f11bfe7cec2cbbd6f530cbf262e8fdb9d6ff[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 22 11:58:44 2024 +0100
+
+    FIX: uncommented the route rules and association so the jumper box can be reached
+
+[33mcommit 0fd23d0b30a55a867eef2d8cc5c90ebe59ff0885[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 22 10:18:47 2024 +0100
+
+    FIX: release lock
+
+[33mcommit 47c2dbe7ed23ab5ba2bc069817cfe8df6a7cb911[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 22 10:11:41 2024 +0100
+
+    FIX: release lock
+
+[33mcommit 196312ab1c7de95fb6423ea03ec7d8ce1a0bf609[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 22 10:07:16 2024 +0100
+
+    FIX: added current config data
+
+[33mcommit cd5d75b9d724153b1222105d235f3df2ab2c7ae7[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 22 10:06:59 2024 +0100
+
+    FIX: added current config data
+
+[33mcommit f2d911dcc42bd546bf42daae688edf22c820985d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 22 09:50:46 2024 +0100
+
+    FIX: release lock
+
+[33mcommit 098db45e54174c90a0d5c34f750572238bf95c08[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 22 09:43:07 2024 +0100
+
+    FIX: added current config data
+
+[33mcommit 0344b6944a33389f7b24e4a45ad1f1cf09d5b77f[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 22 09:41:59 2024 +0100
+
+    REFACTOR: commented some part of the code to reduce resources consuption
+
+[33mcommit 29c80f5ca88a1a6897e697894fa9a2f24d36fe92[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 22 09:41:49 2024 +0100
+
+    REFACTOR: commented some part of the code to reduce resources consuption
+
+[33mcommit e55ea2d4554c04937f9f68d6710b44d4a2b92b72[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 22 09:41:29 2024 +0100
+
+    REFACTOR: commented some part of the code to reduce resources consuption
+
+[33mcommit f3ef0d93b50c1009a81d45c66ed8d443034477cc[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 20 16:48:24 2024 +0100
+
+    FIX: minor change
+
+[33mcommit 7b2ef5adb8dd01240d9847c5813aa061a804c325[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 20 16:26:43 2024 +0100
+
+    FIX: added conf value
+
+[33mcommit 89d6d825037f927f5503620437106295ab630ef5[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 20 16:00:32 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 526e606431196090239c522c011c698a452efabc[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 20 15:59:45 2024 +0100
+
+    FIX: changed entrypoint to cmd
+
+[33mcommit f4cabd1ab92ee9891e395f33cdeb4edeac244c8e[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 20 13:49:24 2024 +0100
+
+    FIX: add an ingress rule to the jumper box security group
+
+[33mcommit 878954f8ce583ac1de614d30b43e30fc3cc1e29a[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 20 13:48:40 2024 +0100
+
+    REFACTOR: deleted the user data
+
+[33mcommit 2618a07d54421cd5063cf073ab1b18e275fac602[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 20 13:48:10 2024 +0100
+
+    REFACTOR: commented some block of the infra workflow for troubleshooting purpose
+
+[33mcommit 9074a85739e555354bdb9c2826a81b590cda7e59[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 20 12:57:14 2024 +0100
+
+    FEATURE: installing pgadmin
+
+[33mcommit cd6dbcdf09c962db1372ab3686daeb1cf0ab8b5c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 20 12:44:14 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 44c87bda9935b0f21b3320ae8dfe24b6f37cc395[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 20 12:43:33 2024 +0100
+
+    FEATURE: installing pgadmin
+
+[33mcommit 99347e3b459441c01bae269949537e1ae87aaa2f[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 19:05:02 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit a638d201efd407387a431d0866e4e597f0e419c7[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 18:58:48 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit d79a3703797df56297d17735e8b3d20476c083a9[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 18:52:28 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 8d0de0c97f0c26aae7dcd27029e91b30c0369a13[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 18:46:18 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit fd0da137dee7d2a1ee8f7f9ac80df5fab5b7cbc6[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 18:46:08 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 6ceeb2cff5454e055f7e1051f505541e70858e41[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 18:35:40 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 27f42745d81faf794d1ddc2774ec64d33520d376[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 18:27:29 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 07c493258ae7304b19ad6461e44c2103fde85faf[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 18:18:03 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit d42f7b1a8a88c0d2dee1ed998338aa0954732437[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 18:07:05 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit f26353170dab84b54f6f6e93730624d97a49868d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 18:06:51 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 2420daaaf154f570b11ae2abe2a78215cb660d31[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 18:00:30 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 1973c86042d656c78c090ba61d2d8278003157bb[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 17:46:35 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 0839d13d5bffca54ce6a198348e0567a6ba515b2[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 17:20:31 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 875910d523ef1af876703f02b2252a29a1c3616e[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 17:11:20 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 3ae8523079ab4dcb28d99668c04cf72673578cc0[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 16:59:27 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 2ebfc28891bce9394cfd955e658298d33b92bab7[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 16:40:54 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 6ed6aa5e594cd393929c495629f62f848ae47e3a[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 16:31:41 2024 +0100
+
+    FIX: checking if terraform can see the script from this directory
+
+[33mcommit d91557850fa1f3010f35c723f8510a1719c760e8[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 16:20:54 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 0690e41d4dfa62ccccb99ebf845bc4b36c477202[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 16:09:21 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit d0a189c98ef300f713d30a65d1ba9f64898de40b[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 16:03:06 2024 +0100
+
+    DELETE: i move it to a new location
+
+[33mcommit ac7a3108d009fac4e6d3dea23320454a80521300[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 16:01:55 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 5bf98c5263e1e9715d785f12d4ac49b63ecbc0f4[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 15:17:20 2024 +0100
+
+    FIX: moved web.sh into web-app-module directory
+
+[33mcommit 7507b92dc3fb879ee424c42cc31f644899c7f590[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 15:11:43 2024 +0100
+
+    FIX: using templatefile
+
+[33mcommit f6d7c4f8c5531c80f4fccf175a275df17370ab52[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 15:07:25 2024 +0100
+
+    FIX: using templatefile
+
+[33mcommit b343606e62bc480a77b73b313ee022c510117b3f[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 14:57:57 2024 +0100
+
+    FIX: contains instance user data
+
+[33mcommit c974d0da512db0f8b1a5bd9271567b196801d7bb[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 14:55:48 2024 +0100
+
+    FIX: using templatefile
+
+[33mcommit faf7d4aec975e84a948069f8e0c791ed88e1fa6d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 12:43:14 2024 +0100
+
+    FIX: reformatted the syntax
+
+[33mcommit d0acddcefa3b942ed557f54dfb25d683895e9451[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 12:12:22 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 5e6b3b41b06b6053272cbf5c5513c10b768a98e2[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 12:05:21 2024 +0100
+
+    FIX: reformatted the syntax
+
+[33mcommit 0225e42576fbe91f97a01b7caab35923465de188[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 11:38:18 2024 +0100
+
+    FIX: reformatted the syntax
+
+[33mcommit f7acc8954946ffbfeb79b38ce4caff0d9acaab95[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 11:36:54 2024 +0100
+
+    REFACTOR: mivor change
+
+[33mcommit 4345a02973331f52722c968381c994a1fabf90f1[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 11:20:47 2024 +0100
+
+    FIX added the variable value to the terraform plan command
+
+[33mcommit 0ec8a61055c3b921ff3736f6534c9b1a0ead21d0[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 11:17:02 2024 +0100
+
+    FIX added the variable value to the terraform plan command
+
+[33mcommit 3c4409e3e11755efb4a0b070dd1ecd9d475a8f75[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 11:11:19 2024 +0100
+
+    FIX added the variable value to the terraform plan command
+
+[33mcommit 2290a679c3f014a8f355b9b98949625723d29d6f[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 11:04:28 2024 +0100
+
+    FIX: added the registry and repository variable
+
+[33mcommit a99b7a305a8e4cb0cd396e9b684163fb38e17488[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 11:03:32 2024 +0100
+
+    FIX: minor change
+
+[33mcommit 81291a6ec9647005f94592455258b5239ee535b1[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 11:02:05 2024 +0100
+
+    FIX: passing the added variable to our module
+
+[33mcommit 86505b6f6b8600c13710460dc78def419f9a335b[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 11:01:54 2024 +0100
+
+    FIX: passing the added variable to our module
+
+[33mcommit ede500f111414c5f4e3eb0eccf48bc6f5a3ba3f0[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 11:01:34 2024 +0100
+
+    FIX: passing the added variable to our module
+
+[33mcommit 042d4703f4a3fbc96bf669694b2be71441185e20[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 19 10:56:42 2024 +0100
+
+    FIX: added some environmental variable to the terraform apply command
+
+[33mcommit 94f0c3ebd3b2da512807e054feb85035ca91e579[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 21:22:21 2024 +0100
+
+    FIX: added the run_number  variable to module
+
+[33mcommit f8aeafc6b8b279de6107058703ea5d2ac89f0900[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 21:16:36 2024 +0100
+
+    FIX: added the run_number  variable
+
+[33mcommit 1fbe4c6024510b87fc5df7c417ad89793e71a604[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 21:09:35 2024 +0100
+
+    FIX: added the credential variables to the module
+
+[33mcommit b43eda96b3d026ad4f2e286e61eeb35153fb9c07[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 21:09:24 2024 +0100
+
+    FIX: added the credential variables to the module
+
+[33mcommit d97670c6faa9ba94802db39a34db7503ee063f31[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 21:09:12 2024 +0100
+
+    FIX: added the credential variables to the module
+
+[33mcommit da793821d4af15f3a1cb69a886cc8a55485bc5ed[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 20:58:41 2024 +0100
+
+    FIX: minor changes
+
+[33mcommit cdda5b6a0cf15e0c8b842290fa66480e6f4b3482[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 20:48:41 2024 +0100
+
+    FIX: minor changes
+
+[33mcommit c65e4a5022cd17a8768121770401fabc9c09b3b3[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 20:18:01 2024 +0100
+
+    FIX: minor changes
+
+[33mcommit 5ed2993ce81d1187e3f4cdf4d421e1bb935a2d09[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 19:32:06 2024 +0100
+
+    FIX: minor changes
+
+[33mcommit 409d6b07499e75690f27f1d0da10472f26b31452[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 19:15:33 2024 +0100
+
+    FIX: minor changes
+
+[33mcommit 5ab578299b4e33e29eb7c4d29a16de23e3e2d6b2[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 19:00:38 2024 +0100
+
+    FIX: minor changes
+
+[33mcommit 24693efad53e11e535c949ff3eaa6e2cd3e47c5c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 18:44:42 2024 +0100
+
+    FIX: checking if the ecr login is going through
+
+[33mcommit fc8f9987e964b47a7fba13308a2c7502b0d8912b[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 18:42:57 2024 +0100
+
+    FIX: minor change
+
+[33mcommit c5c1f0bada52a4a03f226607ea8927c854ce2e07[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 17:51:36 2024 +0100
+
+    FIX: relased the terraform state lock that was cause by having more than one run_number variable in one command
+
+[33mcommit c6671bdd97779aa3dbcbd45aa5f7a4ce79d2b162[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 17:44:59 2024 +0100
+
+    FIX: relased the terraform state lock that was cause by having more than one run_number variable in one command
+
+[33mcommit 2389494b16971490244266224b3d417836c2af71[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 17:37:50 2024 +0100
+
+    FIX: relased the terraform state lock that was cause by having more than one run_number variable in one command
+
+[33mcommit 8701f79366f6743f9dfbfbe0004e3277ab39d48d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 16:24:09 2024 +0100
+
+    FIX: added aws credential into the instance so we can pull the docker image from ECR
+
+[33mcommit 4fecd64704b3327b55e1af98dbcfb8a33e82b6a5[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 16:17:20 2024 +0100
+
+    FIX: added aws credential into the instance so we can pull the docker image from ECR
+
+[33mcommit fadce40dfe6d7435a593ab2f0ca79ed60524fffd[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 16:15:35 2024 +0100
+
+    FIX: added the aws credential valriables
+
+[33mcommit b888c6ba774670933616ac96ddaca6ea35562368[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 16:15:23 2024 +0100
+
+    FIX: added the aws credential valriables
+
+[33mcommit 75629a4158d24630a603e47360cc017f3c39f64b[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 16:14:52 2024 +0100
+
+    FIX: added the aws credential valriables
+
+[33mcommit 610af23ed9bb2cfa51bfc8b813e8e2ae1d99bc6d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 16:13:06 2024 +0100
+
+    FIX: added aws credential to the terraform command
+
+[33mcommit 843ff70e3dfb5f3a44e092062aa8a7d0444ed85d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 15:39:33 2024 +0100
+
+    FIX: installing aws cli in our private instances
+
+[33mcommit 90c293ce94c52f615ed0928e827cbc707a330a58[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 14:27:17 2024 +0100
+
+    FIX: installing aws cli in our private instances
+
+[33mcommit 7d2344f476dcfa6eb488a5d4047258544cb011c7[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 12:18:59 2024 +0100
+
+    FIX: installing aws cli in our private instances
+
+[33mcommit db9d2f3c026ad3923d3ded2fa2d6241bcd77df93[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 12:00:23 2024 +0100
+
+    FIX: added the -y flag to the docker installtion  script
+
+[33mcommit 6d9913901ff4b0303d2969365d48fdf9c4f24327[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 11:44:36 2024 +0100
+
+    FIX: added the -y flag to the docker installtion line in the script
+
+[33mcommit 2c4baae8c8b6cabfc1bd05591004b6f90ba59126[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 11:18:13 2024 +0100
+
+    FIX: Sdded ICMP protocol
+
+[33mcommit 8679fca22db6ba200c89b0323c27558251f5a8e0[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 10:59:36 2024 +0100
+
+    FIX: Sdded ICMP protocol
+
+[33mcommit 2b74a2dbf5006ec6205b19aed2a2454752214711[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 18 10:23:19 2024 +0100
+
+    FIX: changed the cidr block range
+
+[33mcommit 809195cf940803c50ed859815f886eaffc839eee[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sun Nov 17 08:30:27 2024 +0100
+
+    FIX: minor change
+
+[33mcommit 5052a119bbc800179ca2cb8e720dff760cf5e43d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sun Nov 17 02:26:09 2024 +0100
+
+    FIX: added ssh key to the jumper box instance config
+
+[33mcommit 36f6720e83fba4ce0ad5a11990c46e8e665b98e7[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sun Nov 17 02:11:04 2024 +0100
+
+    FIX: added icmp ingress rule to jumper box
+
+[33mcommit eed630b73f7de6d77d7fe38a496f1952ec593a43[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sun Nov 17 01:54:08 2024 +0100
+
+    FIX: minor change
+
+[33mcommit bbfca8d3eaf82179987c5fef4723b307a2698fd5[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sun Nov 17 01:13:19 2024 +0100
+
+    FIX: specify output action for the build
+
+[33mcommit 0fd64a7c0140e74911ef77e687a373bd4b48b528[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sun Nov 17 00:49:33 2024 +0100
+
+    FIX: added egress rule to jumper box security group
+
+[33mcommit 096e22d520772a1864d8e27054bab942386b063b[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sun Nov 17 00:48:50 2024 +0100
+
+    FEAT: added docker caching mechanism
+
+[33mcommit 10279bce07c1ccdd71280c76f2bcc29f2aa63495[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sun Nov 17 00:09:47 2024 +0100
+
+    FIX: change the cidr range for the jumper box to be all ip
+
+[33mcommit c93480fb76aabd22b0ffb0081db94ea9a0aac6c1[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 16 22:45:37 2024 +0100
+
+    FEAT: created a bastion host security group
+
+[33mcommit 55f0be88322548821af5e34daa2ad224b1edb9e1[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 16 22:45:04 2024 +0100
+
+    FEAT: created a bastion host
+
+[33mcommit e61005ef30afb09e15a99af1d83e7a480b0969ef[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 16 21:57:05 2024 +0100
+
+    FIX: deploying to a private subnet
+
+[33mcommit 40ae829982590b64a86d52f7eb502cf7cebc0bd4[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 16 04:00:28 2024 +0100
+
+    FIX: deploying to a private subnet
+
+[33mcommit 456737e81fc4e25ccf0772b8f0c0851a71f5188c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 16 02:43:17 2024 +0100
+
+    FIX: deploying to a private subnet
+
+[33mcommit 1d6dd9e43a162beb83a4c2476a98c03498a74021[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 16 02:32:33 2024 +0100
+
+    FIX: log file to hold log of the installation of instances
+
+[33mcommit 7a3a1b34069f3b700d17dd563332b7e17fb6f712[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 16 02:19:13 2024 +0100
+
+    FIX: change user data instruction
+
+[33mcommit 5eac4061f376a71c1b91d7e833e7d45d89cf768a[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Sat Nov 16 02:18:11 2024 +0100
+
+    FIX: minor fix
+
+[33mcommit f86052a9697abaa75554531a4fde8c8e8ddb0e47[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 15 20:40:49 2024 +0100
+
+    FIX: updated the remote backend bucket name to the new name
+
+[33mcommit 6edc593bbd35eafb6a981ca3d3d4f53b5315f49d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 15 20:40:36 2024 +0100
+
+    FIX: updated the remote backend bucket name to the new name
+
+[33mcommit eaf205aaeca2089e8735883c18ce68a4ef265013[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 15 20:39:17 2024 +0100
+
+    FIX: made the bucket name to be unique across different environment. because bucket name must be unique
+
+[33mcommit 9c4d29e9d2e19d185c7c3611f10e4bab337e3450[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 15 20:37:20 2024 +0100
+
+    REFACTOR: added more decriptions and instruction to the file
+
+[33mcommit 2acc60951aa58eb4a4b3cafae57e1f4bc47d21c8[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 15 20:33:52 2024 +0100
+
+    FIX: commented the block that deals with our infrastructure backend code based o a script should be ran before the execution of this workflow
+
+[33mcommit 0706b6cf149e38934167fad7939854dc117a882c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Fri Nov 15 20:31:49 2024 +0100
+
+    DOC: hold the application infrastructure architectural diagram
+
+[33mcommit 55de8a909343d20b2e7817a3e3a9162793a0d9b2[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 13:45:32 2024 +0100
+
+    fix: added run_number variable to the destroy command
+
+[33mcommit 9d5c02a5d9e43eae81ecb6901c81613054334b67[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 13:42:33 2024 +0100
+
+    fix: added run_number variable to the destroy command
+
+[33mcommit 917c8d9c34541115d614034684eee8baab84a9cc[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 10:59:55 2024 +0100
+
+    FIX: adding the runner variable to each module
+
+[33mcommit a64da1e7ba43e6224957bde607a8194134a12a0a[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 10:42:35 2024 +0100
+
+    FIX: minor change
+
+[33mcommit 238819338e0ac1f4e13ec27786e0f459286beaea[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 10:32:56 2024 +0100
+
+    FIX: minor change
+
+[33mcommit c8169204eeee39915e1ff5368415868aedc2910f[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 10:26:14 2024 +0100
+
+    FIX: reverting to my current state
+
+[33mcommit 435f8ffe35449ad85e080469b5c5a28cb2ba32bf[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 10:26:05 2024 +0100
+
+    FIX: reverting to my current state
+
+[33mcommit aa3bbab1df851a6e0f8127ed92b4214f8218aa61[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 10:25:54 2024 +0100
+
+    FIX: reverting to my current state
+
+[33mcommit 0847546b72419d1e9e440fb60669c165c9d5f8ad[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 03:53:24 2024 +0100
+
+    DOC: mistakenly deleted them
+
+[33mcommit 28db064bb8637392f1b737e23a204c5f2c654bbf[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 03:39:55 2024 +0100
+
+    FIX: corrected the run_number syntax
+
+[33mcommit 96ac5ef6abcc19a65f6fe285ca3454e62c19210c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 03:32:55 2024 +0100
+
+    FIX: used git-ha instead of runner
+
+[33mcommit e75b119179854d2ea50505d3d5f331ed48581bbe[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 03:22:19 2024 +0100
+
+    FIX: corrected the run_number syntax
+
+[33mcommit d3d634a5941f4125123010aed9664a6e6f80044a[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 03:22:00 2024 +0100
+
+    FIX: corrected the run_number syntax
+
+[33mcommit 64ffbc1502d0a7101ae2df27ef8b4a63e950bbd0[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 03:07:40 2024 +0100
+
+    FIX: added the run_number as a variable
+
+[33mcommit ac684cd783d79d93a7c0bc9ae6efe9d49e0938cc[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 03:01:18 2024 +0100
+
+    REFACTOR: minor fix
+
+[33mcommit 51f742bbb319374ed680f79cbdf80af8a6eb1654[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 02:45:27 2024 +0100
+
+    FIX: added run_number so the image can be pulled
+
+[33mcommit 1f984cbf0b16d7bac7c4386b03a9fef8ec5d578d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 02:34:15 2024 +0100
+
+    FIX: refactored the docker pul command
+
+[33mcommit d85cad8ff5f579d6483ffb7ae5c227463db0e0df[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 02:26:29 2024 +0100
+
+    FIX: corrected image tag
+
+[33mcommit c5dfc940026d0f89b40bc156487b616f88b77b40[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 02:25:58 2024 +0100
+
+    FIX: minor change
+
+[33mcommit 3d19c4cce81b2d71f76c19bf0d706f58a3ec808b[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 01:51:33 2024 +0100
+
+    FEATURE: pulling odoo image into ec2 instance
+
+[33mcommit 63e2a1007c993ad4a8a58413dd0e4981dfd41b04[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 01:51:03 2024 +0100
+
+    FEATURE: pulling odoo image into ec2 instance
+
+[33mcommit 6e0b0abc7493bb7aa4c2d414e60182056e0cad4c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Thu Nov 14 01:09:54 2024 +0100
+
+    FIX: made the docker image name unique
+
+[33mcommit 650e27c85b852b1fde336253300ea0486a1fb637[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 23:15:48 2024 +0100
+
+    FIX: removed the odoo user
+
+[33mcommit 03cf146d352ec4747b30e55170b7f6d619337615[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 23:10:42 2024 +0100
+
+    FIX: build the docker image
+
+[33mcommit 17d82ac88fc8f5c4bd2fc585c3cd97efdf0e7630[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 23:08:42 2024 +0100
+
+    FIX: build the docker image
+
+[33mcommit bf362fb38c097e8c4c4850a15bbf191820a9efbe[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 23:05:21 2024 +0100
+
+    FIX: build the docker image
+
+[33mcommit 4dde14d55c3a625bfc799f42be22352624f6035d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 23:02:27 2024 +0100
+
+    FIX: build the docker image
+
+[33mcommit a055df19647eb4941b3d36ac7cd335032347a246[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 23:00:43 2024 +0100
+
+    FIX: build the docker image
+
+[33mcommit edecee402cb134bc028438e6c25d9f66f9956e18[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 22:57:41 2024 +0100
+
+    FIX: build the docker image
+
+[33mcommit 379a9fba6c3e5aef5ea0eb7df7c1299fa72deaf7[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 22:49:00 2024 +0100
+
+    FIX: build the docker image
+
+[33mcommit 3d6790380faf4d5b191730c99d9335c233eed118[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 22:36:23 2024 +0100
+
+    FIX: build the docker image
+
+[33mcommit d69027c0f4841f9a26fdf4a937df5d5131c0a4fc[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 19:36:13 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit 7c622f641c373279dd611fa2aefac4d936d5e69a[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 16:31:22 2024 +0100
+
+    FIX: monir fix
+
+[33mcommit 69201ccef1f72366930b3b56c62e1e4667ae934e[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 16:21:16 2024 +0100
+
+    FIX: add deletion policy
+
+[33mcommit ddd254d0be2d2a2816e14b348d9d82d514641c55[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 15:58:54 2024 +0100
+
+    FIX: add deletion policy
+
+[33mcommit e8bac67eec0dfe0cb438e8da4f5836a2af36efca[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 15:58:25 2024 +0100
+
+    REFACTOR: monor change
+
+[33mcommit 011ad99e8a13146e230e23a88e6f7657b51f253a[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 15:36:42 2024 +0100
+
+    FIX: making the conditional statement work
+
+[33mcommit 44199fdce314fac8bc8503b163761864d9717af3[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 15:24:45 2024 +0100
+
+    FIX: moved the state up its parent directory
+
+[33mcommit 129469223e4c90d0b0f63e5d9753213378acb215[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 15:24:32 2024 +0100
+
+    FIX: moved the state up its parent directory
+
+[33mcommit 258c6a31e214945a1dcf5c98390e2d0ead071e33[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 15:22:13 2024 +0100
+
+    FIX: moved the state up its parent directory
+
+[33mcommit 8bba02bb973630f672d776c449fa41da054b8781[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 14:57:46 2024 +0100
+
+    FIX: use method to remove the whitespace in resources name
+
+[33mcommit 11e256360aa47ba97f8f09d24b559e35b63456a4[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 14:57:21 2024 +0100
+
+    REFACTOR: minor change
+
+[33mcommit fcc98717186ba31ebc7fb6ed6196285d3b344fbb[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 14:55:08 2024 +0100
+
+    FIX: use method to remove the whitespace in resources name
+
+[33mcommit 7c2193cd660b9c935ff6726e48a271ff63dd105f[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 13:07:05 2024 +0100
+
+    REFACTOR: commented some part of the networking file so the provioned resources can be minimal since am still teting things out
+
+[33mcommit b1eb470d9d4e3f470831b8e48108a15dafebe185[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 13:00:00 2024 +0100
+
+    REFACTOR: commented some part of the networking file so the provioned resources can be minimal since am still teting things out
+
+[33mcommit 0f76ec9d83610ba00582e6c5ebacc2ca379c3de8[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 12:36:38 2024 +0100
+
+    FIX: remove the space in both infra and destroy workflow introduced by github action contextual variable so our destroy script will pass through
+
+[33mcommit 30f36d9049e3ef707c4d623b02384008bff7e78c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 12:00:58 2024 +0100
+
+    FIX: resolve the conflict from the merge request with main
+
+[33mcommit 9f3b58d7dcafaa03955dceeb1b014156cff3a79d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 11:46:12 2024 +0100
+
+    FIX: fixing the omitted step issue
+
+[33mcommit 9954f2d5f13adc851a5678b74582270732f095cf[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 11:36:31 2024 +0100
+
+    FIX: fixing the omitted step issue
+
+[33mcommit 4ba52c151c329516389383f04c65ccaeda8e5925[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 11:31:10 2024 +0100
+
+    FIX: fixing the omitted step issue
+
+[33mcommit 7bb58dce1dc28596143654a522ec9e7b8042b8b2[m
+Merge: 4324d862 b5faf9e6
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 11:23:53 2024 +0100
+
+    FIX: merged the workflow i push to main to my dev branch so i can trigger infrastructure destruction on differnt branch
+
+[33mcommit b5faf9e6c8c06b7743dabc5ff65087a45a838fd6[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 10:40:24 2024 +0100
+
+    DOC: added the github workflow doc so i can be able to manually delete my stack
+
+[33mcommit a3586a5715ca01dfef519dfb0d5e907905aaab07[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 10:31:57 2024 +0100
+
+    DOC: added the github workflow doc so i can be able to manually delete my stack
+
+[33mcommit c35483d712d215e8e223e1ead4c7a0cc767affbc[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 10:29:48 2024 +0100
+
+    DOC: added the github workflow doc so i can be able to manually delete my stack
+
+[33mcommit 397642f7aae7f2c2b2720b5ede68cbc9415780a3[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 10:27:02 2024 +0100
+
+    DOC: added the github workflow doc so i can be able to manually delete my stack
+
+[33mcommit 9715278492d01405b5a098f734a633c990139f21[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 10:13:25 2024 +0100
+
+    DOC: added the github workflow doc so i can be able to manually delete my stack
+
+[33mcommit 7110964217c47908f4e8a9e6ce691cd5f687e084[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 10:08:58 2024 +0100
+
+    DOC: added the github workflow doc so i can be able to manually delete my stack
+
+[33mcommit 4324d862447daf712c293d37ebac4233f1d7ec00[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 09:58:22 2024 +0100
+
+    FIX: introduce the sleep command to allow cloudformation finish its provisioning and some minor changes
+
+[33mcommit 9457e97ede0db6db1396e24bf5694695ff44192e[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 09:57:05 2024 +0100
+
+    FIX: corrected the destroy command
+
+[33mcommit 2c34e49b6cb4582fed7fe1e7f69ddda99f1b7f1b[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 09:36:37 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit df5d5915e2ef0b004e242591cd75c98eb6258c37[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 09:29:20 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 702c8d8070bca69aa24731734a3f95fca0fcd449[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 09:26:24 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 0a2c0045f923a63a88f783a4e2339f0ce24b5e9a[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 09:06:03 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit c9faa340ceec068cf6a90538a54c2c9e962b8862[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 09:03:45 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 1fe53403116b0d5aec72d04709b53e6b0df7c615[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 08:59:08 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 96ab6b72e841765636b043301bfc19f0413beb2f[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 08:56:03 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 91b48be9527a56975b77bba35bbcf5bfc4a8ffbe[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 08:53:44 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 1d723fc184b3a8402054365c319902d462087c24[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 08:52:08 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit b56701e0c245996ad4883fffb73a433a8827487b[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 08:50:19 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 3f7fe202abb1e946f4ef766b245567fdacd67162[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 08:45:44 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit c70f27b17e5013bc1aad1af0a87bb435d349b318[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Wed Nov 13 08:43:11 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 162f7b1244974cd3be90b8906b8a23bc6919daa2[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 19:49:44 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 7cf0d98ff953798bd451864111fe5f0c36c84bb5[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 19:03:00 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 62509b1b49f5c44f3103ac23824e2f411dbc4bb6[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 18:54:17 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 1a8bc45a5ed86d33c0f32aeb48eaa5f4b2d8db52[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 18:51:47 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit a974917b0f92c818ed985f2cd5ddd3761002929f[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 18:35:06 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 8a94bfeadc42171e1c7ee42a39b4e434c2845efb[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 18:29:35 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit cc3f7d10d96a33dbf6dbb4d7c457ae0b869d03cb[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 18:21:02 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit b99d0bf6d9484a3f9ae6a474f655d9e3dbb49dcb[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 17:09:49 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 8045a2351f8dfd44e72e36d1b221bad75e4da72c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 16:49:54 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit abe85dd0d458665c449c6e9b4a028eec0cfc3a74[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 16:48:20 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 309e3b73989a80ae61b038e4cab3d734c618d252[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 16:42:53 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit d7105de7278816db7d65557de8b0dbfb27e0ab1b[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 16:28:18 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 9ce2c67af3bbf49cb3d18fae837c16c6acc6c5e4[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 16:24:43 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 339a4e73693bd5b6b35507bcdda54652e7034d0c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 16:17:39 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit acd874268b1c396e5503616e33b45c41add50369[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 16:11:10 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 79c55e278ec59e0453f16426eccfcb91a3cbd235[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 15:58:24 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 1282dac04644bab29f1be962892492e56c0f510b[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 15:51:01 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit f1a88347b7b57c291d9637232395e4624f3d5d89[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 15:40:18 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 405d09241c16c092a35e46ba7d4da9bd4c6130b0[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 15:36:45 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit a612628cf0cb084ff7ee94b5132ededfea5719b3[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 15:31:40 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 2c2d7b49ba67fe321509354b7bc2ff2956e18050[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 15:18:23 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit 91e3c42f4b8552812ff688b531b81cfec1d56bed[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 14:27:45 2024 +0100
+
+    FIX: corrected the systax error in line 59
+
+[33mcommit eff43a96beed87f8e81f4bb9a7f43d4dc8d9728e[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 14:14:01 2024 +0100
+
+    DOC: added the backend script to create our infra for storing terraform state
+
+[33mcommit fa378939703eff7dcc0cd12fdd1d72b0c95a50ff[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 14:12:14 2024 +0100
+
+    FIX: uncommented the backend block in the file to store its state in the remote s3 and dynamo db infra
+
+[33mcommit c8a6498962489753c52efd22c67b2da2bb3a765a[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 14:11:44 2024 +0100
+
+    FIX: uncommented the backend block in the file to store its state in the remote s3 and dynamo db infra
+
+[33mcommit 80a6943e2e70b5127a4e3835004e0deab043d689[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 14:11:08 2024 +0100
+
+    FIX: uncommented the backend block in the file to store its state in the remote s3 and dynamo db infra
+
+[33mcommit 1160c545713fe75863bc83027bea1af8fcbe2677[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 14:10:46 2024 +0100
+
+    FIX: uncommented the backend block in the file to store its state in the remote s3 and dynamo db infra
+
+[33mcommit 1094357cf358bb5686ec11c22696dfeffa30da67[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 14:07:55 2024 +0100
+
+    FIX: reconfigured this file to always work with terraform backend before its operations
+
+[33mcommit b92a43ff2e49e183e34211bc6f75f83851ea5163[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 13:45:02 2024 +0100
+
+    FIX: this is to be able to delete the terraform backend stack
+
+[33mcommit ccf9059799bd7d41ef43b289f5cadf241fd56539[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 13:41:27 2024 +0100
+
+    FIX: this is to be able to delete the terraform backend stack
+
+[33mcommit 1eac447ff81cf2bc50f7161666bd96137648bda0[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 13:27:57 2024 +0100
+
+    FIX: this is to be able to delete the terraform backend stack
+
+[33mcommit a4b37f486b699bd9514450bf520b4dc4157ed826[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 13:18:36 2024 +0100
+
+    FIX: this is to be able to delete the terraform backend stack
+
+[33mcommit d44684b30344c2fc92b2f1c81fdfcdadba78aecf[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 13:08:57 2024 +0100
+
+    FIX: this is to be able to delete the terraform backend stack
+
+[33mcommit 41ec6293c20f8c8f6330a45a1e49c4db2064e4d2[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 12:56:22 2024 +0100
+
+    FIX: this is to be able to delete the terraform backend stack
+
+[33mcommit 803d2b77ecf7a927c31c6fb3c1fb137fab038c31[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Tue Nov 12 12:46:55 2024 +0100
+
+    FIX: this is to be able to delete the terraform backend stack
+
+[33mcommit e3a0cebd84cf4eba1cd1591ba4c54cccf6139670[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 11 18:51:03 2024 +0100
+
+    FIX: minor fix
+
+[33mcommit 41f293d41350fe1841104ab8bb6632f2120ee5ca[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 11 18:43:18 2024 +0100
+
+    REFACTOR: commented the backend block of the code
+
+[33mcommit 00f5e033f99944783174fd2687f276be23da19b3[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 11 18:41:59 2024 +0100
+
+    FIX: minor fix
+
+[33mcommit 6d24a8177c5904d1cc9d9cd4a3935ef9b2c6075a[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 11 18:26:49 2024 +0100
+
+    ADD: added the infrastructural diagram
+
+[33mcommit d30df4fe0ddd83fd06373d7f0b0c1f3b2c1243f2[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 11 17:05:31 2024 +0100
+
+    ADD: added the infrastructural diagram
+
+[33mcommit 27886fa30aec361b3f72a136619ed50cdc765742[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 11 16:23:41 2024 +0100
+
+    ADD: added the first successful deployment badge
+
+[33mcommit f8629bed539ced927d6a66947d7a43ec88a35407[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 11 16:09:52 2024 +0100
+
+    FIX: remove the private key variable added to the terraform apply command
+
+[33mcommit c26cd82c88bc9a20cad62c9e6133aefcb082a29c[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 11 15:42:33 2024 +0100
+
+    FIX: remove the private key variable added to the terraform plan command
+
+[33mcommit bab399528c17bab21205aae6c9406557d38fd157[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 11 15:33:45 2024 +0100
+
+    REFACTOR: added little formtting
+
+[33mcommit 9eccb92c7f8f5e78b3ce221fde620f8fcf4e81bf[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 11 15:26:09 2024 +0100
+
+    FIX: corrected the terraform working path to the right path and also rename the prevoius staging and production directory to dev and staging
+
+[33mcommit f9bb21afc5f62da7c4f09c816fb51c2669ab0bad[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 11 14:48:02 2024 +0100
+
+    DOC: added the github Action Workflow file
+
+[33mcommit 8a938c6db77df67722ceabb784f43a0a4774713a[m
+Merge: c3058015 901a2a76
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 11 12:20:04 2024 +0100
+
+    FIX: resolve merge issue
+
+[33mcommit c30580157464c48e1d9a6e9afd2a5c518c21046d[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 11 11:26:53 2024 +0100
+
+    FIX: removed the exposed secret
+
+[33mcommit e341a03f0ac028534a6e34f2989a2d44fc63fbbc[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 11 10:28:33 2024 +0100
+
+    DOC: added the entry script file
+
+[33mcommit 9e0f7391456d453a97ccf7cd7830c60ee13309d5[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 11 10:25:54 2024 +0100
+
+    DOC: added odoo configuration file
+
+[33mcommit a0237df76faabed9f08eab46d510ee464b5c6eb1[m
+Author: oriafo <abrahamibharunujele@gmail.com>
+Date:   Mon Nov 11 10:13:01 2024 +0100
+
+    DOC: added odoo base document
+
+[33mcommit 901a2a76dd393438d141bf5300dac7ed7bd73a87[m
+Author: oriafo <49622249+oriafo@users.noreply.github.com>
+Date:   Mon Nov 11 09:33:50 2024 +0100
+
+    Initial commit
